@@ -1,332 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="El Turista — Agencia de viajes desde San José. Ofertas, simulador de precio y atención personalizada." />
-  <meta name="author" content="El Turista" />
-  <title>El Turista — Viajes desde San José</title>
-
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="El Turista — Descubre tu nueva aventura" />
-  <meta property="og:description" content="Agencia nacida en San José: viajes, ofertas y atención personalizada." />
-  <meta property="og:image" content="hero.jpg" />
-  <meta property="og:type" content="website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>El Turista — Desde San José</title>
+  <meta name="description" content="Agencia de viajes 'El Turista' — Salidas desde San José, Uruguay. Destinos dentro y fuera del país." />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <!-- Favicon (opcional) -->
-  <link rel="icon" href="favicon.ico" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"TravelAgency",
-    "name":"El Turista",
-    "url":"https://tusitio.example",
-    "logo":"https://tusitio.example/logo.png",
-    "sameAs": [],
-    "description":"Agencia de viajes desde San José — Paquetes, ofertas y asesoramiento personalizado."
-  }
-  </script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="page">
+<body>
 
-  <!-- Skip link for accessibility -->
-  <a class="skip-link" href="#main">Saltar al contenido</a>
-
-  <!-- Header / Navbar -->
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="Inicio - El Turista">
-        <img src="logo.png" alt="El Turista — logo" class="logo" />
-      </a>
-
-      <button id="mobile-nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Abrir menú">
-        <span class="hamburger"></span>
-      </button>
-
-      <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Menú principal">
-        <ul class="nav-list">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#uruguay">Destinos Uruguay</a></li>
-          <li><a href="#internacional">Destinos Internacionales</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#sobre">Sobre Nosotros</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <a class="btn btn-outline" href="#contacto">Contacto</a>
-        <a class="btn btn-primary" href="#pricing">Precios</a>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <img src="logo.png" alt="El Turista logo" class="logoturista"/>
+        <div>
+          <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
+        </div>
       </div>
-    </div>
-  </header>
+      <div class="navlinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#destinos">Destinos</a>
+        <a href="#contacto">Contacto</a>
+        <a class="cta" href="#contacto">Reservá</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-  <!-- Main -->
-  <main id="main">
-    <!-- Hero -->
-    <section id="inicio" class="hero" aria-label="Portada">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <h1>Descubre tu nueva aventura con <span class="brand-highlight">EL TURISTA</span></h1>
-          <p class="lead">Del corazón de San José al mundo — planes, ofertas y atención personalizada.</p>
-          <div class="hero-ctas">
-            <a class="btn btn-secondary" href="#uruguay">Destinos Uruguay</a>
-            <a class="btn btn-ghost" href="#internacional">Destinos Internacionales</a>
+<main class="container">
+  <section id="inicio" class="hero">
+    <div class="hero-left">
+      <h2>Viajes que empiezan en el corazón de San José</h2>
+      <p>Paquetes nacionales e internacionales, salidas grupales y privadas. Diseño de viajes a medida.</p>
+
+      <div class="search-card">
+        <form onsubmit="event.preventDefault(); doSearch();">
+          <div style="display:flex;gap:8px;flex-direction:column">
+            <label style="font-weight:700">¿A dónde querés ir desde San José?</label>
+            <div class="search-row">
+              <input id="q" type="text" placeholder="Ej: Montevideo, Río de Janeiro, Salto..." />
+              <select id="scope">
+                <option value="national">Nacional</option>
+                <option value="international">Internacional</option>
+              </select>
+              <button type="submit">Buscar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div style="margin-top:18px;color:var(--muted);font-size:14px">¿Preferís hablar por teléfono? <strong>+598 9XXXXXXX</strong></div>
+    </div>
+
+    <aside>
+      <div style="background:#fff;padding:14px;border-radius:14px;box-shadow:0 6px 20px rgba(16,32,39,0.06)">
+        <h4 style="margin:0 0 8px">Destinos recomendados</h4>
+        <ul style="margin:0;padding:0 12px;color:var(--muted)">
+          <li>Colonia del Sacramento — escapada de fin de semana</li>
+          <li>Punta del Este — sol y vida nocturna</li>
+          <li>Río de Janeiro — viajes directos desde San José</li>
+        </ul>
+      </div>
+    </aside>
+  </section>
+
+  <section id="destinos" class="section">
+    <h3>Destinos destacados</h3>
+    <div class="grid">
+      <article class="card">
+        <img src="dest1.jpg" alt="Colonia" />
+        <h4>Colonia del Sacramento</h4>
+        <p>Historia, arquitectura y gastronomía a una hora de viaje.</p>
+      </article>
+      <article class="card">
+        <img src="dest2.jpg" alt="Punta" />
+        <h4>Punta del Este</h4>
+        <p>Playas, paradores y vida nocturna premium.</p>
+      </article>
+      <article class="card">
+        <img src="dest3.jpg" alt="Río" />
+        <h4>Río de Janeiro</h4>
+        <p>Aventura internacional con paquetes todo incluido.</p>
+      </article>
+    </div>
+
+    <h3 style="margin-top:28px">Galería</h3>
+    <div class="gallery" id="gallery">
+      <img src="gal1.jpg" alt="foto1" onclick="openModal(this)" />
+      <img src="gal2.jpg" alt="foto2" onclick="openModal(this)" />
+      <img src="gal3.jpg" alt="foto3" onclick="openModal(this)" />
+      <img src="gal4.jpg" alt="foto4" onclick="openModal(this)" />
+      <img src="gal5.jpg" alt="foto5" onclick="openModal(this)" />
+      <img src="gal6.jpg" alt="foto6" onclick="openModal(this)" />
+      <img src="gal7.jpg" alt="foto7" onclick="openModal(this)" />
+      <img src="gal8.jpg" alt="foto8" onclick="openModal(this)" />
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <h3>Contacto</h3>
+    <div class="contact-wrap">
+      <div>
+        <h4>Encontranos</h4>
+        <p style="color:var(--muted)">Oficina en San José — horario: lun a vie 09:00 - 18:00</p>
+
+        <div style="margin-top:12px;border-radius:12px;overflow:hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3495.0000000000005!2d-56.439000000000005!3d-34.300000000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDE4JzAwLjAiUyA1NsKwMjYnMDQuMCJX!5e0!3m2!1ses!2suy!4v0000000000000"
+            width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div style="margin-top:12px">
+          <strong>Tel:</strong> +598 9XXXXXXX<br>
+          <strong>Email:</strong> info@elturista.uy
+        </div>
+
+        <div style="margin-top:12px">
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="X">X</a>
           </div>
         </div>
-        <div class="hero-media" aria-hidden="true">
-          <!-- imagen decorativa; si la querés como <img> para SEO, cambiá -->
-        </div>
       </div>
-    </section>
 
-    <!-- Features -->
-    <section class="features container" aria-label="Características">
-      <article class="feature">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16 5.5 20l2-7L2 9h7z"/></svg>
-        <h3>Quick Search</h3>
-        <p>Encuentra destinos por precio, distancia o tipo de experiencia.</p>
-      </article>
-
-      <article class="feature">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1L3 5v6c0 5 3.8 9.6 9 11 5.2-1.4 9-6 9-11V5l-9-4z"/></svg>
-        <h3>Price Simulator</h3>
-        <p>Simula costos y arma tu viaje según presupuesto.</p>
-      </article>
-
-      <article class="feature">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zM11 6h2v6h-2zM11 14h2v2h-2z"/></svg>
-        <h3>Flash Deals</h3>
-        <p>Ofertas limitadas y notificaciones para no perder descuentos.</p>
-      </article>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-      <div class="container cta-inner">
-        <h2>Comienza tu aventura hoy</h2>
-        <p>¿Listo para planificar? Te ayudamos con todo: vuelos, alojamiento y actividades.</p>
-        <div>
-          <a class="btn btn-primary" href="#contacto">Contactanos</a>
-          <a class="btn btn-ghost" href="#pricing">Ver Precios</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="pricing container" aria-label="Planes y precios">
-      <h2 class="section-title">Planes</h2>
-      <div class="pricing-grid">
-        <div class="card">
-          <h3>Basic</h3>
-          <p class="price">$99 <small>/ mes</small></p>
-          <ul>
-            <li>Acceso a destinos Uruguay</li>
-            <li>Newsletter</li>
-          </ul>
-          <a class="btn btn-outline" href="#contacto">Elegir</a>
-        </div>
-
-        <div class="card card-featured" aria-current="true">
-          <h3>Premium</h3>
-          <p class="price">$199 <small>/ mes</small></p>
-          <ul>
-            <li>Uruguay + Internacional</li>
-            <li>Soporte prioritario</li>
-            <li>Recomendaciones personalizadas</li>
-          </ul>
-          <a class="btn btn-primary" href="#contacto">Elegir</a>
-        </div>
-
-        <div class="card">
-          <h3>Ultimate</h3>
-          <p class="price">$299 <small>/ mes</small></p>
-          <ul>
-            <li>VIP Access</li>
-            <li>Descuentos especiales</li>
-          </ul>
-          <a class="btn btn-outline" href="#contacto">Elegir</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sobre Nosotros -->
-    <section id="sobre" class="about container" aria-label="Sobre Nosotros">
-      <h2 class="section-title">Sobre Nosotros</h2>
-      <div class="about-grid">
-        <img src="about.jpg" alt="Equipo de El Turista" class="about-image" loading="lazy" />
-        <div>
-          <p><strong>El Turista</strong> nace en San José con la misión de acercarte al mundo con precios accesibles y atención personalizada. Trabajamos con proveedores locales para ofrecer experiencias genuinas.</p>
-          <p>Nuestro equipo asesora tu viaje de principio a fin: transporte, alojamiento, actividades y recomendaciones locales.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials (opcional) -->
-    <section class="testimonials container" aria-label="Testimonios">
-      <h2 class="section-title">Lo que dicen</h2>
-      <div class="test-grid">
-        <blockquote>
-          <p>"Excelente atención y ofertas reales. ¡Volvería a contratar!"</p>
-          <footer>— María, Montevideo</footer>
-        </blockquote>
-        <blockquote>
-          <p>"Nos ayudaron a planear la luna de miel, todo salió perfecto."</p>
-          <footer>— Joaquín, Maldonado</footer>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq container" aria-label="Preguntas frecuentes">
-      <h2 class="section-title">Preguntas frecuentes</h2>
-      <details>
-        <summary>¿Cómo reservo con El Turista?</summary>
-        <p>Puedes reservar contactándonos por el formulario, WhatsApp o correo. Te enviaremos confirmación y factura digital.</p>
-      </details>
-      <details>
-        <summary>¿Qué formas de pago aceptan?</summary>
-        <p>Aceptamos transferencia bancaria, tarjetas y pagos en efectivo según el paquete.</p>
-      </details>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="contact container" aria-label="Contacto">
-      <h2 class="section-title">Contacto</h2>
-
-      <form id="contact-form" class="contact-form" method="POST" data-endpoint="FORM_ENDPOINT" novalidate>
-        <!-- Reemplaza data-endpoint="FORM_ENDPOINT" por tu endpoint Formspree u otro -->
-        <label>
-          <span class="label-text">Nombre</span>
-          <input type="text" name="name" placeholder="Tu nombre" required>
-        </label>
-
-        <label>
-          <span class="label-text">Correo</span>
-          <input type="email" name="email" placeholder="tu@correo.com" required>
-        </label>
-
-        <label>
-          <span class="label-text">Teléfono (opcional)</span>
-          <input type="tel" name="phone" placeholder="+598 9 1234 567">
-        </label>
-
-        <label>
-          <span class="label-text">Mensaje</span>
-          <textarea name="message" rows="5" placeholder="Contanos qué querés planear..." required></textarea>
-        </label>
-
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Enviar mensaje</button>
-          <button class="btn btn-ghost" type="reset">Limpiar</button>
-        </div>
-
-        <div id="form-status" class="form-status" aria-live="polite"></div>
-      </form>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer-inner">
       <div>
-        <p class="footer-brand"><strong>El Turista</strong> — San José, Uruguay</p>
-        <p class="muted">© <span id="year"></span> El Turista. Todos los derechos reservados.</p>
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <input type="text" id="name" placeholder="Nombre" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <input type="text" id="phone" placeholder="Teléfono (opcional)" />
+          <textarea id="message" rows="6" placeholder="Contanos tu consulta..." required></textarea>
+          <button type="submit">Enviar mensaje</button>
+        </form>
+
+        <div style="margin-top:12px;color:var(--muted);font-size:14px">
+          O también podés escribirnos por WhatsApp.
+        </div>
       </div>
-      <nav aria-label="Redes sociales" class="social">
-        <a href="#" aria-label="Facebook" class="social-link" title="Facebook (placeholder)">
-          <!-- SVG Facebook -->
-          <svg viewBox="0 0 24 24" class="social-icon"><path d="M22 12a10 10 0 10-11.6 9.9v-7H8v-3h2.4V9.2c0-2.4 1.4-3.8 3.6-3.8 1 0 2 .08 2 .08v2.2h-1.1c-1.1 0-1.5.72-1.5 1.5v1.7H19l-.4 3h-2.1v7A10 10 0 0022 12z"/></svg>
-        </a>
-        <a href="#" aria-label="Instagram" class="social-link" title="Instagram (placeholder)">
-          <svg viewBox="0 0 24 24" class="social-icon"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 7.5A4.5 4.5 0 1016.5 14 4.5 4.5 0 0012 9.5zM18 7a1 1 0 11-1-1 1 1 0 011 1z"/></svg>
-        </a>
-      </nav>
+    </div>
+  </section>
+
+  <footer class="section">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>© El Turista — San José • Diseñado por El Turista</div>
+      <div style="color:var(--muted);font-size:14px">Links: <a href="#destinos">Destinos</a> · <a href="#contacto">Contacto</a></div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script>
-  // Small helpers: mobile nav toggle
-  (function() {
-    const btn = document.getElementById('mobile-nav-toggle');
-    const nav = document.getElementById('primary-nav');
-    btn.addEventListener('click', () => {
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
-      document.body.classList.toggle('nav-open');
-    });
+</main>
 
-    // Close nav on link click (mobile)
-    Array.from(document.querySelectorAll('.nav-list a')).forEach(a => {
-      a.addEventListener('click', () => {
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('nav-open');
-      });
-    });
+<a class="whatsapp" href="https://wa.me/5989XXXXXXX?text=Hola%20El%20Turista%2C%20quiero%20consultar%20sobre%20un%20viaje" target="_blank" aria-label="WhatsApp">
+  <img src="whatsapp.png" alt="WhatsApp" />
+</a>
 
-    // Fill current year
-    const y = new Date().getFullYear();
-    document.getElementById('year').textContent = y;
-  })();
+<div id="modal" class="modal" onclick="closeModal(event)">
+  <img id="modalImg" src="" alt="">
+</div>
 
-  // Contact form submit (supports endpoints like Formspree)
-  (function() {
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
+<!-- Scripts -->
+<script src="script.js"></script>
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = 'Enviando...';
-      status.classList.remove('error','success');
-
-      const endpoint = form.dataset.endpoint && form.dataset.endpoint !== 'FORM_ENDPOINT'
-        ? form.dataset.endpoint
-        : null;
-
-      const data = new FormData(form);
-
-      if (!endpoint) {
-        // no endpoint configured — give user instructions but still show success demo
-        status.classList.add('error');
-        status.innerHTML = 'Formulario preparado. <strong>Configura tu endpoint</strong> en el atributo <code>data-endpoint</code> del formulario para enviar mensajes reales.<br>Sugerencia: usa Formspree o EmailJS.';
-        return;
-      }
-
-      try {
-        const resp = await fetch(endpoint, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (resp.ok) {
-          form.reset();
-          status.classList.add('success');
-          status.textContent = 'Mensaje enviado. ¡Gracias! Nos contactamos pronto.';
-        } else {
-          const json = await resp.json().catch(()=>{});
-          status.classList.add('error');
-          status.textContent = json?.error || 'Error al enviar el mensaje. Por favor intentá nuevamente.';
-        }
-      } catch (err) {
-        status.classList.add('error');
-        status.textContent = 'Error de red. Revisa tu conexión e inténtalo de nuevo.';
-        console.error(err);
-      }
-    });
-  })();
-  </script>
 </body>
 </html>
