@@ -256,17 +256,23 @@ footer {
 
 .whatsapp {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 4rem;
+  right: 4rem;
   background: #25d366;
-  padding: 12px;
+  width: 8rem;
+  height: 8rem;
+  padding: 0; /* mejor quitar padding si definís ancho y alto */
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+
 .whatsapp img {
-  width: 28px;
-  height: 28px;
+  width: 4rem;
+  height: auto;
 }
 
 .logoturista {
