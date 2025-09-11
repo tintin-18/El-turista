@@ -1,0 +1,118 @@
+/* Variables de colores */
+:root {
+  --primary: #23297F;
+  --secondary: #8F84D2;
+  --light: #fff;
+  --dark: #080A45;
+}
+
+/* Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--dark);
+  background: var(--light);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: var(--light);
+}
+.navbar img { height: 40px; }
+.navbar nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--light);
+}
+.nav-buttons button {
+  margin-left: .5rem;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.nav-buttons button:first-child { background: var(--secondary); color: var(--light); }
+.nav-buttons button:last-child { background: var(--light); color: var(--primary); }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: url('hero.jpg') no-repeat center/cover;
+  color: var(--light);
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { margin-bottom: 1.5rem; }
+.hero button {
+  margin: 0 .5rem;
+  padding: .75rem 1.5rem;
+  border-radius: 24px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.hero button:first-child { background: var(--secondary); color: var(--light); }
+.hero button:last-child { background: var(--light); color: var(--primary); }
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.features article { max-width: 250px; }
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--secondary);
+  color: var(--light);
+}
+.cta button {
+  margin-top: 1rem;
+  padding: .75rem 1.5rem;
+  border: none;
+  border-radius: 24px;
+  background: var(--primary);
+  color: var(--light);
+  cursor: pointer;
+}
+
+/* Pricing */
+.pricing {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 2rem;
+}
+.pricing article {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 30%;
+  text-align: center;
+}
+.pricing h3 { margin-bottom: 1rem; }
+.pricing ul { list-style: none; }
+.pricing li { margin: .5rem 0; }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--primary);
+  color: var(--light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .features, .pricing { flex-direction: column; align-items: center; }
+  .pricing article { width: 80%; margin-bottom: 1rem; }
+}
