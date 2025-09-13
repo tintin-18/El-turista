@@ -259,8 +259,8 @@ footer {
   bottom: 4rem;
   right: 4rem;
   background: #25d366;
-  width: 8rem;
-  height: 8rem;
+  width: 7rem;
+  height: 7rem;
   padding: 0; /* mejor quitar padding si definís ancho y alto */
   border-radius: 50%;
   box-shadow: 0 4px 12px black;

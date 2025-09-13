@@ -4,8 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>El Turista — Sobre nosotros</title>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 🎨 Estilos exclusivos de esta página */
+    header {
+  margin-bottom: 3rem;
+}
+    .about-hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .about-hero h2 {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+    }
+
+    .about-section {
+      margin-bottom: 60px;
+    }
+
+    .mission-card {
+      background: #f8faff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .team-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .team-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .team-card .emoji {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .cta-box {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .cta-box a {
+      display:inline-block;
+      background: var(--primary);
+      color:#fff;
+      padding:16px 28px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:1.2rem;
+      text-decoration:none;
+      transition: background 0.2s;
+    }
+    .cta-box a:hover {
+      background: var(--secondary);
+    }
+  </style>
 </head>
 <body>
 
@@ -13,7 +91,9 @@
   <div class="container">
     <nav>
       <div class="brand">
-        <img src="logo.png" alt="El Turista logo" class="logoturista"/>
+        <a href="index.html">
+          <img src="logo.png" alt="El Turista logo" class="logoturista">
+        </a>
         <div>
           <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
         </div>
@@ -28,28 +108,75 @@
 </header>
 
 <main class="container">
-  <section class="section">
-    <h3>Sobre nosotros</h3>
-    <p>En <strong>El Turista</strong> nos apasiona crear experiencias de viaje únicas para cada persona. Desde nuestro inicio en San José, Uruguay, hemos ayudado a cientos de viajeros a descubrir destinos nacionales e internacionales con comodidad y seguridad.</p>
-    
-    <p>Nuestro equipo está formado por profesionales del turismo con años de experiencia, apasionados por ofrecer atención personalizada y asesoramiento experto. Nos aseguramos de que cada viaje sea inolvidable, adaptado a tus gustos y necesidades.</p>
-    
-    <h4>Nuestra misión</h4>
-    <p>Brindar experiencias de viaje auténticas y memorables, fomentando la conexión con los destinos y la cultura local.</p>
-
-    <h4>Nuestro equipo</h4>
-    <ul>
-      <li>Daniela — Coordinación de viajes nacionales</li>
-      <li>Mauricio — Especialista en viajes internacionales</li>
-      <li>Agustín — Diseño de experiencias y atención al cliente</li>
-    </ul>
+  <!-- Hero -->
+  <section class="about-hero">
+    <h2>Conocenos ✨</h2>
+    <p>En <strong>El Turista</strong> diseñamos viajes únicos desde el corazón de San José hacia el mundo.</p>
   </section>
+
+  <!-- Historia -->
+  <section class="about-section">
+    <h3>Nuestra historia</h3>
+    <p>Desde nuestros inicios en San José, Uruguay, acompañamos a viajeros a descubrir destinos nacionales e internacionales con confianza y cercanía. Nuestro compromiso siempre fue el mismo: que cada experiencia sea inolvidable.</p>
+  </section>
+
+  <!-- Misión -->
+  <div class="mission-card">
+    <h3>🌍 Nuestra misión</h3>
+    <p>Brindar experiencias de viaje auténticas y memorables, fomentando la conexión con los destinos y la cultura local.</p>
+  </div>
+
+  <!-- Equipo -->
+  <section class="about-section">
+    <h3>Conocé al equipo</h3>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="emoji">🧭</div>
+        <h4>Daniela</h4>
+        <p>Coordinación de viajes nacionales</p>
+      </div>
+      <div class="team-card">
+        <div class="emoji">🌎</div>
+        <h4>Mauricio</h4>
+        <p>Especialista en viajes internacionales</p>
+      </div>
+      <div class="team-card">
+        <div class="emoji">🤝</div>
+        <h4>Agustín</h4>
+        <p>Diseño de experiencias y atención al cliente</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-box">
+    <h3>¿Listo para tu próxima aventura?</h3>
+    <a href="contacto.html">🚀 Planificá tu viaje con nosotros</a>
+  </div>
 </main>
 
-<footer class="section">
-  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-    <div>© El Turista — San José • Diseñado por El Turista</div>
-    <div style="color:var(--muted);font-size:14px">Links: <a href="index.html">Inicio</a> · <a href="blog.html">Blog</a></div>
+<footer class="section" style="background:#f8f9fa; padding:40px 20px; border-top:1px solid #ddd; position:relative;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; position:relative;">
+    
+    <!-- Info de copyright (izquierda) -->
+    <div style="font-size:14px; color:#555;">
+      © El Turista — San José • Diseñado por Agustin Espinosa
+    </div>
+    
+    <!-- Logo centrado -->
+    <div style="position:absolute; left:50%; transform:translateX(-50%);">
+      <a href="index.html">
+        <img src="logo.png" alt="El Turista logo" style="height:50px;">
+      </a>
+    </div>
+    
+    <!-- Redes sociales (derecha) -->
+    <div class="socials" style="font-size:16px;">
+      <a href="https://instagram.com/" target="_blank" style="margin-right:12px; color:#E4405F;">Instagram</a>
+      <a href="https://facebook.com/" target="_blank" style="margin-right:12px; color:#1877F2;">Facebook</a>
+      <a href="https://tiktok.com/" target="_blank" style="color:#000;">TikTok</a>
+    </div>
+    
   </div>
 </footer>
 
