@@ -258,12 +258,9 @@ footer {
   position: fixed;
   bottom: 4rem;
   right: 4rem;
-  background: #25d366;
   width: 7rem;
   height: 7rem;
   padding: 0; /* mejor quitar padding si definís ancho y alto */
-  border-radius: 50%;
-  box-shadow: 0 4px 12px black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -271,7 +268,7 @@ footer {
 
 
 .whatsapp img {
-  width: 4rem;
+  width: 6rem;
   height: auto;
 }
 

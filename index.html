@@ -29,9 +29,9 @@
         </div>
       </div>
       <div class="navlinks">
-        <a class="cta" href="blog.html">Blog</a>
-        <a class="cta" href="sobre.html">Sobre Nosotros</a>
-        <a class="cta" href="contacto.html">Contacto</a>
+        <a href="blog.html">Blog</a>
+        <a href="sobre.html">Sobre Nosotros</a>
+        <a href="contacto.html">Contacto</a>
 
       </div>
     </nav>
@@ -45,19 +45,21 @@
       <p>Paquetes nacionales e internacionales, salidas grupales y privadas. Diseño de viajes a medida.</p>
 
       <div class="search-card">
-        <form onsubmit="event.preventDefault(); doSearch();">
-          <div style="display:flex;gap:8px;flex-direction:column">
-            <label style="font-weight:700">¿A dónde querés ir desde San José?</label>
-            <div class="search-row">
-              <input id="q" type="text" placeholder="Ej: Montevideo, Río de Janeiro, Salto..." />
-              <select id="scope">
-                <option value="national">Nacional</option>
-                <option value="international">Internacional</option>
-              </select>
-              <button type="submit">Buscar</button>
-            </div>
-          </div>
-        </form>
+      <form onsubmit="event.preventDefault(); doSearch();">
+    <div style="display:flex;gap:8px;flex-direction:column">
+      <label style="font-weight:700">¿A dónde querés ir desde San José?</label>
+      <div class="search-row">
+        <input id="q" type="text" placeholder="Ej: Montevideo, Río de Janeiro, Salto..." />
+        <select id="scope">
+          <option value="national">Nacional</option>
+          <option value="international">Internacional</option>
+        </select>
+        <button type="submit">Buscar</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="results" style="margin-top:16px;"></div>
       </div>
 
       <div style="margin-top:18px;color:var(--muted);font-size:14px">¿Preferís hablar por teléfono? <strong>+598 9XXXXXXX</strong></div>
@@ -173,22 +175,23 @@
   });
 </script>
 
-<footer class="section" style="background:#f8f9fa; padding:40px 20px; border-top:1px solid #ddd;">
-  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; max-width:1200px; margin:0 auto;">
+
+<footer class="section" style="background:#f8f9fa; padding:40px 20px; border-top:1px solid #ddd; position:relative;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; position:relative;">
     
-    <!-- Info de copyright -->
+    <!-- Info de copyright (izquierda) -->
     <div style="font-size:14px; color:#555;">
       © El Turista — San José • Diseñado por Agustin Espinosa
     </div>
     
-    <!-- Logo -->
-    <div>
+    <!-- Logo centrado -->
+    <div style="position:absolute; left:50%; transform:translateX(-50%);">
       <a href="index.html">
         <img src="logo.png" alt="El Turista logo" style="height:50px;">
       </a>
     </div>
     
-    <!-- Redes sociales -->
+    <!-- Redes sociales (derecha) -->
     <div class="socials" style="font-size:16px;">
       <a href="https://instagram.com/" target="_blank" style="margin-right:12px; color:#E4405F;">Instagram</a>
       <a href="https://facebook.com/" target="_blank" style="margin-right:12px; color:#1877F2;">Facebook</a>

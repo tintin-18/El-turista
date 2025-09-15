@@ -1,17 +1,37 @@
 // script.js
 
-// Simula una búsqueda rápida de destinos
+// búsqueda rápida de destinos
 function doSearch() {
-  const query = document.getElementById("q").value.trim();
+  const query = document.getElementById("q").value.trim().toLowerCase();
   const scope = document.getElementById("scope").value;
+  const resultsDiv = document.getElementById("results");
 
+  // Lista de destinos
+  const destinations = [
+    { name: "Punta del Este", type: "national" },
+    { name: "Colonia del Sacramento", type: "national" },
+    { name: "Rio de Janeiro", type: "international" }
+  ];
+
+  // Filtramos según el query y el scope
+  let results;
   if (!query) {
-    alert("Por favor, escribí un destino para buscar.");
-    return;
+    // Si no escribe nada, mostramos todos los destinos del scope seleccionado
+    results = destinations.filter(dest => dest.type === scope);
+  } else {
+    results = destinations.filter(dest =>
+      dest.name.toLowerCase().includes(query) && dest.type === scope
+    );
   }
 
-  alert(`Buscando viajes a "${query}" (${scope === "national" ? "Nacional" : "Internacional"})...`);
+  // Mostrar resultados
+  if (results.length > 0) {
+    resultsDiv.innerHTML = "<ul>" + results.map(r => `<li>${r.name}</li>`).join("") + "</ul>";
+  } else {
+    resultsDiv.innerHTML = "<p>No se encontraron resultados.</p>";
+  }
 }
+
 
 // Abre la imagen en modal
 function openModal(imgElement) {
