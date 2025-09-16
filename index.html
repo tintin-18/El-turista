@@ -5,80 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>El Turista — Desde San José</title>
   <meta name="description" content="Agencia de viajes 'El Turista' — Salidas desde San José, Uruguay. Destinos dentro y fuera del país." />
-<meta property="og:title" content="El Turista — Agencia de Viajes en San José" />
-<meta property="og:description" content="Paquetes nacionales e internacionales, desde el corazón de San José, Uruguay." />
-<meta property="og:image" content="preview.jpg" />
-<meta property="og:type" content="website" />
+  <meta property="og:title" content="El Turista — Agencia de Viajes en San José" />
+  <meta property="og:description" content="Paquetes nacionales e internacionales, desde el corazón de San José, Uruguay." />
+  <meta property="og:image" content="preview.jpg" />
+  <meta property="og:type" content="website" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="container">
     <nav>
       <div class="brand">
-<a href="index.html">
-  <img src="logo.png" alt="El Turista logo" class="logoturista">
-</a>        <div>
+        <a href="index.html">
+          <img src="logo.png" alt="El Turista logo" class="logoturista">
+        </a>
+        <div>
           <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
         </div>
       </div>
       <div class="navlinks">
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
-         <a href="rentabus.html">Rent a Bus</a>
+        <a href="rentabus.html">Rent a Bus</a>
         <a href="contacto.html">Contacto</a>
-
       </div>
     </nav>
   </div>
 </header>
 
+<!-- HERO LANDING -->
+<section class="hero-landing">
+  <div class="content">
+    <h1>Viaja con</h1>
+    <h2>Comodidad y Seguridad</h2>
+    <p>Desde San José de Mayo conectamos Uruguay y el mundo.<br>
+       Destinos nacionales e internacionales con el mejor servicio.</p>
+
+    <div class="buttons">
+      <a href="#destinos">Ver Destinos</a>
+      <a href="#contacto">Reservar</a>
+    </div>
+  </div>
+</section>
+
 <main class="container">
-  <section id="inicio" class="hero">
-    <div class="hero-left">
-      <h2>Viajes que empiezan en el corazón de San José</h2>
-      <p>Paquetes nacionales e internacionales, salidas grupales y privadas. Diseño de viajes a medida.</p>
 
-      <div class="search-card">
-      <form onsubmit="event.preventDefault(); doSearch();">
-    <div style="display:flex;gap:8px;flex-direction:column">
-      <label style="font-weight:700">¿A dónde querés ir desde San José?</label>
-      <div class="search-row">
-        <input id="q" type="text" placeholder="Ej: Montevideo, Río de Janeiro, Salto..." />
-        <select id="scope">
-          <option value="national">Nacional</option>
-          <option value="international">Internacional</option>
-        </select>
-        <button type="submit">Buscar</button>
-      </div>
-    </div>
-  </form>
-
-  <div id="results" style="margin-top:16px;"></div>
-      </div>
-
-      <div style="margin-top:18px;color:var(--muted);font-size:14px">¿Preferís hablar por teléfono? <strong>+598 9XXXXXXX</strong></div>
-    </div>
-
-    <aside>
-      <div style="background:#fff;padding:14px;border-radius:14px;box-shadow:0 6px 20px rgba(16,32,39,0.06)">
-        <h4 style="margin:0 0 8px">Destinos recomendados</h4>
-        <ul style="margin:0;padding:0 12px;color:var(--muted)">
-          <li>Colonia del Sacramento — escapada de fin de semana</li>
-          <li>Punta del Este — sol y vida nocturna</li>
-          <li>Río de Janeiro — viajes directos desde San José</li>
-        </ul>
-      </div>
-    </aside>
-  </section>
-
+  <!-- DESTINOS -->
   <section id="destinos" class="section">
     <h3>Destinos destacados</h3>
     <div class="grid">
@@ -111,90 +91,56 @@
       <img src="gal8.jpg" alt="foto8" onclick="openModal(this)" />
     </div>
   </section>
-<section id="viajes" class="section">
-  <h3>Destinos y próximas salidas aseguradas</h3>
-  <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;">
-    
-    <!-- Mapa -->
-    <div id="mapa" style="flex:1;min-width:300px;height:400px;border-radius:12px;overflow:hidden;"></div>
-    
-    <!-- Calendario simple -->
-    <div style="flex:1;min-width:300px;">
-      <h4 style="margin-bottom:10px;">Próximas salidas confirmadas</h4>
-      <table style="width:100%;border-collapse:collapse;">
-        <thead>
-          <tr style="background:#0077ff;color:white;">
-            <th>Fecha</th>
-            <th>Destino</th>
-            <th>Tipo de paquete</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>12/10/2025</td>
-            <td>Colonia del Sacramento</td>
-            <td>Escapada fin de semana</td>
-          </tr>
-          <tr>
-            <td>20/10/2025</td>
-            <td>Punta del Este</td>
-            <td>Playa & vida nocturna</td>
-          </tr>
-          <tr>
-            <td>05/11/2025</td>
-            <td>Río de Janeiro</td>
-            <td>Paquete todo incluido</td>
-          </tr>
-        </tbody>
-      </table>
+
+  <!-- VIAJES -->
+  <section id="viajes" class="section">
+    <h3>Destinos y próximas salidas aseguradas</h3>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;">
+      <!-- Mapa -->
+      <div id="mapa" style="flex:1;min-width:300px;height:400px;border-radius:12px;overflow:hidden;"></div>
+      <!-- Calendario simple -->
+      <div style="flex:1;min-width:300px;">
+        <h4 style="margin-bottom:10px;">Próximas salidas confirmadas</h4>
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="background:#0077ff;color:white;">
+              <th>Fecha</th>
+              <th>Destino</th>
+              <th>Tipo de paquete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>12/10/2025</td><td>Colonia del Sacramento</td><td>Escapada fin de semana</td></tr>
+            <tr><td>20/10/2025</td><td>Punta del Este</td><td>Playa & vida nocturna</td></tr>
+            <tr><td>05/11/2025</td><td>Río de Janeiro</td><td>Paquete todo incluido</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Leaflet JS y CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- RENT A BUS -->
+  <section id="rentabus-home" class="section" style="margin-top:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:280px;">
+      <h3>Rent a Bus</h3>
+      <p>
+        Nuestro servicio <strong>Rent a Bus</strong> está pensado para grupos, empresas,
+        instituciones educativas o eventos familiares. Ofrecemos unidades modernas,
+        seguras y cómodas, con choferes experimentados para que tu viaje sea
+        tranquilo desde el inicio hasta el final.
+      </p>
+      <a href="rentabus.html" style="display:inline-block;margin-top:12px;background:#0077ff;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;">
+        Más información
+      </a>
+    </div>
+    <div style="flex:1;min-width:280px;">
+      <img src="elturistabus2.jpg" alt="El Turista Rent a Bus" style="width:100%;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
+    </div>
+  </section>
 
-<script>
-  // Inicializar mapa centrado en Uruguay
-  const map = L.map('mapa').setView([-34.9, -56.2], 6);
+</main>
 
-  // Capa base
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-  }).addTo(map);
-
-  // Pins de destinos
-  const destinos = [
-    {name: "Colonia del Sacramento", coords: [-34.4667, -57.8333], info: "Escapada fin de semana"},
-    {name: "Punta del Este", coords: [-34.9667, -54.9333], info: "Playas y vida nocturna"},
-    {name: "Río de Janeiro", coords: [-22.9068, -43.1729], info: "Paquete todo incluido"}
-  ];
-
-  destinos.forEach(d => {
-    L.marker(d.coords).addTo(map)
-      .bindPopup(`<b>${d.name}</b><br>${d.info}`);
-  });
-</script>
-<section id="rentabus-home" class="section" style="margin-top:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-  <div style="flex:1;min-width:280px;">
-    <h3>Rent a Bus</h3>
-    <p>
-      Nuestro servicio <strong>Rent a Bus</strong> está pensado para grupos, empresas,
-      instituciones educativas o eventos familiares. Ofrecemos unidades modernas,
-      seguras y cómodas, con choferes experimentados para que tu viaje sea
-      tranquilo desde el inicio hasta el final.
-    </p>
-    <a href="rentabus.html" style="display:inline-block;margin-top:12px;background:#0077ff;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;">
-      Más información
-    </a>
-  </div>
-  <div style="flex:1;min-width:280px;">
-    <img src="elturistabus2.jpg" alt="El Turista Rent a Bus" style="width:100%;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
-  </div>
-</section>
-
-
+<!-- FOOTER -->
 <footer class="section">
   <div class="footer-container">
     
@@ -316,19 +262,34 @@
   </style>
 </footer>
 
-
-</main>
-
+<!-- BOTÓN WHATSAPP -->
 <a class="whatsapp" href="https://www.whatsapp.com" target="_blank" aria-label="WhatsApp">
   <img src="whatsapp.png" alt="WhatsApp" />
 </a>
 
+<!-- MODAL -->
 <div id="modal" class="modal" onclick="closeModal(event)">
   <img id="modalImg" src="" alt="">
 </div>
 
 <!-- Scripts -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="script.js"></script>
+
+<script>
+  // Inicializar mapa centrado en Uruguay
+  const map = L.map('mapa').setView([-34.9, -56.2], 6);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+  const destinos = [
+    {name: "Colonia del Sacramento", coords: [-34.4667, -57.8333], info: "Escapada fin de semana"},
+    {name: "Punta del Este", coords: [-34.9667, -54.9333], info: "Playas y vida nocturna"},
+    {name: "Río de Janeiro", coords: [-22.9068, -43.1729], info: "Paquete todo incluido"}
+  ];
+  destinos.forEach(d => {
+    L.marker(d.coords).addTo(map).bindPopup(`<b>${d.name}</b><br>${d.info}`);
+  });
+</script>
 
 </body>
 </html>

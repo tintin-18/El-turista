@@ -1,3 +1,81 @@
+/* ------------------ HERO LANDING ------------------ */
+.hero-landing {
+  position: relative;
+  background: url('elturistabus.jpg') no-repeat center center/cover; /* Ruta a tu imagen */
+  height: 100vh; /* ocupa toda la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-landing::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(13, 71, 161, 0.6); /* overlay */
+  z-index: 1;
+}
+
+.hero-landing .content {
+  position: relative;
+  z-index: 2;
+  max-width: 60rem;
+  padding: 1rem;
+}
+
+.hero-landing h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-landing h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.hero-landing p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hero-landing .buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;      /* para que se apilen en móvil */
+  justify-content: center; /* centrado horizontal */
+  margin-top: 1.5rem;
+}
+
+.hero-landing .buttons a {
+  background: #0077ff;        /* azul elegante */
+  color: #fff;
+  padding: 0.75rem 1.8rem;    /* más cómodo de clickear */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hero-landing .buttons a:hover {
+  background: #005fcc;        /* más oscuro al pasar mouse */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+/* Responsive */
+@media(max-width: 768px) {
+  .hero-landing h1 { font-size: 2.2rem; }
+  .hero-landing h2 { font-size: 2rem; }
+  .hero-landing p { font-size: 1rem; }
+}
+
+
+
 /* ------------------ VARIABLES ------------------ */
 :root {
   --primary: #0d47a1;   /* Azul fuerte elegante */
@@ -275,21 +353,25 @@ footer {
 }
 
 /* ------------------ WHATSAPP ------------------ */
+/* ------------------ WHATSAPP ------------------ */
 .whatsapp {
-  position: fixed;
-  bottom: 4rem;
-  right: 4rem;
-  width: 7rem;
-  height: 7rem;
+  position: fixed;   /* fijo en pantalla */
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;     
 }
 
 .whatsapp img {
-  width: 6rem;
+  width: 100%;        
   height: auto;
+  position: relative; 
 }
+
 
 /* ------------------ LOGO ------------------ */
 .logoturista {
@@ -317,16 +399,24 @@ footer {
 }
 
 /* ------------------ RENT A BUS RESPONSIVE ------------------ */
-#rentabus-home {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem; /* 20px */
-  align-items: center;
-}
 
-#rentabus-home div {
-  flex: 1;
-  min-width: 17.5rem; /* 280px */
+/* Ajuste para pantallas chicas */
+@media (max-width: 768px) {
+  #rentabus-home {
+    flex-direction: column;       /* Pone los elementos uno debajo del otro */
+    text-align: center;           /* Centra el texto */
+    justify-content: center;      /* Centra el contenido verticalmente */
+  }
+
+  #rentabus-home div {
+    flex: unset;                  /* Quita el flex automático */
+    width: 100%;                  /* Que ocupen todo el ancho */
+  }
+
+  #rentabus-home a {
+    margin-left: auto;            /* Centra el botón */
+    margin-right: auto;
+  }
 }
 
 /* ------------------ DESTINOS Y GALERÍA RESPONSIVE ------------------ */
@@ -350,3 +440,36 @@ footer {
     width: 4rem;
   }
 }
+
+
+/* Ajuste para pantallas chicas */
+@media (max-width: 768px) {
+  #viajes > div {
+    flex-direction: column;   /* Apila mapa y tabla */
+    align-items: center;      /* Centra horizontalmente */
+  }
+
+  #viajes #mapa,
+  #viajes table {
+    width: 100%;              /* Ocupan todo el ancho */
+  }
+
+  #viajes h3,
+  #viajes h4 {
+    text-align: center;       /* Centra los títulos */
+  }
+
+  #viajes table th,
+  #viajes table td {
+    font-size: 0.9rem;        /* Texto un poco más chico en cel */
+  }
+}
+/* Centrar texto de la tabla en móvil */
+@media (max-width: 768px) {
+  #viajes table th,
+  #viajes table td {
+    text-align: center;
+    font-size: 0.9rem; /* opcional: un poquito más pequeño en celular */
+  }
+}
+

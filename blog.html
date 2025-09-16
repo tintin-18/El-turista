@@ -148,28 +148,214 @@ header {
   </div>
 </main>
 
-<footer class="section" style="background:#f8f9fa; padding:40px 20px; border-top:1px solid #ddd; position:relative;">
-  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; position:relative;">
+<footer class="section">
+  <div class="footer-container">
     
-    <!-- Info de copyright (izquierda) -->
-    <div style="font-size:14px; color:#555;">
+    <!-- Info de copyright -->
+    <div class="footer-left">
       © El Turista — San José • Diseñado por Agustin Espinosa
     </div>
     
     <!-- Logo centrado -->
-    <div style="position:absolute; left:50%; transform:translateX(-50%);">
+    <div class="footer-logo">
       <a href="index.html">
-        <img src="logo.png" alt="El Turista logo" style="height:50px;">
+        <img src="logo.png" alt="El Turista logo">
       </a>
     </div>
     
-  <!-- Redes sociales (derecha) -->
-    <div class="socials" style="font-size:16px;">
-      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank" style="margin-right:12px; color:#E4405F;">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank" style="margin-right:12px; color:#1877F2;">Facebook</a>
+    <!-- Redes sociales: palabras y iconos -->
+    <div class="socials">
+      <!-- Palabras para PC -->
+      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank" class="desktop">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank" class="desktop">Facebook</a>
+
+      <!-- Iconos para móvil -->
+      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank" class="mobile">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank" class="mobile">
+        <i class="fab fa-facebook-f"></i>
+      </a>
     </div>
     
   </div>
+
+  <style>
+    footer {
+      background: #f8f9fa;
+      padding: 1.5rem 1rem; /* menos espacio vertical en PC */
+      border-top: 0.0625rem solid #ddd;
+      position: relative;
+      margin-bottom: -3rem;
+    }
+
+    .footer-container {
+      max-width: 75rem;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+      margin-bottom: -3rem;
+    }
+
+    .footer-left {
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    .footer-logo img {
+      height: 3rem; /* un poquito más pequeño */
+    }
+
+    .footer-logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .socials a {
+      margin: 0 0.5rem;
+      font-size: 1.1rem; /* iconos más compactos */
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+    }
+
+    .socials a:first-child.desktop {
+      color: #E4405F; /* Instagram */
+    }
+
+    .socials a:nth-child(2).desktop {
+      color: #1877F2; /* Facebook */
+    }
+
+    .desktop { display: inline; }
+    .mobile { display: none; }
+
+    /* Media query para pantallas pequeñas */
+    @media (max-width: 48rem) {
+      footer {
+        padding: 1rem 0.75rem; 
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left,
+      .socials {
+        margin: 0.2rem 0; 
+      }
+      .socials {
+        margin-bottom: -3rem; 
+      }
+
+      .footer-logo {
+        position: static;
+        transform: none;
+        margin: 0.3rem 0; 
+      }
+
+      .desktop { display: none; }
+      .mobile { display: inline; }
+    }
+  </style>
+</footer>
+
+  <style>
+    footer {
+      background: #f8f9fa;
+      padding: 1.5rem 1rem; /* menos espacio vertical en PC */
+      border-top: 0.0625rem solid #ddd;
+      position: relative;
+      margin-bottom: -3rem;
+    }
+
+    .footer-container {
+      max-width: 75rem;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+      margin-bottom: -3rem;
+    }
+
+    .footer-left {
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    .footer-logo img {
+      height: 3rem; /* un poquito más pequeño */
+    }
+
+    .footer-logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .socials a {
+      margin: 0 0.5rem;
+      font-size: 1.1rem; /* iconos más compactos */
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+    }
+
+    .socials a:first-child.desktop {
+      color: #E4405F; /* Instagram */
+    }
+
+    .socials a:nth-child(2).desktop {
+      color: #1877F2; /* Facebook */
+    }
+
+    .desktop { display: inline; }
+    .mobile { display: none; }
+
+    /* Media query para pantallas pequeñas */
+    @media (max-width: 48rem) {
+      footer {
+        padding: 1rem 0.75rem; 
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left,
+      .socials {
+        margin: 0.2rem 0; 
+      }
+      .socials {
+        margin-bottom: -3rem; 
+      }
+
+      .footer-logo {
+        position: static;
+        transform: none;
+        margin: 0.3rem 0; 
+      }
+
+      .desktop { display: none; }
+      .mobile { display: inline; }
+    }
+  </style>
 </footer>
 
 
