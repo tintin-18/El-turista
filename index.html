@@ -12,6 +12,7 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
@@ -31,6 +32,7 @@
       <div class="navlinks">
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
+         <a href="rentabus.html">Rent a Bus</a>
         <a href="contacto.html">Contacto</a>
 
       </div>
@@ -110,7 +112,7 @@
     </div>
   </section>
 <section id="viajes" class="section">
-  <h3>Destinos y próximas salidas</h3>
+  <h3>Destinos y próximas salidas aseguradas</h3>
   <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;">
     
     <!-- Mapa -->
@@ -118,7 +120,7 @@
     
     <!-- Calendario simple -->
     <div style="flex:1;min-width:300px;">
-      <h4 style="margin-bottom:10px;">Próximas salidas</h4>
+      <h4 style="margin-bottom:10px;">Próximas salidas confirmadas</h4>
       <table style="width:100%;border-collapse:collapse;">
         <thead>
           <tr style="background:#0077ff;color:white;">
@@ -174,31 +176,144 @@
       .bindPopup(`<b>${d.name}</b><br>${d.info}`);
   });
 </script>
+<section id="rentabus-home" class="section" style="margin-top:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+  <div style="flex:1;min-width:280px;">
+    <h3>Rent a Bus</h3>
+    <p>
+      Nuestro servicio <strong>Rent a Bus</strong> está pensado para grupos, empresas,
+      instituciones educativas o eventos familiares. Ofrecemos unidades modernas,
+      seguras y cómodas, con choferes experimentados para que tu viaje sea
+      tranquilo desde el inicio hasta el final.
+    </p>
+    <a href="rentabus.html" style="display:inline-block;margin-top:12px;background:#0077ff;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;">
+      Más información
+    </a>
+  </div>
+  <div style="flex:1;min-width:280px;">
+    <img src="elturistabus2.jpg" alt="El Turista Rent a Bus" style="width:100%;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.08);">
+  </div>
+</section>
 
 
-<footer class="section" style="background:#f8f9fa; padding:40px 20px; border-top:1px solid #ddd; position:relative;">
-  <div style="max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; position:relative;">
+<footer class="section">
+  <div class="footer-container">
     
-    <!-- Info de copyright (izquierda) -->
-    <div style="font-size:14px; color:#555;">
+    <!-- Info de copyright -->
+    <div class="footer-left">
       © El Turista — San José • Diseñado por Agustin Espinosa
     </div>
     
     <!-- Logo centrado -->
-    <div style="position:absolute; left:50%; transform:translateX(-50%);">
+    <div class="footer-logo">
       <a href="index.html">
-        <img src="logo.png" alt="El Turista logo" style="height:50px;">
+        <img src="logo.png" alt="El Turista logo">
       </a>
     </div>
     
-    <!-- Redes sociales (derecha) -->
-    <div class="socials" style="font-size:16px;">
-      <a href="https://instagram.com/" target="_blank" style="margin-right:12px; color:#E4405F;">Instagram</a>
-      <a href="https://facebook.com/" target="_blank" style="margin-right:12px; color:#1877F2;">Facebook</a>
-      <a href="https://tiktok.com/" target="_blank" style="color:#000;">TikTok</a>
+    <!-- Redes sociales: palabras y iconos -->
+    <div class="socials">
+      <!-- Palabras para PC -->
+      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank" class="desktop">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank" class="desktop">Facebook</a>
+
+      <!-- Iconos para móvil -->
+      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank" class="mobile">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank" class="mobile">
+        <i class="fab fa-facebook-f"></i>
+      </a>
     </div>
     
   </div>
+
+  <style>
+    footer {
+      background: #f8f9fa;
+      padding: 1.5rem 1rem; /* menos espacio vertical en PC */
+      border-top: 0.0625rem solid #ddd;
+      position: relative;
+      margin-bottom: -3rem;
+    }
+
+    .footer-container {
+      max-width: 75rem;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+      margin-bottom: -3rem;
+    }
+
+    .footer-left {
+      font-size: 0.875rem;
+      color: #555;
+    }
+
+    .footer-logo img {
+      height: 3rem; /* un poquito más pequeño */
+    }
+
+    .footer-logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .socials a {
+      margin: 0 0.5rem;
+      font-size: 1.1rem; /* iconos más compactos */
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+    }
+
+    .socials a:first-child.desktop {
+      color: #E4405F; /* Instagram */
+    }
+
+    .socials a:nth-child(2).desktop {
+      color: #1877F2; /* Facebook */
+    }
+
+    .desktop { display: inline; }
+    .mobile { display: none; }
+
+    /* Media query para pantallas pequeñas */
+    @media (max-width: 48rem) {
+      footer {
+        padding: 1rem 0.75rem; 
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-left,
+      .socials {
+        margin: 0.2rem 0; 
+      }
+      .socials {
+        margin-bottom: -3rem; 
+      }
+
+      .footer-logo {
+        position: static;
+        transform: none;
+        margin: 0.3rem 0; 
+      }
+
+      .desktop { display: none; }
+      .mobile { display: inline; }
+    }
+  </style>
 </footer>
 
 
