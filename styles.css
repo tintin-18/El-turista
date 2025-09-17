@@ -1,20 +1,21 @@
 /* ------------------ HERO LANDING ------------------ */
 .hero-landing {
   position: relative;
-  background: url('elturistabus.jpg') no-repeat center center/cover; /* Ruta a tu imagen */
-  height: 100vh; /* ocupa toda la pantalla */
+  background: url('elturistabus.jpg') no-repeat center center/cover;
+  height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  /* centro horizontal */
+  align-items: center;      /* centro vertical */
   text-align: center;
   color: var(--white);
+  overflow: hidden;
 }
 
 .hero-landing::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(13, 71, 161, 0.6); /* overlay */
+  background-color: rgba(13, 71, 161, 0.6); /* overlay azul semitransparente */
   z-index: 1;
 }
 
@@ -22,6 +23,7 @@
   position: relative;
   z-index: 2;
   max-width: 60rem;
+  width: 90%;      /* ancho responsivo */
   padding: 1rem;
 }
 
@@ -38,21 +40,22 @@
 
 .hero-landing p {
   font-size: 1.25rem;
+  line-height: 1.6;
   margin-bottom: 2rem;
 }
 
 .hero-landing .buttons {
   display: flex;
+  flex-wrap: wrap;          /* se apilan en móvil */
+  justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap;      /* para que se apilen en móvil */
-  justify-content: center; /* centrado horizontal */
   margin-top: 1.5rem;
 }
 
 .hero-landing .buttons a {
-  background: #0077ff;        /* azul elegante */
+  background: #0077ff;
   color: #fff;
-  padding: 0.75rem 1.8rem;    /* más cómodo de clickear */
+  padding: 0.75rem 1.8rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -61,10 +64,31 @@
 }
 
 .hero-landing .buttons a:hover {
-  background: #005fcc;        /* más oscuro al pasar mouse */
+  background: #005fcc;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 48rem) { /* 768px */
+  .hero-landing h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-landing h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero-landing p {
+    font-size: 1rem;
+  }
+
+  .hero-landing .buttons a {
+    width: 100%;       /* botones apilados y full ancho */
+    padding: 0.75rem 0;
+  }
+}
+
 
 
 /* Responsive */

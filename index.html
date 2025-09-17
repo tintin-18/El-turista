@@ -32,9 +32,9 @@
         </div>
       </div>
       <div class="navlinks">
+         <a href="index.html">Inicio</a>
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
-        <a href="rentabus.html">Rent a Bus</a>
         <a href="contacto.html">Contacto</a>
       </div>
     </nav>
@@ -50,7 +50,7 @@
        Destinos nacionales e internacionales con el mejor servicio.</p>
 
     <div class="buttons">
-      <a href="#destinos">Ver Destinos</a>
+      <a href="#destinos">Destinos</a>
       <a href="#contacto">Reservar</a>
     </div>
   </div>
@@ -59,37 +59,88 @@
 <main class="container">
 
   <!-- DESTINOS -->
-  <section id="destinos" class="section">
-    <h3>Destinos destacados</h3>
-    <div class="grid">
-      <article class="card">
-        <img src="dest1.jpg" alt="Colonia" />
-        <h4>Colonia del Sacramento</h4>
-        <p>Historia, arquitectura y gastronomía a una hora de viaje.</p>
-      </article>
-      <article class="card">
-        <img src="dest2.jpg" alt="Punta" />
-        <h4>Punta del Este</h4>
-        <p>Playas, paradores y vida nocturna premium.</p>
-      </article>
-      <article class="card">
-        <img src="dest3.jpg" alt="Río" />
-        <h4>Río de Janeiro</h4>
-        <p>Aventura internacional con paquetes todo incluido.</p>
-      </article>
-    </div>
+ <section id="destinos" class="section">
+  <h3>Destinos destacados</h3>
+  <div class="grid">
 
-    <h3 style="margin-top:28px">Galería</h3>
-    <div class="gallery" id="gallery">
-      <img src="gal1.jpg" alt="foto1" onclick="openModal(this)" />
-      <img src="gal2.jpg" alt="foto2" onclick="openModal(this)" />
-      <img src="gal3.jpg" alt="foto3" onclick="openModal(this)" />
-      <img src="gal4.jpg" alt="foto4" onclick="openModal(this)" />
-      <img src="gal5.jpg" alt="foto5" onclick="openModal(this)" />
-      <img src="gal6.jpg" alt="foto6" onclick="openModal(this)" />
-      <img src="gal7.jpg" alt="foto7" onclick="openModal(this)" />
-      <img src="gal8.jpg" alt="foto8" onclick="openModal(this)" />
+    <article class="card">
+      <a href="rio.html">
+        <img src="dest1.jpg" alt="Colonia del Sacramento" />
+      </a>
+      <h4><a href="rio.html" style="text-decoration:none; color:inherit;">Colonia del Sacramento</a></h4>
+      <p>Historia, arquitectura y gastronomía a una hora de viaje.</p>
+    </article>
+
+    <article class="card">
+      <a href="rio.html">
+        <img src="dest2.jpg" alt="Punta del Este" />
+      </a>
+      <h4><a href="rio.html" style="text-decoration:none; color:inherit;">Punta del Este</a></h4>
+      <p>Playas, paradores y vida nocturna premium.</p>
+    </article>
+
+    <article class="card">
+      <a href="rio.html">
+        <img src="dest3.jpg" alt="Río de Janeiro" />
+      </a>
+      <h4><a href="rio.html" style="text-decoration:none; color:inherit;">Río de Janeiro</a></h4>
+      <p>Aventura internacional con paquetes todo incluido.</p>
+    </article>
+
+  </div>
+</section>
+
+
+<section id="galeria" class="section">
+  <h3 style="text-align:center; margin-bottom:30px;">📸 Galería de recuerdos</h3>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="gal1.jpg" alt="Excursión en Colonia del Sacramento">
     </div>
+    <div class="gallery-item">
+      <img src="gal2.jpg" alt="Playa de Punta del Este">
+    </div>
+    <div class="gallery-item">
+      <img src="gal3.jpg" alt="Cristo Redentor en Río de Janeiro">
+    </div>
+    <div class="gallery-item">
+      <img src="gal4.jpg" alt="Bus de El Turista en viaje">
+    </div>
+    <div class="gallery-item">
+      <img src="gal5.jpg" alt="Grupo de viajeros disfrutando">
+    </div>
+    <div class="gallery-item">
+      <img src="gal6.jpg" alt="Paisaje de montaña">
+    </div>
+  </div>
+</section>
+
+<style>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+</style>
+
   </section>
 
   <!-- VIAJES -->

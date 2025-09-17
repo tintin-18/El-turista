@@ -3,81 +3,97 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>El Turista — Blog de viajes</title>
+  <title>El Turista — Río de Janeiro</title>
 
-  <!-- Fuentes -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Estilos -->
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
   <style>
     /* 🎨 Estilos exclusivos de esta página */
-header {
-  margin-bottom: 3rem; /* espacio entre el header y el hero */
-}
+    header { margin-bottom: 3rem; }
 
-    .blog-hero {
+    .rio-hero {
       text-align: center;
       padding: 80px 20px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, #ff9800, #ff5722);
       color: #fff;
       border-radius: 20px;
       margin-bottom: 40px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-
-
     }
-    .blog-hero h2 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
+    .rio-hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
     }
-    .blog-hero p {
+    .rio-hero p {
       font-size: 1.1rem;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
-    .grid {
+    .itinerary {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      margin-bottom: 60px;
     }
-
-    .card {
+    .itinerary-card {
       background: #fff;
+      padding: 24px;
       border-radius: 16px;
-      padding: 20px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       transition: transform 0.2s;
     }
-    .card:hover {
-      transform: translateY(-5px);
+    .itinerary-card:hover {
+      transform: translateY(-4px);
+    }
+    .itinerary-card h4 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
     }
 
-    .category {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 600;
-      color: #fff;
-      background: var(--primary);
-      padding: 4px 10px;
-      border-radius: 8px;
-      margin-bottom: 12px;
+    .services {
+      background: #f8faff;
+      padding: 40px 20px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      margin-bottom: 60px;
+    }
+    .services ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+    .services li {
+      font-size: 1rem;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+    .services li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
     }
 
     .cta-box {
       text-align: center;
-      margin-top: 50px;
+      margin: 60px 0;
     }
     .cta-box a {
-      display:inline-block;
+      display: inline-block;
       background: var(--primary);
-      color:#fff;
-      padding:16px 28px;
-      border-radius:12px;
-      font-weight:700;
-      font-size:1.1rem;
-      text-decoration:none;
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
       transition: background 0.2s;
     }
     .cta-box a:hover {
@@ -108,45 +124,49 @@ header {
   </div>
 </header>
 
-</header>
 
 <main class="container">
   <!-- Hero -->
-  <section class="blog-hero">
-    <h2>Blog de viajes 🌍</h2>
-    <p>Tips, destinos y experiencias únicas para inspirar tu próxima aventura</p>
+  <section class="rio-hero">
+    <h2>Río de Janeiro 🌴☀️</h2>
+    <p>Viví la energía de la Cidade Maravilhosa con El Turista</p>
   </section>
 
-  <!-- Posts -->
-  <section id="posts" class="section">
-    <div class="grid">
-      <article class="card">
-        <div class="category">🇺🇾 Uruguay</div>
-        <h4>5 tips para viajar a Colonia del Sacramento</h4>
-        <p>Descubrí los mejores lugares históricos, restaurantes y actividades para tu escapada.</p>
-        <a class="cta-link" href="#">Leer más →</a>
-      </article>
-
-      <article class="card">
-        <div class="category">🇧🇷 Brasil</div>
-        <h4>Río de Janeiro: qué hacer en 3 días</h4>
-        <p>Itinerario completo, consejos de transporte y lugares imperdibles en la ciudad brasileña.</p>
-        <a class="cta-link" href="#">Leer más →</a>
-      </article>
-
-      <article class="card">
-        <div class="category">❤️ Parejas</div>
-        <h4>Viajes en pareja: escapadas románticas en Uruguay</h4>
-        <p>Ideas de destinos y experiencias para disfrutar en pareja sin salir del país.</p>
-        <a class="cta-link" href="#">Leer más →</a>
-      </article>
+  <!-- Itinerario -->
+  <section>
+    <h3 style="text-align:center; margin-bottom:30px;">Itinerario de 3 días</h3>
+    <div class="itinerary">
+      <div class="itinerary-card">
+        <h4>📍 Día 1</h4>
+        <p>City tour: Cristo Redentor, Pan de Azúcar y Copacabana. Tarde libre en la playa.</p>
+      </div>
+      <div class="itinerary-card">
+        <h4>📍 Día 2</h4>
+        <p>Excursión a Santa Teresa y Lapa. Noche con show de samba en vivo.</p>
+      </div>
+      <div class="itinerary-card">
+        <h4>📍 Día 3</h4>
+        <p>Visita al Jardín Botánico y Lagoa Rodrigo de Freitas. Shopping en Ipanema.</p>
+      </div>
     </div>
+  </section>
+
+  <!-- Servicios incluidos -->
+  <section class="services">
+    <h3 style="text-align:center; margin-bottom:20px;">Incluye</h3>
+    <ul>
+      <li>Pasaje ida y vuelta en bus con butacas reclinables</li>
+      <li>Alojamiento 3★ con desayuno</li>
+      <li>Traslados y excursiones guiadas</li>
+      <li>Seguro de viaje internacional</li>
+      <li>Coordinador de El Turista durante todo el viaje</li>
+    </ul>
   </section>
 
   <!-- CTA -->
   <div class="cta-box">
-    <h3>¿Querés más inspiración viajera?</h3>
-    <a href="contacto.html">✈️ Planificá tu viaje con nosotros</a>
+    <h3>¿Listo para tu aventura en Río? 🌊</h3>
+    <a href="contacto.html">✈️ Reservá tu lugar ahora</a>
   </div>
 </main>
 
@@ -270,96 +290,6 @@ header {
     }
   </style>
 </footer>
-
-  <style>
-    footer {
-      background: #f8f9fa;
-      padding: 1.5rem 1rem; /* menos espacio vertical en PC */
-      border-top: 0.0625rem solid #ddd;
-      position: relative;
-      margin-bottom: -3rem;
-    }
-
-    .footer-container {
-      max-width: 75rem;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      position: relative;
-      margin-bottom: -3rem;
-    }
-
-    .footer-left {
-      font-size: 0.875rem;
-      color: #555;
-    }
-
-    .footer-logo img {
-      height: 3rem; /* un poquito más pequeño */
-    }
-
-    .footer-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .socials a {
-      margin: 0 0.5rem;
-      font-size: 1.1rem; /* iconos más compactos */
-      color: inherit;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-    }
-
-    .socials a:first-child.desktop {
-      color: #E4405F; /* Instagram */
-    }
-
-    .socials a:nth-child(2).desktop {
-      color: #1877F2; /* Facebook */
-    }
-
-    .desktop { display: inline; }
-    .mobile { display: none; }
-
-    /* Media query para pantallas pequeñas */
-    @media (max-width: 48rem) {
-      footer {
-        padding: 1rem 0.75rem; 
-      }
-
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-left,
-      .socials {
-        margin: 0.2rem 0; 
-      }
-      .socials {
-        margin-bottom: -3rem; 
-      }
-
-      .footer-logo {
-        position: static;
-        transform: none;
-        margin: 0.3rem 0; 
-      }
-
-      .desktop { display: none; }
-      .mobile { display: inline; }
-    }
-  </style>
-</footer>
-
 
 </body>
 </html>
