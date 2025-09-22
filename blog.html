@@ -7,35 +7,26 @@
 
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Estilos -->
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* 🎨 Estilos exclusivos de esta página */
-header {
-  margin-bottom: 3rem; /* espacio entre el header y el hero */
-}
+    /* Estilos exclusivos de esta página */
+    body { font-family: 'Nunito', sans-serif; margin:0; padding:0; }
+    header { margin-bottom: 3rem; }
 
     .blog-hero {
       text-align: center;
       padding: 80px 20px;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      background: linear-gradient(135deg, var(--primary,#0077ff), var(--secondary,#00c3ff));
       color: #fff;
       border-radius: 20px;
       margin-bottom: 40px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-
-
     }
-    .blog-hero h2 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-    }
-    .blog-hero p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
+    .blog-hero h2 { font-size: 2.4rem; margin-bottom: 10px; }
+    .blog-hero p { font-size: 1.1rem; opacity: 0.9; }
 
     .grid {
       display: grid;
@@ -49,29 +40,71 @@ header {
       padding: 20px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
       transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    .card:hover { transform: translateY(-5px); }
 
     .category {
       display: inline-block;
       font-size: 13px;
       font-weight: 600;
       color: #fff;
-      background: var(--primary);
+      background: var(--primary,#0077ff);
       padding: 4px 10px;
       border-radius: 8px;
       margin-bottom: 12px;
     }
 
-    .cta-box {
-      text-align: center;
-      margin-top: 50px;
+    .card button.cta-link {
+      background: var(--secondary,#00c3ff);
+      border: none;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
     }
+    .card button.cta-link:hover { background: var(--primary,#0077ff); }
+
+    /* Modal base */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background: rgba(0,0,0,0.6);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 16px;
+      max-width: 600px;
+      position: relative;
+    }
+    .modal-content h2 { margin-top: 0; }
+    .close {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+    .close:hover { color: #000; }
+
+    .cta-box { text-align: center; margin-top: 50px; }
     .cta-box a {
       display:inline-block;
-      background: var(--primary);
+      background: var(--primary,#0077ff);
       color:#fff;
       padding:16px 28px;
       border-radius:12px;
@@ -80,9 +113,7 @@ header {
       text-decoration:none;
       transition: background 0.2s;
     }
-    .cta-box a:hover {
-      background: var(--secondary);
-    }
+    .cta-box a:hover { background: var(--secondary,#00c3ff); }
   </style>
 </head>
 <body>
@@ -91,15 +122,11 @@ header {
   <div class="container">
     <nav>
       <div class="brand">
-        <a href="index.html">
-          <img src="logo.png" alt="El Turista logo" class="logoturista">
-        </a>
-        <div>
-          <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
-        </div>
+        <a href="index.html"><img src="logo.png" alt="El Turista logo" class="logoturista"></a>
+        <div><div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div></div>
       </div>
       <div class="navlinks">
-         <a href="index.html">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
         <a href="contacto.html">Contacto</a>
@@ -108,258 +135,482 @@ header {
   </div>
 </header>
 
-</header>
-
 <main class="container">
-  <!-- Hero -->
   <section class="blog-hero">
     <h2>Blog de viajes 🌍</h2>
     <p>Tips, destinos y experiencias únicas para inspirar tu próxima aventura</p>
   </section>
 
-  <!-- Posts -->
   <section id="posts" class="section">
     <div class="grid">
+
+      <!-- Card 1 -->
       <article class="card">
         <div class="category">🇺🇾 Uruguay</div>
         <h4>5 tips para viajar a Colonia del Sacramento</h4>
         <p>Descubrí los mejores lugares históricos, restaurantes y actividades para tu escapada.</p>
-        <a class="cta-link" href="#">Leer más →</a>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal1')">Leer más →</button>
+        </div>
       </article>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <h2>5 tips para viajar a Colonia del Sacramento</h2>
+          <p><strong>1-Llegá temprano para aprovechar el día:</strong> Colonia es ideal para recorrer caminando; si llegás en la mañana podés disfrutar de todo el barrio histórico sin apuro.
+<br>
+<strong>2-No te pierdas el atardecer en la Rambla:</strong> es uno de los más lindos del Río de la Plata, con vista despejada y ambiente relajado.
+<br>
+<strong>3-Alquilá una bici o carrito eléctrico:</strong> recorrer la ciudad y la costanera en dos ruedas es cómodo y divertido.
+<br>
+<strong>4-Explorá el Barrio Histórico:</strong> calle de los Suspiros, Faro, Plaza Mayor y la Puerta de la Ciudadela son paradas obligatorias.
+<br>
+<strong>5-Probá la gastronomía local:</strong> desde un buen chivito hasta restaurantes con vista al río, la experiencia culinaria completa el viaje.</p>
+        </div>
+      </div>
 
+      <!-- Card 2 -->
       <article class="card">
         <div class="category">🇧🇷 Brasil</div>
         <h4>Río de Janeiro: qué hacer en 3 días</h4>
         <p>Itinerario completo, consejos de transporte y lugares imperdibles en la ciudad brasileña.</p>
-        <a class="cta-link" href="#">Leer más →</a>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal2')">Leer más →</button>
+        </div>
       </article>
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <h2>Río de Janeiro: qué hacer en 3 días</h2>
+          <p><strong>Día 1:</strong> Visitá el Cristo Redentor en la mañana, subí al Pan de Azúcar para ver la ciudad desde arriba y terminá con una caminata por Copacabana.
+<br>
+<strong>Día 2:</strong> Explorá el barrio bohemio de Santa Teresa, la Escalera de Selarón y disfrutá la tarde en Ipanema. Por la noche, samba en Lapa.
+<br>
+<strong>Día 3:</strong> Excursión al Parque Nacional de Tijuca, con cascadas y senderos, y despedida de la ciudad con un paseo por el Jardín Botánico.</p>
+        </div>
+      </div>
 
+      <!-- Card 3 -->
       <article class="card">
         <div class="category">❤️ Parejas</div>
         <h4>Viajes en pareja: escapadas románticas en Uruguay</h4>
         <p>Ideas de destinos y experiencias para disfrutar en pareja sin salir del país.</p>
-        <a class="cta-link" href="#">Leer más →</a>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal3')">Leer más →</button>
+        </div>
       </article>
+      <div id="modal3" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal3')">&times;</span>
+          <h2>Viajes en pareja: escapadas románticas en Uruguay</h2>
+          <p><strong>Colonia del Sacramento:</strong> calles empedradas, paseos en coche antiguo y atardeceres frente al río.
+<br>
+<strong>José Ignacio:</strong> cabañas junto al mar y cenas íntimas en restaurantes de autor.
+<br>
+<strong>Bodegas en Canelones:</strong> recorridos entre viñedos, degustaciones y hospedajes boutique.
+<br>
+<strong>Valle del Lunarejo:</strong> naturaleza pura, caminatas y noches bajo un cielo estrellado.
+<br>
+<strong>Termas del Daymán:</strong> relax en aguas termales y tratamientos de spa para dos.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <article class="card">
+        <div class="category">🇦🇷 Argentina</div>
+        <h4>Buenos Aires en 48 horas</h4>
+        <p>Descubrí los barrios más emblemáticos, cafés históricos y actividades imperdibles en la capital argentina.</p>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal4')">Leer más →</button>
+        </div>
+      </article>
+      <div id="modal4" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal4')">&times;</span>
+          <h2>Buenos Aires en 48 horas</h2>
+          <p><strong>Día 1 (mañana):</strong> Plaza de Mayo, Casa Rosada y Catedral Metropolitana. No te pierdas las historias detrás de los edificios y la arquitectura colonial.<br>
+    <strong>Día 1 (tarde):</strong> Caminá por San Telmo, visitá la feria y probá un café en un bar notable. Terminá en Puerto Madero para una cena frente al río.<br>
+    <strong>Día 2 (mañana):</strong> Explorá La Boca con su Caminito y el estadio de Boca Juniors, sumergiéndote en la cultura futbolera.<br>
+    <strong>Día 2 (tarde):</strong> Recoleta (cementerio, librerías, museos) y cerrá con cena en Palermo, barrio trendy con bares y restaurantes de moda.</p>
+    <p>Tip: Usá transporte público o caminá entre barrios cercanos para vivir la ciudad como un local y aprovechar el tiempo al máximo.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <article class="card">
+        <div class="category">🏔️ Aventura</div>
+        <h4>Aventura en la Cordillera de los Andes</h4>
+        <p>Rutas de trekking, refugios y paisajes que no te podés perder en tu próxima escapada.</p>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal5')">Leer más →</button>
+        </div>
+      </article>
+      <div id="modal5" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal5')">&times;</span>
+          <h2>Aventura en la Cordillera de los Andes</h2>
+         <p><strong>1.</strong> Trekking en Bariloche: Cerro Catedral y Refugio Frey ofrecen senderos para todos los niveles.<br>
+    <strong>2.</strong> Ascenso al Aconcagua: desafío para los más experimentados, con vistas impresionantes.<br>
+    <strong>3.</strong> Refugios de montaña: alojamiento rústico y cercano a la naturaleza.<br>
+    <strong>4.</strong> Cabalgatas y rafting: aventuras que suman adrenalina y paisajes únicos.<br>
+    <strong>5.</strong> Paisajes espectaculares: glaciares, lagos y montañas que parecen de otro planeta.</p>
+    <p>Consejo: siempre llevá ropa adecuada para cambios de clima y guías locales para rutas más seguras.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <article class="card">
+        <div class="category">🏖️ Punta del Este</div>
+        <h4>Punta del Este: guía de playas y vida nocturna</h4>
+        <p>Desde playas tranquilas hasta los mejores paradores y clubs nocturnos.</p>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal6')">Leer más →</button>
+        </div>
+      </article>
+      <div id="modal6" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal6')">&times;</span>
+          <h2>Punta del Este: guía de playas y vida nocturna</h2>
+         <p><strong>Playa Mansa:</strong> perfecta para familias y atardeceres tranquilos.<br>
+    <strong>Playa Brava:</strong> surf y “La Mano”, icono de Punta.<br>
+    <strong>La Barra y Manantiales:</strong> ambiente joven, galerías de arte y restaurantes.<br>
+    <strong>Vida nocturna:</strong> paradores, boliches y casinos para todos los gustos.<br>
+    <strong>Extra:</strong> visitá Casapueblo en Punta Ballena para un atardecer inolvidable.<br>
+  Tip: si vas en temporada alta, llegá temprano a las playas y reservá restaurantes con anticipación.</p>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <article class="card">
+        <div class="category">🍷 Gastronomía</div>
+        <h4>Ruta del vino en Uruguay</h4>
+        <p>Visita bodegas, degustaciones y consejos para disfrutar del vino uruguayo como un experto.</p>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal7')">Leer más →</button>
+        </div>
+      </article>
+      <div id="modal7" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal7')">&times;</span>
+          <h2>Ruta del vino en Uruguay</h2>
+           <p><strong>1.</strong> Bodegas en Canelones: visitas guiadas y catas.<br>
+    <strong>2.</strong> Tannat, uva insignia: probá sus diferentes expresiones.<br>
+    <strong>3.</strong> Experiencias gourmet: maridajes con quesos y carnes.<br>
+    <strong>4.</strong> Bodegas boutique en Maldonado: intimidad y diseño único.<br>
+    <strong>5.</strong> Participá en vendimias y eventos locales.
+    Consejo: llevá una libreta de notas para registrar tus vinos favoritos y aprovechar al máximo cada degustación.</p>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <article class="card">
+        <div class="category">👨‍👩‍👧 Familias</div>
+        <h4>Escapadas familiares: destinos ideales en Uruguay</h4>
+        <p>Lugares para disfrutar con niños, actividades al aire libre y alojamiento recomendado.</p>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal8')">Leer más →</button>
+        </div>
+      </article>
+      <div id="modal8" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal8')">&times;</span>
+          <h2>Escapadas familiares: destinos ideales en Uruguay</h2>
+          <p><strong>Piriápolis:</strong> playa, Cerro Pan de Azúcar y aerosilla.<br>
+    <strong>Termas de Arapey:</strong> aguas termales y diversión para todas las edades.<br>
+    <strong>Parque Lecocq:</strong> naturaleza y picnic, ideal para niños.<br>
+    <strong>Minas y sierras:</strong> senderismo y camping.<br>
+    <strong>Colonia:</strong> casco histórico y recorridos en carrito eléctrico.
+    Tip: combiná actividades al aire libre con momentos de relax para que toda la familia disfrute el viaje.</p>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <article class="card">
+        <div class="category">✈️ Tips de viaje</div>
+        <h4>Cómo preparar tu viaje internacional sin estrés</h4>
+        <p>Tips de planificación, documentos, equipaje y seguridad para viajar tranquilo.</p>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal9')">Leer más →</button>
+        </div>
+      </article>
+      <div id="modal9" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal9')">&times;</span>
+          <h2>Cómo preparar tu viaje internacional sin estrés</h2>
+      <p><strong>1.</strong> Revisá pasaporte, visas y seguros.<br>
+    <strong>2.</strong> Armá tu equipaje con listas y llevá solo lo necesario.<br>
+    <strong>3.</strong> Dinero y tarjetas: informá al banco y llevá efectivo local.<br>
+    <strong>4.</strong> Traslados y transporte: reservá desde el aeropuerto si es necesario.<br>
+    <strong>5.</strong> Planificación flexible: itinerario tentativo, pero espacio para improvisar.
+    Extra: descargá apps de mapas y traducción antes de viajar para mayor comodidad.</p>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <article class="card">
+        <div class="category">🛶 Turismo activo</div>
+        <h4>Turismo activo: kayak, rafting y aventuras en Uruguay</h4>
+        <p>Lugares para los que buscan emoción y deportes al aire libre.</p>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal10')">Leer más →</button>
+        </div>
+      </article>
+      <div id="modal10" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal10')">&times;</span>
+          <h2>Turismo activo: kayak, rafting y aventuras en Uruguay</h2>
+         <p><strong>Kayak:</strong> Río Negro, ideal para principiantes y familias.<br>
+    <strong>Rafting:</strong> Río Tacuarembó, adrenalina y paisajes serranos.<br>
+    <strong>Kitesurf:</strong> playas de Rocha, viento perfecto.<br>
+    <strong>Senderismo:</strong> Quebrada de los Cuervos, naturaleza y fauna.<br>
+    <strong>Cabalgatas:</strong> Lavalleja, entre sierras y arroyos.
+    Tip: consultá condiciones climáticas y guías locales para cada actividad para mayor seguridad.</p>
+        </div>
+      </div>
+
+      <!-- Card 11 -->
+      <article class="card">
+        <div class="category">🎭 Cultura</div>
+        <h4>Cultura y festivales en Brasil</h4>
+        <p>Eventos imperdibles, carnavales y fiestas locales que todo viajero debería conocer.</p>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal11')">Leer más →</button>
+        </div>
+      </article>
+      <div id="modal11" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal11')">&times;</span>
+          <h2>Cultura y festivales en Brasil</h2>
+          <p><strong>1.</strong> Carnaval de Río: desfiles, comparsas y música sin igual.<br>
+    <strong>2.</strong> Fiestas juninas: bailes tradicionales y comidas típicas.<br>
+    <strong>3.</strong> Festival de Parintins: espectáculo amazónico lleno de color.<br>
+    <strong>4.</strong> Música en Salvador de Bahía: ritmos afrobrasileños y conciertos.<br>
+    <strong>5.</strong> Arte y museos en São Paulo: galerías, arquitectura y exposiciones contemporáneas.
+    Consejo: buscá festivales locales según la fecha de tu viaje para vivir la cultura brasileña al máximo.</p>
+        </div>
+      </div>
+
+      <!-- Card 12 -->
+      <article class="card">
+        <div class="category">🏕️ Naturaleza</div>
+        <h4>Camping y naturaleza en Uruguay</h4>
+        <p>Los mejores campings, reservas naturales y actividades al aire libre.</p>
+        <div style="display:flex; justify-content:flex-end;">
+          <button class="cta-link" onclick="openModal('modal12')">Leer más →</button>
+        </div>
+      </article>
+      <div id="modal12" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal12')">&times;</span>
+          <h2>Camping y naturaleza en Uruguay</h2>
+          <p><strong>Santa Teresa (Rocha):</strong> playas, bosque y fortaleza histórica.<br>
+    <strong>Valle del Lunarejo (Rivera):</strong> paisajes únicos, senderismo y fauna.<br>
+    <strong>Laguna Garzón:</strong> deportes acuáticos, pesca y tranquilidad.<br>
+    <strong>Parque Anchorena (Colonia):</strong> reserva natural con ciervos y flora nativa.<br>
+    <strong>Sierras de Minas:</strong> camping entre arroyos, cascadas y miradores naturales.
+    Tip: llevá repelente, abrigo para la noche y respetá las normas de cada reserva para una experiencia segura y responsable.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- CTA -->
   <div class="cta-box">
     <h3>¿Querés más inspiración viajera?</h3>
     <a href="contacto.html">✈️ Planificá tu viaje con nosotros</a>
   </div>
 </main>
 
-<footer class="section">
-  <div class="footer-container">
-    
-    <!-- Info de copyright -->
-    <div class="footer-left">
-      © El Turista — San José • Diseñado por Agustin Espinosa
-    </div>
-    
-    <!-- Logo centrado -->
-    <div class="footer-logo">
-      <a href="index.html">
-        <img src="logo.png" alt="El Turista logo">
-      </a>
-    </div>
-    
-    <!-- Redes sociales: palabras y iconos -->
-    <div class="socials">
-      <!-- Palabras para PC -->
-      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank" class="desktop">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank" class="desktop">Facebook</a>
+<script>
+function openModal(id) { document.getElementById(id).style.display = "block"; }
+function closeModal(id) { document.getElementById(id).style.display = "none"; }
+window.onclick = function(event) {
+  document.querySelectorAll('.modal').forEach(modal => {
+    if (event.target == modal) modal.style.display = "none";
+  });
+}
+</script>
+<br><br>
+<!-- FOOTER -->
+<footer class="footer">
+  <style>
+    /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
+    .footer {
+      background: #0d1b2a; /* azul profundo */
+      color: #e6e6e6;
+      padding: 3rem 1rem 1rem;
+    }
 
-      <!-- Iconos para móvil -->
-      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank" class="mobile">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank" class="mobile">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-    </div>
+    .footer-container {
+      max-width: 75rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: #fff;
+    }
+
+    .footer-col p {
+      color: #c9d6df;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .footer-logo {
+      height: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col ul li a {
+      color: #c9d6df;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-col ul li a:hover {
+      color: #4da8da;
+    }
+
+    .btn-maps {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: #1b263b;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn-maps:hover {
+      background: #415a77;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.6rem;
+      border: 1px solid #415a77;
+      border-radius: 6px;
+      background: #1b263b;
+      color: #fff;
+    }
+    .newsletter-form input::placeholder {
+      color: #8d99ae;
+    }
+    .newsletter-form button {
+      background: #4da8da;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .newsletter-form button:hover {
+      background: #1e90ff;
+    }
+
+    .socials {
+      margin-top: 1rem;
+    }
+    .socials a {
+      margin-right: 0.8rem;
+      font-size: 1.3rem;
+      color: #4da8da;
+      transition: transform 0.2s, color 0.3s;
+    }
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #1e90ff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #8d99ae;
+      border-top: 1px solid #415a77;
+      padding-top: 1rem;
+    }
+    .phone-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff; /* si tu footer es azul */
+  text-decoration: none;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+  color: #ffdd57; /* un color contraste */
+}
+
     
+  </style>
+
+  <div class="footer-container">
+
+    <!-- Columna 1: Logo y descripción -->
+    <div class="footer-col">
+      <img src="logowhite.png" alt="El Turista logo" class="footer-logo">
+      <p>Agencia de viajes con más de 20 años de experiencia.  
+         Salidas desde San José hacia todo el país y el mundo.</p>
+    </div>
+
+    <!-- Columna 2: Dirección -->
+    <div class="footer-col">
+      <h4>📍 Dirección</h4>
+      <p>San José de Mayo, Uruguay</p>
+      <a href="https://maps.google.com/?q=San+José+de+Mayo+Uruguay" target="_blank" class="btn-maps">Ver en mapa</a>
+    </div>
+
+    <!-- Columna 3: Enlaces -->
+    <div class="footer-col">
+      <h4>Enlaces rápidos</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destinos.html">Destinos</a></li>
+        <li><a href="sobre.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 4: Newsletter -->
+<div class="footer-col">
+  <h4>📞 ¿Preferís hablar?</h4>
+  <p>Llamanos y te asesoramos al instante:</p>
+  <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
+  
+  <div class="socials">
+    <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  </div>
+</div>
+
   </div>
 
-  <style>
-    footer {
-      background: #f8f9fa;
-      padding: 1.5rem 1rem; /* menos espacio vertical en PC */
-      border-top: 0.0625rem solid #ddd;
-      position: relative;
-      margin-bottom: -3rem;
-    }
-
-    .footer-container {
-      max-width: 75rem;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      position: relative;
-      margin-bottom: -3rem;
-    }
-
-    .footer-left {
-      font-size: 0.875rem;
-      color: #555;
-    }
-
-    .footer-logo img {
-      height: 3rem; /* un poquito más pequeño */
-    }
-
-    .footer-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .socials a {
-      margin: 0 0.5rem;
-      font-size: 1.1rem; /* iconos más compactos */
-      color: inherit;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-    }
-
-    .socials a:first-child.desktop {
-      color: #E4405F; /* Instagram */
-    }
-
-    .socials a:nth-child(2).desktop {
-      color: #1877F2; /* Facebook */
-    }
-
-    .desktop { display: inline; }
-    .mobile { display: none; }
-
-    /* Media query para pantallas pequeñas */
-    @media (max-width: 48rem) {
-      footer {
-        padding: 1rem 0.75rem; 
-      }
-
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-left,
-      .socials {
-        margin: 0.2rem 0; 
-      }
-      .socials {
-        margin-bottom: -3rem; 
-      }
-
-      .footer-logo {
-        position: static;
-        transform: none;
-        margin: 0.3rem 0; 
-      }
-
-      .desktop { display: none; }
-      .mobile { display: inline; }
-    }
-  </style>
+  <div class="footer-bottom">
+    © 2025 El Turista — San José • Diseñado por Agustin Espinosa
+  </div>
 </footer>
-
-  <style>
-    footer {
-      background: #f8f9fa;
-      padding: 1.5rem 1rem; /* menos espacio vertical en PC */
-      border-top: 0.0625rem solid #ddd;
-      position: relative;
-      margin-bottom: -3rem;
-    }
-
-    .footer-container {
-      max-width: 75rem;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      position: relative;
-      margin-bottom: -3rem;
-    }
-
-    .footer-left {
-      font-size: 0.875rem;
-      color: #555;
-    }
-
-    .footer-logo img {
-      height: 3rem; /* un poquito más pequeño */
-    }
-
-    .footer-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .socials a {
-      margin: 0 0.5rem;
-      font-size: 1.1rem; /* iconos más compactos */
-      color: inherit;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-
-    .socials a:hover {
-      transform: scale(1.2);
-    }
-
-    .socials a:first-child.desktop {
-      color: #E4405F; /* Instagram */
-    }
-
-    .socials a:nth-child(2).desktop {
-      color: #1877F2; /* Facebook */
-    }
-
-    .desktop { display: inline; }
-    .mobile { display: none; }
-
-    /* Media query para pantallas pequeñas */
-    @media (max-width: 48rem) {
-      footer {
-        padding: 1rem 0.75rem; 
-      }
-
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-left,
-      .socials {
-        margin: 0.2rem 0; 
-      }
-      .socials {
-        margin-bottom: -3rem; 
-      }
-
-      .footer-logo {
-        position: static;
-        transform: none;
-        margin: 0.3rem 0; 
-      }
-
-      .desktop { display: none; }
-      .mobile { display: inline; }
-    }
-  </style>
-</footer>
-
-
 </body>
 </html>

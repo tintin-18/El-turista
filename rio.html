@@ -132,6 +132,26 @@
     <p>Viví la energía de la Cidade Maravilhosa con El Turista</p>
   </section>
 
+  <!-- Galería estilo scroll horizontal -->
+  <section style="margin:60px 0;">
+    <h3 style="text-align:center; color:#0077ff; margin-bottom:30px;">Galería de Río</h3>
+    <div class="instagram-gallery">
+      <div class="ig-item">
+        <img src="gal1.jpg" alt="Copacabana">
+        <div class="ig-overlay">Copacabana Beach</div>
+      </div>
+      <div class="ig-item">
+        <img src="gal2.jpg" alt="Cristo Redentor">
+        <div class="ig-overlay">Cristo Redentor</div>
+      </div>
+      <div class="ig-item">
+        <img src="gal3.jpg" alt="Pan de Azúcar">
+        <div class="ig-overlay">Pan de Azúcar</div>
+      </div>
+      <!-- Podés agregar más imágenes -->
+    </div>
+  </section>
+
   <!-- Itinerario -->
   <section>
     <h3 style="text-align:center; margin-bottom:30px;">Itinerario de 3 días</h3>
@@ -151,16 +171,38 @@
     </div>
   </section>
 
-  <!-- Servicios incluidos -->
-  <section class="services">
-    <h3 style="text-align:center; margin-bottom:20px;">Incluye</h3>
-    <ul>
-      <li>Pasaje ida y vuelta en bus con butacas reclinables</li>
-      <li>Alojamiento 3★ con desayuno</li>
-      <li>Traslados y excursiones guiadas</li>
-      <li>Seguro de viaje internacional</li>
-      <li>Coordinador de El Turista durante todo el viaje</li>
+  <!-- Tips de viaje -->
+  <section style="margin:60px 0;">
+    <h3 style="text-align:center; color:#0077ff; margin-bottom:30px;">Tips de viaje en Río</h3>
+    <ul style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; list-style:none; padding:0; text-align:center;">
+      <li>🚖 Usá Uber o taxis autorizados para moverte seguro</li>
+      <li>🍴 Probá la feijoada y jugo de acai</li>
+      <li>🕶️ No olvides protector solar y gorra</li>
+      <li>📸 Llevá cámara para los atardeceres en la playa</li>
+      <li>🎶 Disfrutá de la samba y la vida nocturna</li>
     </ul>
+  </section>
+
+  <!-- Experiencias destacadas -->
+  <section style="margin:60px 0;">
+    <h3 style="text-align:center; color:#0077ff; margin-bottom:30px;">Experiencias destacadas</h3>
+    <div class="experience-cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;">
+      <div class="experience-card">
+        <img src="gal1.jpg" alt="Samba" style="width:100%; border-radius:12px;">
+        <h4>Samba en Lapa</h4>
+        <p>Sumergite en la cultura brasileña con noches llenas de música y baile.</p>
+      </div>
+      <div class="experience-card">
+        <img src="gal2.jpg" alt="Playas" style="width:100%; border-radius:12px;">
+        <h4>Playas icónicas</h4>
+        <p>Copacabana e Ipanema te esperan para disfrutar del sol y la arena.</p>
+      </div>
+      <div class="experience-card">
+        <img src="gal3.jpg" alt="Pan de Azúcar" style="width:100%; border-radius:12px;">
+        <h4>Pan de Azúcar</h4>
+        <p>Subí al teleférico y disfrutá de vistas panorámicas únicas.</p>
+      </div>
+    </div>
   </section>
 
   <!-- CTA -->
@@ -170,125 +212,282 @@
   </div>
 </main>
 
-<footer class="section">
-  <div class="footer-container">
-    
-    <!-- Info de copyright -->
-    <div class="footer-left">
-      © El Turista — San José • Diseñado por Agustin Espinosa
-    </div>
-    
-    <!-- Logo centrado -->
-    <div class="footer-logo">
-      <a href="index.html">
-        <img src="logo.png" alt="El Turista logo">
-      </a>
-    </div>
-    
-    <!-- Redes sociales: palabras y iconos -->
-    <div class="socials">
-      <!-- Palabras para PC -->
-      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank" class="desktop">Instagram</a>
-      <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank" class="desktop">Facebook</a>
+<style>
+/* Galería estilo Instagram scroll horizontal */
+.instagram-gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+.instagram-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+.instagram-gallery::-webkit-scrollbar-thumb {
+  background: #0077ff;
+  border-radius: 4px;
+}
+.ig-item {
+  position: relative;
+  min-width: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.ig-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+.ig-item:hover img {
+  transform: scale(1.05);
+}
+.ig-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ig-item:hover .ig-overlay {
+  opacity: 1;
+}
 
-      <!-- Iconos para móvil -->
-      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank" class="mobile">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank" class="mobile">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-    </div>
-    
-  </div>
+/* Itinerario cards */
+.itinerary-card {
+  background:#fff;
+  padding:24px;
+  border-radius:16px;
+  transition: transform 0.2s;
+}
+.itinerary-card:hover {
+  transform: translateY(-4px);
+}
 
+/* Experiencias */
+.experience-card {
+  background:#fff;
+  border-radius:12px;
+  padding:12px;
+  text-align:center;
+  transition: transform 0.2s;
+}
+.experience-card:hover {
+  transform: translateY(-4px);
+}
+
+/* CTA */
+.cta-box a {
+  display:inline-block;
+  background:#0077ff;
+  color:#fff;
+  padding:16px 28px;
+  border-radius:12px;
+  font-weight:700;
+  font-size:1.1rem;
+  text-decoration:none;
+  transition: background 0.2s, transform 0.2s;
+}
+.cta-box a:hover {
+  background:#005bb5;
+  transform: scale(1.05);
+}
+</style>
+
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
   <style>
-    footer {
-      background: #f8f9fa;
-      padding: 1.5rem 1rem; /* menos espacio vertical en PC */
-      border-top: 0.0625rem solid #ddd;
-      position: relative;
-      margin-bottom: -3rem;
+    /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
+    .footer {
+      background: #0d1b2a; /* azul profundo */
+      color: #e6e6e6;
+      padding: 3rem 1rem 1rem;
     }
 
     .footer-container {
       max-width: 75rem;
       margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      position: relative;
-      margin-bottom: -3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
     }
 
-    .footer-left {
-      font-size: 0.875rem;
-      color: #555;
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: #fff;
     }
 
-    .footer-logo img {
-      height: 3rem; /* un poquito más pequeño */
+    .footer-col p {
+      color: #c9d6df;
+      font-size: 0.95rem;
+      line-height: 1.5;
     }
 
     .footer-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      height: 3rem;
+      margin-bottom: 0.8rem;
     }
 
-    .socials a {
-      margin: 0 0.5rem;
-      font-size: 1.1rem; /* iconos más compactos */
-      color: inherit;
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col ul li a {
+      color: #c9d6df;
       text-decoration: none;
-      transition: transform 0.2s;
+      transition: color 0.3s;
     }
 
+    .footer-col ul li a:hover {
+      color: #4da8da;
+    }
+
+    .btn-maps {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: #1b263b;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn-maps:hover {
+      background: #415a77;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.6rem;
+      border: 1px solid #415a77;
+      border-radius: 6px;
+      background: #1b263b;
+      color: #fff;
+    }
+    .newsletter-form input::placeholder {
+      color: #8d99ae;
+    }
+    .newsletter-form button {
+      background: #4da8da;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .newsletter-form button:hover {
+      background: #1e90ff;
+    }
+
+    .socials {
+      margin-top: 1rem;
+    }
+    .socials a {
+      margin-right: 0.8rem;
+      font-size: 1.3rem;
+      color: #4da8da;
+      transition: transform 0.2s, color 0.3s;
+    }
     .socials a:hover {
       transform: scale(1.2);
+      color: #1e90ff;
     }
 
-    .socials a:first-child.desktop {
-      color: #E4405F; /* Instagram */
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #8d99ae;
+      border-top: 1px solid #415a77;
+      padding-top: 1rem;
     }
+    .phone-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff; /* si tu footer es azul */
+  text-decoration: none;
+}
 
-    .socials a:nth-child(2).desktop {
-      color: #1877F2; /* Facebook */
-    }
+.phone-link:hover {
+  text-decoration: underline;
+  color: #ffdd57; /* un color contraste */
+}
 
-    .desktop { display: inline; }
-    .mobile { display: none; }
-
-    /* Media query para pantallas pequeñas */
-    @media (max-width: 48rem) {
-      footer {
-        padding: 1rem 0.75rem; 
-      }
-
-      .footer-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-left,
-      .socials {
-        margin: 0.2rem 0; 
-      }
-      .socials {
-        margin-bottom: -3rem; 
-      }
-
-      .footer-logo {
-        position: static;
-        transform: none;
-        margin: 0.3rem 0; 
-      }
-
-      .desktop { display: none; }
-      .mobile { display: inline; }
-    }
+    
   </style>
+
+  <div class="footer-container">
+
+    <!-- Columna 1: Logo y descripción -->
+    <div class="footer-col">
+      <img src="logowhite.png" alt="El Turista logo" class="footer-logo">
+      <p>Agencia de viajes con más de 20 años de experiencia.  
+         Salidas desde San José hacia todo el país y el mundo.</p>
+    </div>
+
+    <!-- Columna 2: Dirección -->
+    <div class="footer-col">
+      <h4>📍 Dirección</h4>
+      <p>San José de Mayo, Uruguay</p>
+      <a href="https://maps.google.com/?q=San+José+de+Mayo+Uruguay" target="_blank" class="btn-maps">Ver en mapa</a>
+    </div>
+
+    <!-- Columna 3: Enlaces -->
+    <div class="footer-col">
+      <h4>Enlaces rápidos</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destinos.html">Destinos</a></li>
+        <li><a href="sobre.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 4: Newsletter -->
+<div class="footer-col">
+  <h4>📞 ¿Preferís hablar?</h4>
+  <p>Llamanos y te asesoramos al instante:</p>
+  <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
+  
+  <div class="socials">
+    <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  </div>
+</div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 El Turista — San José • Diseñado por Agustin Espinosa
+  </div>
 </footer>
 
 </body>

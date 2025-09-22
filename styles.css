@@ -1,3 +1,21 @@
+
+/* ------------------ ANIMATION ON SCROLLING------------------ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* más lento y suave */
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Puedes escalonar con animation-delay directamente en HTML */
+
+
+
 /* ------------------ HERO LANDING ------------------ */
 .hero-landing {
   position: relative;
@@ -294,13 +312,15 @@ nav {
 /* ------------------ GALERÍA ------------------ */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr)); /* 150px */
-  gap: 0.625rem; /* 10px */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
 }
 
 .gallery img {
   width: 100%;
-  border-radius: 0.5rem; /* 8px */
+  height: 150px;       /* altura fija para todas */
+  object-fit: cover;   /* recorta la imagen para llenar el espacio */
+  border-radius: 8px;
   cursor: pointer;
   transition: transform 0.3s;
 }
@@ -308,6 +328,7 @@ nav {
 .gallery img:hover {
   transform: scale(1.05);
 }
+
 
 /* ------------------ MODAL ------------------ */
 .modal {
@@ -394,6 +415,20 @@ footer {
   width: 100%;        
   height: auto;
   position: relative; 
+}
+/* Contenedor del mapa */
+#mapa {
+  height: 25rem;           /* 400px ≈ 25rem */
+  min-height: 18.75rem;    /* 300px ≈ 18.75rem */
+  border-radius: 0.75rem;  /* 12px */
+  overflow: hidden;
+}
+
+/* Ajuste para pantallas móviles */
+@media (max-width: 48rem) { /* 768px */
+  #mapa {
+    height: 18.75rem;      /* 300px ≈ 18.75rem */
+  }
 }
 
 

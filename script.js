@@ -70,3 +70,18 @@ function submitForm(event) {
   // Resetea el formulario
   document.getElementById("contactForm").reset();
 }
+ // animation on scrolling
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if(entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('show');
+      }, i * 300); // cada card entra 300ms después de la anterior
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+fadeElements.forEach(el => observer.observe(el));
