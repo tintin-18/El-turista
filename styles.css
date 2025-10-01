@@ -434,9 +434,15 @@ footer {
 
 /* ------------------ LOGO ------------------ */
 .logoturista {
-  max-width: 10rem;
-  width: max-content;
+  max-width: 10rem;  /* ≈160px */
   height: auto;
+  display: block;
+}
+
+@media (max-width: 48rem) { /* 768px */
+  .logoturista {
+    max-width: 7.5rem; /* ≈120px en móviles */
+  }
 }
 
 /* ------------------ HERO Y CONTACTO RESPONSIVE ------------------ */
