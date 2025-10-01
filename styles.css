@@ -434,6 +434,7 @@ footer {
 
 /* ------------------ LOGO ------------------ */
 .logoturista {
+  max-width: 10rem;
   width: max-content;
   height: auto;
 }
