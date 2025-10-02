@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     /* 🎨 Estilos exclusivos de esta página */
+    html, body {
+  margin: 0;
+  padding: 0;
+  background: #F4C542
+}
     header { margin-bottom: 3rem; }
 
     .rio-hero {
@@ -99,6 +104,64 @@
     .cta-box a:hover {
       background: var(--secondary);
     }
+    .instagram-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+  justify-items: center; /* centra las imágenes en desktop */
+}
+
+.ig-item {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  width: 100%;
+  max-width: 15.625rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.ig-item img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+  border-radius: 0.75rem;
+}
+
+.ig-item:hover img {
+  transform: scale(1.05);
+}
+
+.ig-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.ig-item:hover .ig-overlay {
+  opacity: 1;
+}
+
+/* Mobile: hacer columna */
+@media (max-width: 768px) {
+  .instagram-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .ig-item img {
+    height: auto;
+  }
+}
   </style>
 </head>
 <body>
@@ -125,80 +188,103 @@
 </header>
 
 
-<main class="container">
+<main class="container" style="max-width:90rem; margin:0 auto; padding:2rem 1rem; font-family:sans-serif; background:#F4C542; border-radius:20px;">
+
   <!-- Hero -->
-  <section class="rio-hero">
-    <h2>Río de Janeiro 🌴☀️</h2>
-    <p>Viví la energía de la Cidade Maravilhosa con El Turista</p>
+  <section class="rio-hero" style="text-align:center; margin-bottom:3rem;">
+    <h2 style="font-size:2rem; margin-bottom:1rem;">Río de Janeiro 🌴☀️</h2>
+    <p style="font-size:1.125rem;">Viví la energía de la Cidade Maravilhosa con El Turista</p>
   </section>
 
-  <!-- Galería estilo scroll horizontal -->
-  <section style="margin:60px 0;">
-    <h3 style="text-align:center; color:#0077ff; margin-bottom:30px;">Galería de Río</h3>
-    <div class="instagram-gallery">
-      <div class="ig-item">
-        <img src="gal1.jpg" alt="Copacabana">
-        <div class="ig-overlay">Copacabana Beach</div>
-      </div>
-      <div class="ig-item">
-        <img src="gal2.jpg" alt="Cristo Redentor">
-        <div class="ig-overlay">Cristo Redentor</div>
-      </div>
-      <div class="ig-item">
-        <img src="gal3.jpg" alt="Pan de Azúcar">
-        <div class="ig-overlay">Pan de Azúcar</div>
-      </div>
-      <!-- Podés agregar más imágenes -->
+  <section style="margin:3.75rem 0;">
+  <h3 style="text-align:center; color:#0077ff; margin-bottom:1.875rem; font-size:1.5rem;">Galería de Río</h3>
+  <div class="instagram-gallery">
+    <div class="ig-item">
+      <img src="gal1.jpg" alt="Cristo Redentor">
+      <div class="ig-overlay">Cristo Redentor</div>
     </div>
-  </section>
+    <div class="ig-item">
+      <img src="gal2.jpg" alt="Escalera de Selarón">
+      <div class="ig-overlay">Escalera de Selarón</div>
+    </div>
+    <div class="ig-item">
+      <img src="gal3.jpg" alt="Copacabana Beach">
+      <div class="ig-overlay">Copacabana Beach</div>
+    </div>
+    <div class="ig-item">
+      <img src="gal7.jpg" alt="Las favelas">
+      <div class="ig-overlay">Las favelas</div>
+    </div>
+     <div class="ig-item">
+      <img src="samba.jpg" alt="Sambra en Lapa">
+      <div class="ig-overlay">Samba en Lapa</div>
+    </div>
+  </div>
+</section>
 
   <!-- Itinerario -->
-  <section>
-    <h3 style="text-align:center; margin-bottom:30px;">Itinerario de 3 días</h3>
-    <div class="itinerary">
-      <div class="itinerary-card">
+  <section style="text-align:center; margin-bottom:3rem;">
+    <h3 style="margin-bottom:1.875rem; color:#ff5722;">Itinerario de 3 días</h3>
+    <div class="itinerary" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:1.5rem;">
+      <div class="itinerary-card" style="padding:1rem; border-radius:0.5rem; background:#ffecb3;">
         <h4>📍 Día 1</h4>
         <p>City tour: Cristo Redentor, Pan de Azúcar y Copacabana. Tarde libre en la playa.</p>
       </div>
-      <div class="itinerary-card">
+      <div class="itinerary-card" style="padding:1rem; border-radius:0.5rem; background:#ffe0b2;">
         <h4>📍 Día 2</h4>
         <p>Excursión a Santa Teresa y Lapa. Noche con show de samba en vivo.</p>
       </div>
-      <div class="itinerary-card">
+      <div class="itinerary-card" style="padding:1rem; border-radius:0.5rem; background:#ffccbc;">
         <h4>📍 Día 3</h4>
         <p>Visita al Jardín Botánico y Lagoa Rodrigo de Freitas. Shopping en Ipanema.</p>
       </div>
     </div>
   </section>
 
-  <!-- Tips de viaje -->
-  <section style="margin:60px 0;">
-    <h3 style="text-align:center; color:#0077ff; margin-bottom:30px;">Tips de viaje en Río</h3>
-    <ul style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; list-style:none; padding:0; text-align:center;">
-      <li>🚖 Usá Uber o taxis autorizados para moverte seguro</li>
-      <li>🍴 Probá la feijoada y jugo de acai</li>
-      <li>🕶️ No olvides protector solar y gorra</li>
-      <li>📸 Llevá cámara para los atardeceres en la playa</li>
-      <li>🎶 Disfrutá de la samba y la vida nocturna</li>
-    </ul>
-  </section>
+<!-- Tips de viaje -->
+<section style="margin:3.75rem 0;">
+  <h3 style="text-align:center; color:#0077ff; margin-bottom:1.875rem;">Tips de viaje en Río</h3>
+  <div class="tips-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(14rem,1fr)); gap:1.5rem;">
+    <div class="tip-card" style="background:linear-gradient(135deg,#ffecb3,#ffd54f); padding:1.5rem; border-radius:16px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition:transform 0.2s;">
+      <h4>🚖 Transporte seguro</h4>
+      <p>Usá Uber o taxis autorizados para moverte sin preocupaciones.</p>
+    </div>
+    <div class="tip-card" style="background:linear-gradient(135deg,#ffe0b2,#ffb74d); padding:1.5rem; border-radius:16px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition:transform 0.2s;">
+      <h4>🍴 Gastronomía local</h4>
+      <p>Probá la feijoada y jugo de acai para vivir la experiencia brasileña.</p>
+    </div>
+    <div class="tip-card" style="background:linear-gradient(135deg,#ffccbc,#ff8a65); padding:1.5rem; border-radius:16px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition:transform 0.2s;">
+      <h4>🕶️ Protección solar</h4>
+      <p>No olvides gorra y protector solar para disfrutar sin quemaduras.</p>
+    </div>
+    <div class="tip-card" style="background:linear-gradient(135deg,#b3e5fc,#4fc3f7); padding:1.5rem; border-radius:16px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition:transform 0.2s;">
+      <h4>📸 Fotografía</h4>
+      <p>Llevá cámara para capturar los atardeceres y momentos especiales.</p>
+    </div>
+    <div class="tip-card" style="background:linear-gradient(135deg,#c8e6c9,#81c784); padding:1.5rem; border-radius:16px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition:transform 0.2s;">
+      <h4>🎶 Cultura y música</h4>
+      <p>Disfrutá de la samba y la vida nocturna auténtica de Río.</p>
+    </div>
+  </div>
+</section>
+
 
   <!-- Experiencias destacadas -->
-  <section style="margin:60px 0;">
-    <h3 style="text-align:center; color:#0077ff; margin-bottom:30px;">Experiencias destacadas</h3>
-    <div class="experience-cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;">
-      <div class="experience-card">
-        <img src="gal1.jpg" alt="Samba" style="width:100%; border-radius:12px;">
+  <section style="margin:3.75rem 0;">
+    <h3 style="text-align:center; color:#0077ff; margin-bottom:1.875rem;">Experiencias destacadas</h3>
+    <div class="experience-cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(17.5rem,1fr)); gap:1.5rem;">
+      <div class="experience-card" style="text-align:center; background:#b2ebf2;">
+        <img src="samba.jpg" style="width:100%; border-radius:0.75rem;">
         <h4>Samba en Lapa</h4>
         <p>Sumergite en la cultura brasileña con noches llenas de música y baile.</p>
       </div>
-      <div class="experience-card">
-        <img src="gal2.jpg" alt="Playas" style="width:100%; border-radius:12px;">
+      <div class="experience-card" style="text-align:center; background:#80deea;">
+        <img src="playario.jpeg" style="width:100%; border-radius:0.75rem;">
         <h4>Playas icónicas</h4>
         <p>Copacabana e Ipanema te esperan para disfrutar del sol y la arena.</p>
       </div>
-      <div class="experience-card">
-        <img src="gal3.jpg" alt="Pan de Azúcar" style="width:100%; border-radius:12px;">
+      <div class="experience-card" style="text-align:center; background:#4dd0e1;">
+        <img src="pande.jpg" style="width:100%; border-radius:0.75rem;">
         <h4>Pan de Azúcar</h4>
         <p>Subí al teleférico y disfrutá de vistas panorámicas únicas.</p>
       </div>
@@ -206,11 +292,14 @@
   </section>
 
   <!-- CTA -->
-  <div class="cta-box">
+  <div class="cta-box" style="text-align:center; margin:3rem 0;">
     <h3>¿Listo para tu aventura en Río? 🌊</h3>
-    <a href="contacto.html">✈️ Reservá tu lugar ahora</a>
+    <a href="contacto.html" style="display:inline-block; margin-top:1rem; padding:0.75rem 1.5rem; background:#0077ff; color:#fff; border-radius:0.5rem; text-decoration:none;">✈️ Reservá tu lugar ahora</a>
   </div>
+
 </main>
+
+
 
 <style>
 /* Galería estilo Instagram scroll horizontal */
@@ -438,6 +527,26 @@
 .phone-link:hover {
   text-decoration: underline;
   color: #ffdd57; /* un color contraste */
+}
+.experience-card img {
+  width: 100%;
+  height: 12.5rem; /* antes 200px */
+  object-fit: cover; /* recorta y mantiene proporción */
+  border-radius: 12px;
+  display: block;
+}
+
+.itinerary-card img {
+  width: 100%;
+  height: 11.25rem; /* antes 180px */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .experience-card img {
+    height: 9.375rem; /* antes 150px */
+  }
 }
 
     
