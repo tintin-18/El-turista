@@ -87,6 +87,8 @@ header { margin-bottom: 3rem; }
 .cta-box a:hover { background: var(--secondary,#00c3ff); }
 
 /* ------------------ MODAL ------------------ */
+/* MODAL GENERAL */
+/* MODAL GENERAL */
 .modal {
   display: none;
   position: fixed;
@@ -94,10 +96,14 @@ header { margin-bottom: 3rem; }
   inset: 0;
   background: rgba(0,0,0,0.4);
   justify-content: center;
-  align-items: center;
-  padding: 1rem;
+  align-items: flex-start; /* importante: arriba, no center */
+  padding-top: 6rem; /* esto reemplaza margin-top */
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow-y: auto; /* para que scroll funcione si es muy alto */
 }
 
+/* MODAL CONTENT */
 .modal-content {
   position: relative;
   background: #fdf1c7;
@@ -105,15 +111,13 @@ header { margin-bottom: 3rem; }
   border-radius: 0.75rem;
   max-width: 31.25rem;
   width: 100%;
-  max-height: 85vh; /* altura máxima en desktop */
-  overflow-y: visible; /* scroll si se excede */
+  max-height: 85vh;
   box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,0.3);
-  transform: rotate(-2deg);
+  transform: rotate(-2deg); /* si querés la inclinación */
   border-top: 0.375rem solid #e5c16f;
-  animation: fadeIn 0.3s ease;
   font-family: 'Nunito', sans-serif;
-  margin-top: 4rem;
 }
+
 
 /* Chincheta/pin */
 .modal-content::before {
@@ -151,36 +155,40 @@ header { margin-bottom: 3rem; }
 
 /* ------------------ MODAL MOBILE ------------------ */
 @media (max-width: 758px) {
-  .modal { align-items: flex-start; padding-top: 1rem; }
+  .modal {
+    align-items: flex-start;
+    padding: 0 1rem; /* quitamos padding-top */
+    overflow-y: auto; /* para que pueda scrollear si es alto */
+  }
 
   .modal-content {
+    margin-top: 8rem; /* esto empuja el modal hacia abajo */
     padding: 1.5rem 1rem;
     border-radius: 0.625rem;
     max-width: 90%;
-    max-height: 80vh; /* altura máxima en mobile */
-    overflow-y: auto;  /* scroll interno si es necesario */
+    max-height: 80vh;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
   }
-
-  /* Scrollbar opcional */
-  .modal-content::-webkit-scrollbar { width: 0.375rem; }
-  .modal-content::-webkit-scrollbar-thumb { background: #e0c97f; border-radius: 0.25rem; }
 
   .modal-content::before {
     top: 0rem;
     left: 0.5rem;
     width: 1.5rem;
     height: 1.5rem;
-    z-index: 10000; /* siempre encima del contenido */
+    z-index: 10000;
   }
 
   .close {
     font-size: 1.4rem;
     top: 0.5rem;
     right: 0.625rem;
-    z-index: 10001; /* encima del pin */
+    z-index: 10001;
   }
 }
+  /* Scrollbar opcional */
+  .modal-content::-webkit-scrollbar { width: 0.375rem; }
+  .modal-content::-webkit-scrollbar-thumb { background: #e0c97f; border-radius: 0.25rem; }
 
 </style>
 
