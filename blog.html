@@ -12,6 +12,18 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="styles.css">
  <style>
+  /* ------------------ FADE IN ------------------ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(2rem); /* empieza un poquito abajo */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ------------------ GLOBAL ------------------ */
 body { font-family: 'Nunito', sans-serif; margin:0; padding:0; }
 header { margin-bottom: 3rem; }
@@ -195,15 +207,19 @@ header { margin-bottom: 3rem; }
 </head>
 <body>
 
-<header>
+<header class="fade-in">
   <div class="container">
     <nav>
-      <div class="brand">
-        <a href="index.html"><img src="logo.png" alt="El Turista logo" class="logoturista"></a>
-        <div><div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div></div>
+      <div class="brand fade-in">
+        <a href="index.html">
+          <img src="logo.png" alt="El Turista logo" class="logoturista">
+        </a>
+        <div>
+          <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
+        </div>
       </div>
-      <div class="navlinks">
-        <a href="index.html">Inicio</a>
+      <div class="navlinks fade-in">
+         <a href="index.html">Inicio</a>
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
         <a href="contacto.html">Contacto</a>
@@ -213,12 +229,12 @@ header { margin-bottom: 3rem; }
 </header>
 
 <main class="container">
-  <section class="blog-hero">
+  <section class="blog-hero fade-in">
     <h2>Blog de viajes 🌍</h2>
     <p>Tips, destinos y experiencias únicas para inspirar tu próxima aventura</p>
   </section>
 
-  <section id="posts" class="section">
+  <section id="posts" class="section fade-in">
     <div class="grid">
 
       <!-- Card 1 -->
@@ -521,6 +537,26 @@ header { margin-bottom: 3rem; }
       event.target.style.display = "none";
     }
   }
+
+  // Detecta los elementos con clase 'fade-in'
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const handleScroll = () => {
+  const triggerBottom = window.innerHeight * 0.85; // cuándo aparece el elemento
+
+  fadeElements.forEach(el => {
+    const elTop = el.getBoundingClientRect().top;
+
+    if (elTop < triggerBottom) {
+      el.classList.add('show');
+    }
+  });
+};
+
+// Ejecuta al hacer scroll y al cargar la página
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll);
+
 </script>
 
 <br><br>

@@ -7,15 +7,16 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css">
   <style>
     /* 🎨 Estilos exclusivos de esta página */
     header {
-  margin-bottom: 3rem;
-}
+      margin-bottom: 3rem;
+    }
+
     .about-hero {
       text-align: center;
       padding: 80px 20px;
@@ -57,6 +58,7 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       transition: transform 0.2s;
     }
+
     .team-card:hover {
       transform: translateY(-4px);
     }
@@ -70,6 +72,7 @@
       text-align: center;
       margin-top: 50px;
     }
+
     .cta-box a {
       display:inline-block;
       background: var(--primary);
@@ -81,49 +84,63 @@
       text-decoration:none;
       transition: background 0.2s;
     }
+
     .cta-box a:hover {
       background: var(--secondary);
     }
+
     .bus-gallery {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
 
-.bus-gallery img {
-  width: 48%;
-  max-width: 600px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  display: block;
-}
+    .bus-gallery img {
+      width: 48%;
+      max-width: 600px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      display: block;
+    }
 
-@media (max-width: 768px) {
-  .about-section {
-    text-align: center;
-  }
+    @media (max-width: 768px) {
+      .about-section {
+        text-align: center;
+      }
 
-  .bus-gallery {
-    flex-direction: column;
-    align-items: center;  /* centra las imágenes en columna */
-    gap: 20px;            /* separación entre imágenes */
-  }
+      .bus-gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
 
-  .bus-gallery img {
-    width: 90%;           /* ocupan casi todo el ancho disponible */
-    max-width: 500px;     /* para que no queden gigantes en pantallas grandes */
-  }
-}
+      .bus-gallery img {
+        width: 90%;
+        max-width: 500px;
+      }
+    }
+
+    /* ----------- FADE-IN ON SCROLL ------------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(2rem);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
 
-<header>
+<header class="fade-in">
   <div class="container">
     <nav>
-      <div class="brand">
+      <div class="brand fade-in">
         <a href="index.html">
           <img src="logo.png" alt="El Turista logo" class="logoturista">
         </a>
@@ -131,7 +148,7 @@
           <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
         </div>
       </div>
-      <div class="navlinks">
+      <div class="navlinks fade-in">
          <a href="index.html">Inicio</a>
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
@@ -141,84 +158,81 @@
   </div>
 </header>
 
-
 <main class="container">
+
   <!-- Hero -->
-  <section class="about-hero">
-    <h2>Conocenos ✨</h2>
-    <p>En <strong>El Turista</strong> diseñamos viajes únicos desde el corazón de San José hacia el mundo.</p>
+  <section class="about-hero fade-in">
+    <h2 class="fade-in">Conocenos ✨</h2>
+    <p class="fade-in">En <strong>El Turista</strong> diseñamos viajes únicos desde el corazón de San José hacia el mundo.</p>
   </section>
 
   <!-- Historia -->
-  <section class="about-section">
-    <h3>Nuestra historia</h3>
-    <p>Desde nuestros inicios en San José, Uruguay, acompañamos a viajeros a descubrir destinos nacionales e internacionales con confianza y cercanía. Nuestro compromiso siempre fue el mismo: que cada experiencia sea inolvidable.</p>
+  <section class="about-section fade-in">
+    <h3 class="fade-in">Nuestra historia</h3>
+    <p class="fade-in">Desde nuestros inicios en San José, Uruguay, acompañamos a viajeros a descubrir destinos nacionales e internacionales con confianza y cercanía. Nuestro compromiso siempre fue el mismo: que cada experiencia sea inolvidable.</p>
   </section>
 
   <!-- Misión -->
-  <div class="mission-card">
-    <h3>🌍 Nuestra misión</h3>
-    <p>Brindar experiencias de viaje auténticas y memorables, fomentando la conexión con los destinos y la cultura local.</p>
+  <div class="mission-card fade-in">
+    <h3 class="fade-in">🌍 Nuestra misión</h3>
+    <p class="fade-in">Brindar experiencias de viaje auténticas y memorables, fomentando la conexión con los destinos y la cultura local.</p>
   </div>
 
-<!-- Nuestro Bus — Sección Deluxe -->
-<section class="about-section" style="padding:60px 20px; background: linear-gradient(135deg, #e3f2fd, #ffffff); border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.1); margin-bottom:60px;">
-  <h3 style="text-align:center; font-size:2rem; margin-bottom:30px;">🚌 Nuestro Bus — Confort y Seguridad</h3>
+  <!-- Nuestro Bus — Sección Deluxe -->
+  <section class="about-section fade-in" style="padding:60px 20px; background: linear-gradient(135deg, #e3f2fd, #ffffff); border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.1); margin-bottom:60px;">
+    <h3 class="fade-in" style="text-align:center; font-size:2rem; margin-bottom:30px;">🚌 Nuestro Bus — Confort y Seguridad</h3>
 
-  <!-- Imagen del bus -->
-<div class="bus-gallery">
-  <img src="elturistabus2.jpg" alt="Nuestro bus — 48 plazas, seguro y cómodo">
-  <img src="elturistabus3.jpg" alt="Nuestro bus — 48 plazas, seguro y cómodo">
-</div>
-
-
-  <!-- Lista de características -->
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px; text-align:center;">
-    <div style="background:#fff; padding:24px; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition: transform 0.2s;">
-      <div style="font-size:2rem; margin-bottom:12px;">💺</div>
-      <h4>48 Plazas</h4>
-      <p>Comodidad total para todos nuestros pasajeros, con asientos amplios y reclinables.</p>
+    <!-- Imagen del bus -->
+    <div class="bus-gallery">
+      <img src="elturistabus2.jpg" alt="Nuestro bus — 48 plazas, seguro y cómodo" class="fade-in">
+      <img src="elturistabus3.jpg" alt="Nuestro bus — 48 plazas, seguro y cómodo" class="fade-in">
     </div>
-    <div style="background:#fff; padding:24px; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition: transform 0.2s;">
-      <div style="font-size:2rem; margin-bottom:12px;">🛡️</div>
-      <h4>Seguridad Garantizada</h4>
-      <p>Supera el test anti-vuelco de <strong>38°</strong>, viaje seguro de principio a fin.</p>
-    </div>
-    <div style="background:#fff; padding:24px; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition: transform 0.2s;">
-      <div style="font-size:2rem; margin-bottom:12px;">🧼</div>
-      <h4>Higiene Impecable</h4>
-      <p>Desinfectado antes de cada viaje, con un estándar de limpieza superior.</p>
-    </div>
-    <div style="background:#fff; padding:24px; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition: transform 0.2s;">
-      <div style="font-size:2rem; margin-bottom:12px;">✨</div>
-      <h4>Experiencia Perfecta</h4>
-      <p>Espacios amplios, iluminación agradable y confort pensado para disfrutar cada momento.</p>
-    </div>
-  </div>
 
-  <!-- CTA sutil -->
-  <div class="cta-box" style="margin-top:40px;">
-    <p style="font-size:1.2rem;">Subite y descubrí lo que significa viajar con estilo y seguridad 🚀</p>
-  </div>
-</section>
+    <!-- Lista de características -->
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px; text-align:center;">
+      <div style="background:#fff; padding:24px; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition: transform 0.2s;" class="fade-in">
+        <div style="font-size:2rem; margin-bottom:12px;">💺</div>
+        <h4>48 Plazas</h4>
+        <p>Comodidad total para todos nuestros pasajeros, con asientos amplios y reclinables.</p>
+      </div>
+      <div style="background:#fff; padding:24px; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition: transform 0.2s;" class="fade-in">
+        <div style="font-size:2rem; margin-bottom:12px;">🛡️</div>
+        <h4>Seguridad Garantizada</h4>
+        <p>Supera el test anti-vuelco de <strong>38°</strong>, viaje seguro de principio a fin.</p>
+      </div>
+      <div style="background:#fff; padding:24px; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition: transform 0.2s;" class="fade-in">
+        <div style="font-size:2rem; margin-bottom:12px;">🧼</div>
+        <h4>Higiene Impecable</h4>
+        <p>Desinfectado antes de cada viaje, con un estándar de limpieza superior.</p>
+      </div>
+      <div style="background:#fff; padding:24px; border-radius:16px; box-shadow:0 6px 18px rgba(0,0,0,0.08); transition: transform 0.2s;" class="fade-in">
+        <div style="font-size:2rem; margin-bottom:12px;">✨</div>
+        <h4>Experiencia Perfecta</h4>
+        <p>Espacios amplios, iluminación agradable y confort pensado para disfrutar cada momento.</p>
+      </div>
+    </div>
 
-
+    <!-- CTA sutil -->
+    <div class="cta-box fade-in" style="margin-top:40px;">
+      <p style="font-size:1.2rem;">Subite y descubrí lo que significa viajar con estilo y seguridad 🚀</p>
+    </div>
+  </section>
 
   <!-- Equipo -->
-  <section class="about-section">
-    <h3>Conocé al equipo</h3>
+  <section class="about-section fade-in">
+    <h3 class="fade-in">Conocé al equipo</h3>
     <div class="team-grid">
-      <div class="team-card">
+      <div class="team-card fade-in">
         <div class="emoji">🧭</div>
         <h4>Daniela</h4>
         <p>Coordinación de viajes nacionales</p>
       </div>
-      <div class="team-card">
+      <div class="team-card fade-in">
         <div class="emoji">🌎</div>
         <h4>Mauricio</h4>
         <p>Especialista en viajes internacionales</p>
       </div>
-      <div class="team-card">
+      <div class="team-card fade-in">
         <div class="emoji">🤝</div>
         <h4>Agustín</h4>
         <p>Diseño de experiencias y atención al cliente</p>
@@ -227,19 +241,20 @@
   </section>
 
   <!-- CTA -->
-  <div class="cta-box">
+  <div class="cta-box fade-in">
     <h3>¿Listo para tu próxima aventura?</h3>
     <a href="contacto.html">🚀 Planificá tu viaje con nosotros</a>
   </div>
 
 </main>
+
 <br><br>
+
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer fade-in">
   <style>
-    /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
     .footer {
-      background: #0d1b2a; /* azul profundo */
+      background: #0d1b2a;
       color: #e6e6e6;
       padding: 3rem 1rem 1rem;
     }
@@ -299,6 +314,7 @@
       text-decoration: none;
       transition: background 0.3s;
     }
+
     .btn-maps:hover {
       background: #415a77;
     }
@@ -308,6 +324,7 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+
     .newsletter-form input {
       flex: 1;
       padding: 0.6rem;
@@ -316,9 +333,11 @@
       background: #1b263b;
       color: #fff;
     }
+
     .newsletter-form input::placeholder {
       color: #8d99ae;
     }
+
     .newsletter-form button {
       background: #4da8da;
       color: #fff;
@@ -328,6 +347,7 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .newsletter-form button:hover {
       background: #1e90ff;
     }
@@ -335,12 +355,14 @@
     .socials {
       margin-top: 1rem;
     }
+
     .socials a {
       margin-right: 0.8rem;
       font-size: 1.3rem;
       color: #4da8da;
       transition: transform 0.2s, color 0.3s;
     }
+
     .socials a:hover {
       transform: scale(1.2);
       color: #1e90ff;
@@ -354,39 +376,34 @@
       border-top: 1px solid #415a77;
       padding-top: 1rem;
     }
+
     .phone-link {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff; /* si tu footer es azul */
-  text-decoration: none;
-}
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
 
-.phone-link:hover {
-  text-decoration: underline;
-  color: #ffdd57; /* un color contraste */
-}
-
-    
+    .phone-link:hover {
+      text-decoration: underline;
+      color: #ffdd57;
+    }
   </style>
 
   <div class="footer-container">
-
-    <!-- Columna 1: Logo y descripción -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <img src="logowhite.png" alt="El Turista logo" class="footer-logo">
       <p>Agencia de viajes con más de 20 años de experiencia.  
          Salidas desde San José hacia todo el país y el mundo.</p>
     </div>
 
-    <!-- Columna 2: Dirección -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <h4>📍 Dirección</h4>
       <p>San José de Mayo, Uruguay</p>
       <a href="https://maps.google.com/?q=San+José+de+Mayo+Uruguay" target="_blank" class="btn-maps">Ver en mapa</a>
     </div>
 
-    <!-- Columna 3: Enlaces -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <h4>Enlaces rápidos</h4>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -397,24 +414,41 @@
       </ul>
     </div>
 
-    <!-- Columna 4: Newsletter -->
-<div class="footer-col">
-  <h4>📞 ¿Preferís hablar?</h4>
-  <p>Llamanos y te asesoramos al instante:</p>
-  <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
-  
-  <div class="socials">
-    <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  </div>
-</div>
-
+    <div class="footer-col fade-in">
+      <h4>📞 ¿Preferís hablar?</h4>
+      <p>Llamanos y te asesoramos al instante:</p>
+      <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
+      <div class="socials">
+        <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
   </div>
 
-  <div class="footer-bottom">
+  <div class="footer-bottom fade-in">
     © 2025 El Turista — San José • Diseñado por Agustin Espinosa
   </div>
 </footer>
+
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, i) => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.transitionDelay = `${i * 0.15}s`;
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 
 </body>
 </html>

@@ -7,15 +7,13 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
   <style>
     /* 🎨 Estilos exclusivos de esta página */
-    header {
-      margin-bottom: 3rem;
-    }
+    header { margin-bottom: 3rem; }
 
     .contact-hero {
       text-align: center;
@@ -48,9 +46,7 @@
       transition: transform 0.2s;
     }
 
-    .contact-card:hover {
-      transform: translateY(-4px);
-    }
+    .contact-card:hover { transform: translateY(-4px); }
 
     .service-img {
       width: 100%;
@@ -78,37 +74,32 @@
       transition: background 0.2s;
     }
 
-    form button:hover {
-      background: var(--secondary);
+    form button:hover { background: var(--secondary); }
+
+    ul { list-style: none; padding-left: 0; }
+    .service-list li::before { content: "✔️ "; margin-right: 0.4rem; }
+
+    /* ------------------ FADE-IN ON SCROLL ------------------ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(2rem);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
- .service-list li::before {
-  content: "✔️ ";
-  margin-right: 0.4rem; /* separa el tick del texto */
-}
-
+    .fade-in.show { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
-<header>
+<header class="fade-in">
   <div class="container">
     <nav>
-      <div class="brand">
-        <a href="index.html">
-          <img src="logo.png" alt="El Turista logo" class="logoturista">
-        </a>
-        <div>
-          <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
-        </div>
+      <div class="brand fade-in">
+        <a href="index.html"><img src="logo.png" alt="El Turista logo" class="logoturista"></a>
+        <div><div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div></div>
       </div>
-      <div class="navlinks">
-         <a href="index.html">Inicio</a>
+      <div class="navlinks fade-in">
+        <a href="index.html">Inicio</a>
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
         <a href="contacto.html">Contacto</a>
@@ -117,32 +108,30 @@
   </div>
 </header>
 
-
 <main class="container">
   <!-- Hero -->
-  <section class="contact-hero">
-    <h2>🚍 Rent a Bus — Exclusivo desde San José</h2>
-    <p>Alquiler de coche semicama con chofer para 48 pasajeros. Viajá seguro, cómodo y sin preocupaciones.</p>
+  <section class="contact-hero fade-in">
+    <h2 class="fade-in">🚍 Rent a Bus — Exclusivo desde San José</h2>
+    <p class="fade-in">Alquiler de coche semicama con chofer para 48 pasajeros. Viajá seguro, cómodo y sin preocupaciones.</p>
   </section>
 
   <!-- Rent a Bus -->
   <section class="contact-wrap">
     <!-- 🚌 Info -->
-    <div class="contact-card">
-      <img src="elturistabus.jpg" alt="Rent a Bus El Turista" class="service-img">
-      <h3 style="font-size:1.6rem; margin-bottom:10px;">Detalles del servicio</h3>
-      <p style="color:#555; margin-bottom:20px;">
+    <div class="contact-card fade-in">
+      <img src="elturistabus.jpg" alt="Rent a Bus El Turista" class="service-img fade-in">
+      <h3 class="fade-in" style="font-size:1.6rem; margin-bottom:10px;">Detalles del servicio</h3>
+      <p class="fade-in" style="color:#555; margin-bottom:20px;">
         Un moderno coche semicama de <strong>48 plazas</strong>, con chofer profesional y todas las comodidades para tu grupo.
       </p>
-   <ul class="service-list" style="color:#333; line-height:1.6; margin-bottom:20px;">
-  <li>Salida exclusiva desde San José</li>
-  <li>Butacas semicama reclinables</li>
-  <li>Aire acondicionado y WiFi a bordo</li>
-  <li>Baño higiénico</li>
-  <li>Ideal para excursiones, eventos y viajes empresariales</li>
-</ul>
-
-      <a href="https://wa.me/5989XXXXXXX" target="_blank"
+      <ul class="service-list fade-in" style="color:#333; line-height:1.6; margin-bottom:20px;">
+        <li>Salida exclusiva desde San José</li>
+        <li>Butacas semicama reclinables</li>
+        <li>Aire acondicionado y WiFi a bordo</li>
+        <li>Baño higiénico</li>
+        <li>Ideal para excursiones, eventos y viajes empresariales</li>
+      </ul>
+      <a href="https://wa.me/5989XXXXXXX" target="_blank" class="fade-in"
          style="display:inline-block;background:#0077ff;color:#fff;
                 padding:14px 26px;border-radius:10px;font-weight:700;
                 text-decoration:none;font-size:1.1rem;">
@@ -151,14 +140,12 @@
     </div>
 
     <!-- 📅 Formulario -->
-    <div class="contact-card">
-      <h3 style="font-size:1.6rem; margin-bottom:10px;">Solicitá tu cotización</h3>
-      <p style="color:#555; margin-bottom:20px;">
+    <div class="contact-card fade-in">
+      <h3 class="fade-in" style="font-size:1.6rem; margin-bottom:10px;">Solicitá tu cotización</h3>
+      <p class="fade-in" style="color:#555; margin-bottom:20px;">
         Completá el formulario y armamos tu propuesta personalizada.
       </p>
-
-      <form id="rentabusForm" onsubmit="sendBusForm(event)" 
-            style="display:flex;flex-direction:column;gap:14px;">
+      <form id="rentabusForm" onsubmit="sendBusForm(event)" class="fade-in" style="display:flex;flex-direction:column;gap:14px;">
         <input type="text" name="name" placeholder="✏️ Tu nombre" required />
         <input type="email" name="email" placeholder="📧 Tu email" required />
         <input type="text" name="phone" placeholder="📱 Teléfono de contacto" />
@@ -170,21 +157,14 @@
     </div>
   </section>
 </main>
+
 <br><br>
-<!-- Script -->
-<script>
-  function sendBusForm(e) {
-    e.preventDefault();
-    alert("✅ Solicitud enviada. Nos pondremos en contacto a la brevedad.");
-    document.getElementById("rentabusForm").reset();
-  }
-</script>
+
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer fade-in">
   <style>
-    /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
     .footer {
-      background: #0d1b2a; /* azul profundo */
+      background: #0d1b2a;
       color: #e6e6e6;
       padding: 3rem 1rem 1rem;
     }
@@ -244,6 +224,7 @@
       text-decoration: none;
       transition: background 0.3s;
     }
+
     .btn-maps:hover {
       background: #415a77;
     }
@@ -253,6 +234,7 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+
     .newsletter-form input {
       flex: 1;
       padding: 0.6rem;
@@ -261,9 +243,11 @@
       background: #1b263b;
       color: #fff;
     }
+
     .newsletter-form input::placeholder {
       color: #8d99ae;
     }
+
     .newsletter-form button {
       background: #4da8da;
       color: #fff;
@@ -273,6 +257,7 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .newsletter-form button:hover {
       background: #1e90ff;
     }
@@ -280,12 +265,14 @@
     .socials {
       margin-top: 1rem;
     }
+
     .socials a {
       margin-right: 0.8rem;
       font-size: 1.3rem;
       color: #4da8da;
       transition: transform 0.2s, color 0.3s;
     }
+
     .socials a:hover {
       transform: scale(1.2);
       color: #1e90ff;
@@ -299,39 +286,34 @@
       border-top: 1px solid #415a77;
       padding-top: 1rem;
     }
+
     .phone-link {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff; /* si tu footer es azul */
-  text-decoration: none;
-}
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
 
-.phone-link:hover {
-  text-decoration: underline;
-  color: #ffdd57; /* un color contraste */
-}
-
-    
+    .phone-link:hover {
+      text-decoration: underline;
+      color: #ffdd57;
+    }
   </style>
 
   <div class="footer-container">
-
-    <!-- Columna 1: Logo y descripción -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <img src="logowhite.png" alt="El Turista logo" class="footer-logo">
       <p>Agencia de viajes con más de 20 años de experiencia.  
          Salidas desde San José hacia todo el país y el mundo.</p>
     </div>
 
-    <!-- Columna 2: Dirección -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <h4>📍 Dirección</h4>
       <p>San José de Mayo, Uruguay</p>
       <a href="https://maps.google.com/?q=San+José+de+Mayo+Uruguay" target="_blank" class="btn-maps">Ver en mapa</a>
     </div>
 
-    <!-- Columna 3: Enlaces -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <h4>Enlaces rápidos</h4>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -342,23 +324,48 @@
       </ul>
     </div>
 
-    <!-- Columna 4: Newsletter -->
-<div class="footer-col">
-  <h4>📞 ¿Preferís hablar?</h4>
-  <p>Llamanos y te asesoramos al instante:</p>
-  <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
-  
-  <div class="socials">
-    <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  </div>
-</div>
-
+    <div class="footer-col fade-in">
+      <h4>📞 ¿Preferís hablar?</h4>
+      <p>Llamanos y te asesoramos al instante:</p>
+      <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
+      <div class="socials">
+        <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
   </div>
 
-  <div class="footer-bottom">
+  <div class="footer-bottom fade-in">
     © 2025 El Turista — San José • Diseñado por Agustin Espinosa
   </div>
 </footer>
+
+<script>
+  function sendBusForm(e) {
+    e.preventDefault();
+    alert("✅ Solicitud enviada. Nos pondremos en contacto a la brevedad.");
+    document.getElementById("rentabusForm").reset();
+  }
+
+  // ------------------ FADE-IN ON SCROLL ------------------
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, i) => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.transitionDelay = `${i * 0.15}s`; // escalonado
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
 </body>
 </html>

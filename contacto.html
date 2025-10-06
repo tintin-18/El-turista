@@ -7,17 +7,16 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
   <style>
     /* 🎨 Estilos exclusivos de esta página */
-        header {
-  margin-bottom: 3rem;
-}
+    header { margin-bottom: 3rem; }
+
     .contact-hero {
-        text-align: center;
+      text-align: center;
       padding: 80px 20px;
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: #fff;
@@ -34,9 +33,7 @@
     }
 
     @media(max-width: 800px) {
-      .contact-wrap {
-        grid-template-columns: 1fr;
-      }
+      .contact-wrap { grid-template-columns: 1fr; }
     }
 
     .contact-card {
@@ -47,9 +44,7 @@
       transition: transform 0.2s;
     }
 
-    .contact-card:hover {
-      transform: translateY(-4px);
-    }
+    .contact-card:hover { transform: translateY(-4px); }
 
     form input, form textarea, form button {
       width: 100%;
@@ -70,9 +65,7 @@
       transition: background 0.2s;
     }
 
-    form button:hover {
-      background: var(--secondary);
-    }
+    form button:hover { background: var(--secondary); }
 
     .info-item {
       margin-bottom: 18px;
@@ -82,10 +75,7 @@
       font-size: 15px;
     }
 
-    .info-item span {
-      font-weight: 600;
-      color: var(--primary);
-    }
+    .info-item span { font-weight: 600; color: var(--primary); }
 
     .socials a {
       margin-right: 12px;
@@ -94,16 +84,28 @@
       color: var(--primary);
       transition: color 0.2s;
     }
-    .socials a:hover {
-      color: var(--secondary);
+
+    .socials a:hover { color: var(--secondary); }
+
+    /* ----------- FADE-IN ON SCROLL ------------- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(2rem);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
-<header>
+
+<header class="fade-in">
   <div class="container">
     <nav>
-      <div class="brand">
+      <div class="brand fade-in">
         <a href="index.html">
           <img src="logo.png" alt="El Turista logo" class="logoturista">
         </a>
@@ -111,8 +113,8 @@
           <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
         </div>
       </div>
-      <div class="navlinks">
-         <a href="index.html">Inicio</a>
+      <div class="navlinks fade-in">
+        <a href="index.html">Inicio</a>
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
         <a href="contacto.html">Contacto</a>
@@ -121,87 +123,76 @@
   </div>
 </header>
 
-
 <main class="container">
   <!-- Hero -->
-  <section class="contact-hero">
-    <h2>Hablemos de tu próximo viaje</h2>
-    <p>Estamos para ayudarte a planearlo desde San José al mundo.</p>
+  <section class="contact-hero fade-in">
+    <h2 class="fade-in">Hablemos de tu próximo viaje</h2>
+    <p class="fade-in">Estamos para ayudarte a planearlo desde San José al mundo.</p>
   </section>
 
   <!-- Contacto -->
   <section class="contact-wrap">
     <!-- 📩 Formulario -->
-    <div class="contact-card">
-  <h3 style="font-size:1.6rem; margin-bottom:10px;">Hablemos de tu próximo viaje 🌍</h3>
-  <p style="color:#555; margin-bottom:20px;">
-    Completá el formulario y nos pondremos en contacto lo antes posible.
-  </p>
+    <div class="contact-card fade-in">
+      <h3 style="font-size:1.6rem; margin-bottom:10px;">Hablemos de tu próximo viaje 🌍</h3>
+      <p style="color:#555; margin-bottom:20px;">Completá el formulario y nos pondremos en contacto lo antes posible.</p>
 
-  <form id="contactForm" onsubmit="submitForm(event)" style="display:flex;flex-direction:column;gap:14px;">
-    <input type="text" id="name" name="name" placeholder="✏️ Tu nombre" required />
-    <input type="email" id="email" name="email" placeholder="📧 Tu email" required />
-    <input type="text" id="phone" name="phone" placeholder="📱 Teléfono (opcional)" />
-    <textarea id="message" name="message" rows="6" placeholder="💬 Contanos tu consulta..." required></textarea>
-    <button type="submit" style="background:#0077ff;color:#fff;padding:14px;border:none;
-                                  border-radius:10px;font-size:1.1rem;font-weight:600;cursor:pointer;">
-      📩 Enviar mensaje
-    </button>
-  </form>
+      <form id="contactForm" onsubmit="submitForm(event)" style="display:flex;flex-direction:column;gap:14px;">
+        <input type="text" id="name" name="name" placeholder="✏️ Tu nombre" required />
+        <input type="email" id="email" name="email" placeholder="📧 Tu email" required />
+        <input type="text" id="phone" name="phone" placeholder="📱 Teléfono (opcional)" />
+        <textarea id="message" name="message" rows="6" placeholder="💬 Contanos tu consulta..." required></textarea>
+        <button type="submit">📩 Enviar mensaje</button>
+      </form>
 
-  <p style="font-size:14px;color:#777;margin-top:14px;">
-    También podés escribirnos por <a href="https://wa.me/5989XXXXXXX" style="color:#0077ff;font-weight:600;">WhatsApp</a> o en nuestras redes sociales.
-  </p>
-</div>
-
+      <p style="font-size:14px;color:#777;margin-top:14px;">
+        También podés escribirnos por <a href="https://wa.me/5989XXXXXXX" style="color:#0077ff;font-weight:600;">WhatsApp</a> o en nuestras redes sociales.
+      </p>
+    </div>
 
     <!-- 📍 Información -->
-<div class="contact-card" style="text-align:center;">
-  <h3 style="font-size:1.6rem; margin-bottom:10px;">Conectá con tu viaje ✨</h3>
-  <p style="color:#555; margin-bottom:20px;">
-    Estamos listos para ayudarte a diseñar la aventura que soñás.  
-    Elegí cómo querés hablar con nosotros 👇
-  </p>
+    <div class="contact-card fade-in" style="text-align:center;">
+      <h3 style="font-size:1.6rem; margin-bottom:10px;">Conectá con tu viaje ✨</h3>
+      <p style="color:#555; margin-bottom:20px;">Estamos listos para ayudarte a diseñar la aventura que soñás. Elegí cómo querés hablar con nosotros 👇</p>
 
-  <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:24px;">
-    <div style="flex:1;min-width:180px;">
-      <div style="font-size:2rem;">📲</div>
-      <h4>WhatsApp</h4>
-      <a href="https://wa.me/5989XXXXXXX" target="_blank" style="color:#0077ff;font-weight:600;">+598 92 227 722</a>
+      <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:24px;">
+        <div style="flex:1;min-width:180px;" class="fade-in">
+          <div style="font-size:2rem;">📲</div>
+          <h4>WhatsApp</h4>
+          <a href="https://wa.me/5989XXXXXXX" target="_blank" style="color:#0077ff;font-weight:600;">+598 92 227 722</a>
+        </div>
+
+        <div style="flex:1;min-width:180px;" class="fade-in">
+          <div style="font-size:2rem;">📧</div>
+          <h4>Email</h4>
+          <a href="mailto:bus.elturista@gmail.com" style="color:#0077ff;font-weight:600;">bus.elturista@gmail.com</a>
+        </div>
+
+        <div style="flex:1;min-width:180px;" class="fade-in">
+          <div style="font-size:2rem;">🌐</div>
+          <h4>Redes</h4>
+          <a href="https://www.instagram.com/elturista.uy/" target="_blank">Instagram</a> · 
+          <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank">Facebook</a>
+        </div>
+      </div>
+
+      <a href="https://wa.me/5989XXXXXXX" target="_blank"
+         style="display:inline-block;background:#0077ff;color:#fff;
+                padding:14px 26px;border-radius:10px;font-weight:700;
+                text-decoration:none;font-size:1.1rem;" class="fade-in">
+        🚀 Empezá tu viaje ahora
+      </a>
     </div>
-
-    <div style="flex:1;min-width:180px;">
-      <div style="font-size:2rem;">📧</div>
-      <h4>Email</h4>
-      <a href="mailto:bus.elturista@gmail.com" style="color:#0077ff;font-weight:600;">bus.elturista@gmail.com</a>
-    </div>
-
-    <div style="flex:1;min-width:180px;">
-      <div style="font-size:2rem;">🌐</div>
-      <h4>Redes</h4>
-      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank">Instagram</a> · 
-      <a href="https://www.instagram.com/elturista.uy/?utm_source=ig_web_button_share_sheet" target="_blank">Facebook</a> · 
-    </div>
-  </div>
-
-  <a href="https://wa.me/5989XXXXXXX" target="_blank"
-     style="display:inline-block;background:#0077ff;color:#fff;
-            padding:14px 26px;border-radius:10px;font-weight:700;
-            text-decoration:none;font-size:1.1rem;">
-    🚀 Empezá tu viaje ahora
-  </a>
-</div>
-
-
   </section>
 </main>
+
 <br><br>
+
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer fade-in">
   <style>
-    /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
     .footer {
-      background: #0d1b2a; /* azul profundo */
+      background: #0d1b2a;
       color: #e6e6e6;
       padding: 3rem 1rem 1rem;
     }
@@ -261,6 +252,7 @@
       text-decoration: none;
       transition: background 0.3s;
     }
+
     .btn-maps:hover {
       background: #415a77;
     }
@@ -270,6 +262,7 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+
     .newsletter-form input {
       flex: 1;
       padding: 0.6rem;
@@ -278,9 +271,11 @@
       background: #1b263b;
       color: #fff;
     }
+
     .newsletter-form input::placeholder {
       color: #8d99ae;
     }
+
     .newsletter-form button {
       background: #4da8da;
       color: #fff;
@@ -290,6 +285,7 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .newsletter-form button:hover {
       background: #1e90ff;
     }
@@ -297,12 +293,14 @@
     .socials {
       margin-top: 1rem;
     }
+
     .socials a {
       margin-right: 0.8rem;
       font-size: 1.3rem;
       color: #4da8da;
       transition: transform 0.2s, color 0.3s;
     }
+
     .socials a:hover {
       transform: scale(1.2);
       color: #1e90ff;
@@ -316,39 +314,34 @@
       border-top: 1px solid #415a77;
       padding-top: 1rem;
     }
+
     .phone-link {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff; /* si tu footer es azul */
-  text-decoration: none;
-}
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
 
-.phone-link:hover {
-  text-decoration: underline;
-  color: #ffdd57; /* un color contraste */
-}
-
-    
+    .phone-link:hover {
+      text-decoration: underline;
+      color: #ffdd57;
+    }
   </style>
 
   <div class="footer-container">
-
-    <!-- Columna 1: Logo y descripción -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <img src="logowhite.png" alt="El Turista logo" class="footer-logo">
       <p>Agencia de viajes con más de 20 años de experiencia.  
          Salidas desde San José hacia todo el país y el mundo.</p>
     </div>
 
-    <!-- Columna 2: Dirección -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <h4>📍 Dirección</h4>
       <p>San José de Mayo, Uruguay</p>
       <a href="https://maps.google.com/?q=San+José+de+Mayo+Uruguay" target="_blank" class="btn-maps">Ver en mapa</a>
     </div>
 
-    <!-- Columna 3: Enlaces -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <h4>Enlaces rápidos</h4>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -359,36 +352,41 @@
       </ul>
     </div>
 
-    <!-- Columna 4: Newsletter -->
-<div class="footer-col">
-  <h4>📞 ¿Preferís hablar?</h4>
-  <p>Llamanos y te asesoramos al instante:</p>
-  <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
-  
-  <div class="socials">
-    <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  </div>
-</div>
-
+    <div class="footer-col fade-in">
+      <h4>📞 ¿Preferís hablar?</h4>
+      <p>Llamanos y te asesoramos al instante:</p>
+      <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
+      <div class="socials">
+        <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
   </div>
 
-  <div class="footer-bottom">
+  <div class="footer-bottom fade-in">
     © 2025 El Turista — San José • Diseñado por Agustin Espinosa
   </div>
 </footer>
 
-
-
-
-
-<!-- Script -->
 <script>
   function submitForm(e) {
     e.preventDefault();
     alert("✅ Mensaje enviado con éxito. Te contactaremos a la brevedad.");
     document.getElementById("contactForm").reset();
   }
+
+  // Fade-in scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, i) => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.transitionDelay = `${i * 0.15}s`;
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
 </script>
 
 </body>

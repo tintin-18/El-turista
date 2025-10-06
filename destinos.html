@@ -7,21 +7,129 @@
   <meta name="description" content="Descubre todos los destinos turísticos que ofrece El Turista. Inspiración para tu próximo viaje desde San José." />
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ------------------ Fade-in global ------------------ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    /* ------------------ Gallery más ancha ------------------ */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* más ancho */
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    .card h3 {
+      margin: 12px 0 6px;
+      color: #0077ff;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      flex-grow: 1;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .btn {
+      margin-top: 12px;
+      display: inline-block;
+      text-decoration: none;
+      background: #0077ff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background: #005bb5;
+      transform: scale(1.05);
+    }
+
+    /* ------------------ Footer ------------------ */
+    .footer {
+      background: #0d1b2a;
+      color: #e6e6e6;
+      padding: 3rem 1rem 1rem;
+    }
+    .footer-container {
+      max-width: 75rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .footer-col h4 { font-size: 1.1rem; margin-bottom: 0.8rem; color: #fff; }
+    .footer-col p { color: #c9d6df; font-size: 0.95rem; line-height: 1.5; }
+    .footer-logo { height: 3rem; margin-bottom: 0.8rem; }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a { color: #c9d6df; text-decoration: none; transition: color 0.3s; }
+    .footer-col ul li a:hover { color: #4da8da; }
+    .btn-maps { display: inline-block; margin-top: 0.5rem; padding: 0.4rem 0.8rem; background: #1b263b; color: #fff; border-radius: 6px; font-size: 0.85rem; text-decoration: none; transition: background 0.3s; }
+    .btn-maps:hover { background: #415a77; }
+    .newsletter-form { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .newsletter-form input { flex: 1; padding: 0.6rem; border: 1px solid #415a77; border-radius: 6px; background: #1b263b; color: #fff; }
+    .newsletter-form input::placeholder { color: #8d99ae; }
+    .newsletter-form button { background: #4da8da; color: #fff; border: none; padding: 0.6rem 1rem; border-radius: 6px; cursor: pointer; transition: background 0.3s; }
+    .newsletter-form button:hover { background: #1e90ff; }
+    .socials { margin-top: 1rem; }
+    .socials a { margin-right: 0.8rem; font-size: 1.3rem; color: #4da8da; transition: transform 0.2s, color 0.3s; }
+    .socials a:hover { transform: scale(1.2); color: #1e90ff; }
+    .footer-bottom { text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #8d99ae; border-top: 1px solid #415a77; padding-top: 1rem; }
+    .phone-link { font-size: 1.2rem; font-weight: bold; color: #fff; text-decoration: none; }
+    .phone-link:hover { text-decoration: underline; color: #ffdd57; }
+  </style>
 </head>
 <body>
-<header>
+<header class="fade-in">
   <div class="container">
     <nav>
       <div class="brand">
         <a href="index.html">
           <img src="logo.png" alt="El Turista logo" class="logoturista">
         </a>
-        <div>
-          <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
-        </div>
+        <div><div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div></div>
       </div>
       <div class="navlinks">
-         <a href="index.html">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
         <a href="contacto.html">Contacto</a>
@@ -29,43 +137,44 @@
     </nav>
   </div>
 </header>
+
 <main class="container">
   <section class="section" style="margin-top:32px;">
-    <h1 style="color:#0077ff;text-align:center;">Destinos Turísticos</h1>
-    <p style="text-align:center;max-width:720px;margin:0 auto;">Inspirate y encontrá tu próximo destino. Viajes grupales y privados, experiencias únicas y rincones por descubrir.</p>
+    <h1 class="fade-in" style="color:#0077ff;text-align:center; font-size: 3rem;">Destinos Turísticos</h1>
+    <p class="fade-in" style="text-align:center;max-width:720px;margin:0 auto;">Inspirate y encontrá tu próximo destino. Viajes grupales y privados, experiencias únicas y rincones por descubrir.</p>
 
-    <div class="gallery" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:32px;">
-      <article class="card">
+    <div class="gallery">
+      <article class="card fade-in">
         <img src="gal11.jpg" alt="Cabo Polonio">
         <h3>Cabo Polonio</h3>
         <p>Un paraíso natural sin calles ni autos, dunas y lobos marinos. Ideal para desconectar.</p>
         <a href="rio.html" class="btn">Ver más</a>
       </article>
-      <article class="card">
-        <img src="gal12.jpeg" alt="Bariloche2">
-     <h3>Bariloche</h3>
-<p>Lagos, montañas y chocolate artesanal en la Patagonia argentina. Ideal para amantes de la aventura y la naturaleza.</p>
+      <article class="card fade-in">
+        <img src="gal12.jpeg" alt="Bariloche">
+        <h3>Bariloche</h3>
+        <p>Lagos, montañas y chocolate artesanal en la Patagonia argentina. Ideal para amantes de la aventura y la naturaleza.</p>
         <a href="rio.html" class="btn">Ver más</a>
       </article>
-      <article class="card">
+      <article class="card fade-in">
         <img src="gal9.jpg" alt="La Paloma">
         <h3>La Paloma</h3>
         <p>Playas extensas, surf y atardeceres inolvidables. El balneario ideal para familias y jóvenes.</p>
         <a href="rio.html" class="btn">Ver más</a>
       </article>
-      <article class="card">
+      <article class="card fade-in">
         <img src="gal13.jpg" alt="Salto Termal">
         <h3>Salto Termal</h3>
         <p>Relajación total en aguas termales, parques acuáticos y hoteles spa. Ideal para descansar.</p>
         <a href="rio.html" class="btn">Ver más</a>
       </article>
-      <article class="card">
+      <article class="card fade-in">
         <img src="gal10.jpg" alt="Montevideo Cultural">
         <h3>Montevideo Cultural</h3>
         <p>Teatros, museos, ferias y gastronomía. La capital uruguaya te espera con propuestas todo el año.</p>
         <a href="rio.html" class="btn">Ver más</a>
       </article>
-      <article class="card">
+      <article class="card fade-in">
         <img src="gal1.jpg" alt="Río de Janeiro">
         <h3>Río de Janeiro</h3>
         <p>La ciudad maravillosa: playas, samba y cultura brasileña. Salidas internacionales desde San José.</p>
@@ -75,72 +184,10 @@
   </section>
 </main>
 
-<style>
-.gallery img {
-  width: 100%;
-  height: 180px;        /* altura uniforme */
-  object-fit: cover;    /* recorta imágenes si es necesario */
-  border-radius: 12px;
-  transition: transform 0.3s;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-.card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-  margin: 12px 0 6px;
-  color: #0077ff;
-  font-size: 1.25rem;
-}
-
-.card p {
-  flex-grow: 1;
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.btn {
-  margin-top: 12px;
-  display: inline-block;
-  text-decoration: none;
-  background: #0077ff;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-align: center;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.btn:hover {
-  background: #005bb5;
-  transform: scale(1.05);
-}
-</style>
-<br><br>
-<!-- FOOTER -->
-<footer class="footer">
+<footer class="footer fade-in">
   <style>
-    /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
     .footer {
-      background: #0d1b2a; /* azul profundo */
+      background: #0d1b2a;
       color: #e6e6e6;
       padding: 3rem 1rem 1rem;
     }
@@ -200,6 +247,7 @@
       text-decoration: none;
       transition: background 0.3s;
     }
+
     .btn-maps:hover {
       background: #415a77;
     }
@@ -209,6 +257,7 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+
     .newsletter-form input {
       flex: 1;
       padding: 0.6rem;
@@ -217,9 +266,11 @@
       background: #1b263b;
       color: #fff;
     }
+
     .newsletter-form input::placeholder {
       color: #8d99ae;
     }
+
     .newsletter-form button {
       background: #4da8da;
       color: #fff;
@@ -229,6 +280,7 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .newsletter-form button:hover {
       background: #1e90ff;
     }
@@ -236,12 +288,14 @@
     .socials {
       margin-top: 1rem;
     }
+
     .socials a {
       margin-right: 0.8rem;
       font-size: 1.3rem;
       color: #4da8da;
       transition: transform 0.2s, color 0.3s;
     }
+
     .socials a:hover {
       transform: scale(1.2);
       color: #1e90ff;
@@ -255,39 +309,34 @@
       border-top: 1px solid #415a77;
       padding-top: 1rem;
     }
+
     .phone-link {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff; /* si tu footer es azul */
-  text-decoration: none;
-}
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
 
-.phone-link:hover {
-  text-decoration: underline;
-  color: #ffdd57; /* un color contraste */
-}
-
-    
+    .phone-link:hover {
+      text-decoration: underline;
+      color: #ffdd57;
+    }
   </style>
 
   <div class="footer-container">
-
-    <!-- Columna 1: Logo y descripción -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <img src="logowhite.png" alt="El Turista logo" class="footer-logo">
       <p>Agencia de viajes con más de 20 años de experiencia.  
          Salidas desde San José hacia todo el país y el mundo.</p>
     </div>
 
-    <!-- Columna 2: Dirección -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <h4>📍 Dirección</h4>
       <p>San José de Mayo, Uruguay</p>
       <a href="https://maps.google.com/?q=San+José+de+Mayo+Uruguay" target="_blank" class="btn-maps">Ver en mapa</a>
     </div>
 
-    <!-- Columna 3: Enlaces -->
-    <div class="footer-col">
+    <div class="footer-col fade-in">
       <h4>Enlaces rápidos</h4>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -298,23 +347,35 @@
       </ul>
     </div>
 
-    <!-- Columna 4: Newsletter -->
-<div class="footer-col">
-  <h4>📞 ¿Preferís hablar?</h4>
-  <p>Llamanos y te asesoramos al instante:</p>
-  <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
-  
-  <div class="socials">
-    <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  </div>
-</div>
-
+    <div class="footer-col fade-in">
+      <h4>📞 ¿Preferís hablar?</h4>
+      <p>Llamanos y te asesoramos al instante:</p>
+      <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
+      <div class="socials">
+        <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
   </div>
 
-  <div class="footer-bottom">
+  <div class="footer-bottom fade-in">
     © 2025 El Turista — San José • Diseñado por Agustin Espinosa
   </div>
 </footer>
+
+<script>
+  // ------------------ Fade-in mientras scrolleas ------------------
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if(entry.isIntersecting){
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 400); // 400ms entre cada elemento
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
