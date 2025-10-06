@@ -69,37 +69,8 @@
     }
     .card button.cta-link:hover { background: var(--primary,#0077ff); }
 
-    /* Modal base */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background: rgba(0,0,0,0.6);
-    }
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 16px;
-      max-width: 600px;
-      position: relative;
-    }
-    .modal-content h2 { margin-top: 0; }
-    .close {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-      color: #333;
-    }
-    .close:hover { color: #000; }
+
+  /* ------------------ CTA BOX ------------------ */
 
     .cta-box { text-align: center; margin-top: 50px; }
     .cta-box a {
@@ -114,6 +85,71 @@
       transition: background 0.2s;
     }
     .cta-box a:hover { background: var(--secondary,#00c3ff); }
+
+/* ------------------ Modal estilo nota de viaje ------------------ */
+/* ------------------ MODAL ESTILO STICKY NOTE ------------------ */
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+
+  /* centrar contenido usando flex solo cuando esté visible */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.modal-content {
+  position: relative;
+  background: #fdf1c7; /* color papel amarillento */
+  padding: 30px 25px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  font-family: 'Nunito', sans-serif;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transform: rotate(-2deg); /* ligera rotación para efecto casual */
+  border-top: 6px solid #e5c16f; /* línea tipo adhesivo */
+  animation: fadeIn 0.3s ease;
+}
+
+/* Chincheta */
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  width: 16px;
+  height: 16px;
+  background: red;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Cerrar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #d35400;
+}
+.close:hover { color: #e67e22; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px) rotate(-2deg); }
+  to { opacity: 1; transform: translateY(0) rotate(-2deg); }
+}
+
+
   </style>
 </head>
 <body>
@@ -422,14 +458,30 @@
 </main>
 
 <script>
-function openModal(id) { document.getElementById(id).style.display = "block"; }
-function closeModal(id) { document.getElementById(id).style.display = "none"; }
-window.onclick = function(event) {
-  document.querySelectorAll('.modal').forEach(modal => {
-    if (event.target == modal) modal.style.display = "none";
-  });
-}
+  // Abrir modal
+  function openModal(id) {
+    // Cerramos cualquier modal abierto antes
+    document.querySelectorAll('.modal').forEach(modal => modal.style.display = "none");
+
+    // Abrimos solo el modal indicado
+    const modal = document.getElementById(id);
+    if(modal) modal.style.display = "flex"; // usamos flex para centrar
+  }
+
+  // Cerrar modal
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if(modal) modal.style.display = "none";
+  }
+
+  // Cerrar modal al hacer clic fuera del contenido
+  window.onclick = function(event) {
+    if(event.target.classList.contains('modal')) {
+      event.target.style.display = "none";
+    }
+  }
 </script>
+
 <br><br>
 <!-- FOOTER -->
 <footer class="footer">
