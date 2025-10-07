@@ -19,7 +19,7 @@
 /* ------------------ HERO LANDING ------------------ */
 .hero-landing {
   position: relative;
-  background: url('elturistabus.jpg') no-repeat center center/cover;
+  background: url('quijote2.png') no-repeat center center/cover;
   height: 100vh;
   display: flex;
   justify-content: center;  /* centro horizontal */
@@ -33,7 +33,6 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(13, 71, 161, 0.6); /* overlay azul semitransparente */
   z-index: 1;
 }
 
