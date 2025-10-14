@@ -120,7 +120,12 @@
         width: 90%;
         max-width: 500px;
       }
-    }
+  .about-section img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
 
     /* ----------- FADE-IN ON SCROLL ------------- */
     .fade-in {
@@ -136,11 +141,10 @@
   </style>
 </head>
 <body>
-
-<header class="fade-in">
+<header>
   <div class="container">
     <nav>
-      <div class="brand fade-in">
+      <div class="brand">
         <a href="index.html">
           <img src="logo.png" alt="El Turista logo" class="logoturista">
         </a>
@@ -148,7 +152,7 @@
           <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
         </div>
       </div>
-      <div class="navlinks fade-in">
+      <div class="navlinks">
          <a href="index.html">Inicio</a>
         <a href="blog.html">Blog</a>
         <a href="sobre.html">Sobre Nosotros</a>
@@ -269,10 +273,11 @@
 <br><br>
 
 <!-- FOOTER -->
-<footer class="footer fade-in">
+<footer class="footer">
   <style>
+    /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
     .footer {
-      background: #0d1b2a;
+      background: #0d1b2a; /* azul profundo */
       color: #e6e6e6;
       padding: 3rem 1rem 1rem;
     }
@@ -332,7 +337,6 @@
       text-decoration: none;
       transition: background 0.3s;
     }
-
     .btn-maps:hover {
       background: #415a77;
     }
@@ -342,7 +346,6 @@
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-
     .newsletter-form input {
       flex: 1;
       padding: 0.6rem;
@@ -351,11 +354,9 @@
       background: #1b263b;
       color: #fff;
     }
-
     .newsletter-form input::placeholder {
       color: #8d99ae;
     }
-
     .newsletter-form button {
       background: #4da8da;
       color: #fff;
@@ -365,7 +366,6 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     .newsletter-form button:hover {
       background: #1e90ff;
     }
@@ -373,14 +373,12 @@
     .socials {
       margin-top: 1rem;
     }
-
     .socials a {
       margin-right: 0.8rem;
       font-size: 1.3rem;
       color: #4da8da;
       transition: transform 0.2s, color 0.3s;
     }
-
     .socials a:hover {
       transform: scale(1.2);
       color: #1e90ff;
@@ -394,34 +392,39 @@
       border-top: 1px solid #415a77;
       padding-top: 1rem;
     }
-
     .phone-link {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #fff;
-      text-decoration: none;
-    }
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff; /* si tu footer es azul */
+  text-decoration: none;
+}
 
-    .phone-link:hover {
-      text-decoration: underline;
-      color: #ffdd57;
-    }
+.phone-link:hover {
+  text-decoration: underline;
+  color: #ffdd57; /* un color contraste */
+}
+
+    
   </style>
 
   <div class="footer-container">
-    <div class="footer-col fade-in">
+
+    <!-- Columna 1: Logo y descripción -->
+    <div class="footer-col">
       <img src="logowhite.png" alt="El Turista logo" class="footer-logo">
       <p>Agencia de viajes con más de 20 años de experiencia.  
          Salidas desde San José hacia todo el país y el mundo.</p>
     </div>
 
-    <div class="footer-col fade-in">
+    <!-- Columna 2: Dirección -->
+    <div class="footer-col">
       <h4>📍 Dirección</h4>
       <p>San José de Mayo, Uruguay</p>
       <a href="https://maps.google.com/?q=San+José+de+Mayo+Uruguay" target="_blank" class="btn-maps">Ver en mapa</a>
     </div>
 
-    <div class="footer-col fade-in">
+    <!-- Columna 3: Enlaces -->
+    <div class="footer-col">
       <h4>Enlaces rápidos</h4>
       <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -432,18 +435,21 @@
       </ul>
     </div>
 
-    <div class="footer-col fade-in">
-      <h4>📞 ¿Preferís hablar?</h4>
-      <p>Llamanos y te asesoramos al instante:</p>
-      <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
-      <div class="socials">
-        <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      </div>
-    </div>
+    <!-- Columna 4: Newsletter -->
+<div class="footer-col">
+  <h4>📞 ¿Preferís hablar?</h4>
+  <p>Llamanos y te asesoramos al instante:</p>
+  <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
+  
+  <div class="socials">
+    <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  </div>
+</div>
+
   </div>
 
-  <div class="footer-bottom fade-in">
+  <div class="footer-bottom">
     © 2025 El Turista — San José • Diseñado por Agustin Espinosa
   </div>
 </footer>
