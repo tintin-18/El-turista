@@ -12,17 +12,31 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="styles.css">
  <style>
-  /* ------------------ FADE IN ------------------ */
+/* ------------------ ANIMACIÓN EN SCROLL ------------------ */
 .fade-in {
   opacity: 0;
-  transform: translateY(2rem); /* empieza un poquito abajo */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(40px); /* empieza un poco abajo */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
 }
 
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ------------------ VARIANTES DE RETRASO ------------------ */
+.fade-in.delay-1 { transition-delay: 0.2s; }
+.fade-in.delay-2 { transition-delay: 0.4s; }
+.fade-in.delay-3 { transition-delay: 0.6s; }
+.fade-in.delay-4 { transition-delay: 0.8s; }
+.fade-in.delay-5 { transition-delay: 1s; }
+
+/* ------------------ VARIANTE MÁS SUAVE ------------------ */
+.fade-in.slow {
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
 
 /* ------------------ GLOBAL ------------------ */
 body { font-family: 'Nunito', sans-serif; margin:0; padding:0; }
@@ -99,8 +113,6 @@ header { margin-bottom: 3rem; }
 .cta-box a:hover { background: var(--secondary,#00c3ff); }
 
 /* ------------------ MODAL ------------------ */
-/* MODAL GENERAL */
-/* MODAL GENERAL */
 .modal {
   display: none;
   position: fixed;
@@ -158,6 +170,14 @@ header { margin-bottom: 3rem; }
   z-index: 10001; /* encima del pin */
 }
 .close:hover { color: #e67e22; }
+
+.cta-link {
+  transition: transform 0.2s ease, background 0.2s;
+}
+.cta-link:hover {
+  transform: scale(1.05);
+}
+
 
 /* Animación */
 @keyframes fadeIn {
@@ -234,11 +254,11 @@ header { margin-bottom: 3rem; }
     <p>Tips, destinos y experiencias únicas para inspirar tu próxima aventura</p>
   </section>
 
-  <section id="posts" class="section fade-in">
+  <section id="posts" class="section">
     <div class="grid">
 
       <!-- Card 1 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">🇺🇾 Uruguay</div>
         <h4>5 tips para viajar a Colonia del Sacramento</h4>
         <p>Descubrí los mejores lugares históricos, restaurantes y actividades para tu escapada.</p>
@@ -263,7 +283,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 2 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">🇧🇷 Brasil</div>
         <h4>Río de Janeiro: qué hacer en 3 días</h4>
         <p>Itinerario completo, consejos de transporte y lugares imperdibles en la ciudad brasileña.</p>
@@ -284,7 +304,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 3 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">❤️ Parejas</div>
         <h4>Viajes en pareja: escapadas románticas en Uruguay</h4>
         <p>Ideas de destinos y experiencias para disfrutar en pareja sin salir del país.</p>
@@ -309,7 +329,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 4 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">🇦🇷 Argentina</div>
         <h4>Buenos Aires en 48 horas</h4>
         <p>Descubrí los barrios más emblemáticos, cafés históricos y actividades imperdibles en la capital argentina.</p>
@@ -330,7 +350,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 5 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">🏔️ Aventura</div>
         <h4>Aventura en la Cordillera de los Andes</h4>
         <p>Rutas de trekking, refugios y paisajes que no te podés perder en tu próxima escapada.</p>
@@ -352,7 +372,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 6 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">🏖️ Punta del Este</div>
         <h4>Punta del Este: guía de playas y vida nocturna</h4>
         <p>Desde playas tranquilas hasta los mejores paradores y clubs nocturnos.</p>
@@ -374,7 +394,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 7 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">🍷 Gastronomía</div>
         <h4>Ruta del vino en Uruguay</h4>
         <p>Visita bodegas, degustaciones y consejos para disfrutar del vino uruguayo como un experto.</p>
@@ -396,7 +416,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 8 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">👨‍👩‍👧 Familias</div>
         <h4>Escapadas familiares: destinos ideales en Uruguay</h4>
         <p>Lugares para disfrutar con niños, actividades al aire libre y alojamiento recomendado.</p>
@@ -418,7 +438,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 9 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">✈️ Tips de viaje</div>
         <h4>Cómo preparar tu viaje internacional sin estrés</h4>
         <p>Tips de planificación, documentos, equipaje y seguridad para viajar tranquilo.</p>
@@ -440,7 +460,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 10 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">🛶 Turismo activo</div>
         <h4>Turismo activo: kayak, rafting y aventuras en Uruguay</h4>
         <p>Lugares para los que buscan emoción y deportes al aire libre.</p>
@@ -462,7 +482,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 11 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">🎭 Cultura</div>
         <h4>Cultura y festivales en Brasil</h4>
         <p>Eventos imperdibles, carnavales y fiestas locales que todo viajero debería conocer.</p>
@@ -484,7 +504,7 @@ header { margin-bottom: 3rem; }
       </div>
 
       <!-- Card 12 -->
-      <article class="card">
+      <article class="card fade-in">
         <div class="category">🏕️ Naturaleza</div>
         <h4>Camping y naturaleza en Uruguay</h4>
         <p>Los mejores campings, reservas naturales y actividades al aire libre.</p>
@@ -508,59 +528,70 @@ header { margin-bottom: 3rem; }
     </div>
   </section>
 
-  <div class="cta-box">
+  <div class="cta-box fade-in">
     <h3>¿Querés más inspiración viajera?</h3>
     <a href="contacto.html">✈️ Planificá tu viaje con nosotros</a>
   </div>
 </main>
 
 <script>
-  // Abrir modal
-  function openModal(id) {
-    // Cerramos cualquier modal abierto antes
+function openModal(id) {
+  // Cerramos cualquier modal abierto antes
+  document.querySelectorAll('.modal').forEach(modal => modal.style.display = "none");
+
+  // Abrimos solo el modal indicado
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.style.display = "flex"; // usamos flex para centrar
+
+    // Esperamos que el modal se renderice y luego movemos la vista un poco más arriba
+    setTimeout(() => {
+      const y = modal.getBoundingClientRect().top + window.pageYOffset - 150; // desplazamiento hacia arriba
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }, 100);
+  }
+}
+
+// Cerrar modal
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) modal.style.display = "none";
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
+  }
+}
+
+// Cerrar con tecla Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
     document.querySelectorAll('.modal').forEach(modal => modal.style.display = "none");
-
-    // Abrimos solo el modal indicado
-    const modal = document.getElementById(id);
-    if(modal) modal.style.display = "flex"; // usamos flex para centrar
   }
+});
 
-  // Cerrar modal
-  function closeModal(id) {
-    const modal = document.getElementById(id);
-    if(modal) modal.style.display = "none";
-  }
-
-  // Cerrar modal al hacer clic fuera del contenido
-  window.onclick = function(event) {
-    if(event.target.classList.contains('modal')) {
-      event.target.style.display = "none";
-    }
-  }
 
   // Detecta los elementos con clase 'fade-in'
 const fadeElements = document.querySelectorAll('.fade-in');
 
 const handleScroll = () => {
-  const triggerBottom = window.innerHeight * 0.85; // cuándo aparece el elemento
+  const triggerBottom = window.innerHeight;
 
-  fadeElements.forEach(el => {
+  fadeElements.forEach((el, index) => {
     const elTop = el.getBoundingClientRect().top;
-
     if (elTop < triggerBottom) {
-      el.classList.add('show');
+      setTimeout(() => el.classList.add('show'), index * 50);
     }
   });
 };
 
-// Ejecuta al hacer scroll y al cargar la página
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('load', handleScroll);
-
 </script>
 
 <br><br>
-<!-- FOOTER -->
 <footer class="footer">
   <style>
     /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
