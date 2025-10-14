@@ -105,6 +105,17 @@
       display: block;
     }
 
+    .pictogramatitulo {
+  font-size: 2rem; /* tamaño normal en desktop */
+}
+
+@media (max-width: 768px) {
+  .pictogramatitulo {
+    font-size: 1.6rem; /* más chico en móviles */
+  }
+}
+
+
     @media (max-width: 768px) {
       .about-section {
         text-align: center;
@@ -120,9 +131,10 @@
         width: 90%;
         max-width: 500px;
       }
-  .about-section img {
-    max-width: 90%;
+        .pictograma2 img {
+    max-width: 100% !important;
     height: auto;
+    margin: 0 auto;
   }
 }
 
@@ -184,9 +196,9 @@
 
   <!-- Inclusividad y Valores -->
 <section class="about-section fade-in" style="padding:60px 20px; background:#f8faff; border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.08); margin-bottom:60px;">
-  <h3 class="fade-in" style="text-align:center; font-size:2rem; margin-bottom:30px;">🤝 Inclusividad y Bienestar en Cada Viaje</h3>
+  <h3 class="pictogramatitulo fade-in" style="text-align:center; margin-bottom:30px;">🤝 Inclusividad y Bienestar en Cada Viaje</h3>
 
-  <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:30px;">
+  <div class="pictograma2"  style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:30px;">
     <img src="pictograma.png" alt="Pictograma de inclusividad, calma, ayuda, bus y neurodiversidad" class="fade-in" style="max-width:420px; border-radius:16px;">
 
     <div style="flex:1; min-width:280px; max-width:600px;">
