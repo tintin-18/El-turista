@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paquete — Cataratas y Ciudad del Este | El Turista</title>
+
+  <!-- Fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Page styles -->
+  <style>
+    :root{
+      --bg:#f2fbff;
+      --card:#fff;
+      --muted:#6b7c84;
+      --primary:#0c9aa6; /* agua/verde naturaleza */
+      --accent:#065a60;
+      --shadow: 0 8px 28px rgba(3,15,17,0.06);
+      --radius:16px;
+    }
+
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+    /* ------------------ HEADER ------------------ */
+header {
+  background: white;
+  border-bottom: 0.125rem solid var(--accent); /* 2px */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-bottom: 2rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0.75rem 0; /* 12px */
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem; /* 10px */
+}
+
+.brand img {
+  height: 2.625rem; /* 42px */
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem; /* 12px */
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navlinks a:hover {
+  color: var(--secondary);
+}
+
+.navlinks .cta {
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.375rem 0.875rem; /* 6px 14px */
+  border-radius: 0.5rem; /* 8px */
+  transition: background 0.3s;
+}
+
+.navlinks .cta:hover {
+  background: var(--secondary);
+}
+
+  :root{
+    --bg:#f2fbff;
+    --card:#fff;
+    --muted:#6b7c84;
+    --primary:#0c9aa6; /* agua termal */
+    --accent:#065a60;
+    --shadow: 0 8px 28px rgba(3,15,17,0.06);
+    --radius:16px;
+  }
+
+  html,body{margin:0;padding:0;background:var(--bg);font-family:'Nunito',system-ui,-apple-system,"Segoe UI",Roboto,Montserrat, "Helvetica Neue", Arial; color:#05343a;}
+.container {
+  width: 100%;
+  max-width: 75rem; /* 1200px */
+  margin: 0 auto;
+  padding: 0 1rem; /* 16px */
+}
+
+    .hero{
+background: linear-gradient(180deg, rgba(178, 34, 34, 0.85), rgba(139, 0, 0, 0.85)), url('img/iguazu-hero.jpg') center/cover no-repeat;
+      border-radius: 20px;
+      color: #fff;
+      padding: 64px 20px;
+      box-shadow: 0 12px 36px rgba(2,28,30,0.16);
+      margin-bottom: 2rem;
+    }
+    .hero-inner{display:grid;grid-template-columns: 1fr 420px; gap: 2rem; align-items:center;}
+    .hero-title{font-size:2.1rem;margin:0 0 0.6rem 0;font-weight:700;}
+    .hero-sub{margin:0;color:rgba(255,255,255,0.95);font-size:1.05rem;line-height:1.6;}
+    .hero-card{background:rgba(255,255,255,0.08);padding:18px;border-radius:12px;text-align:center;}
+    .price-tag{font-size:1.6rem;font-weight:800;color:#fff;}
+    .pill{display:inline-block;background:rgba(255,255,255,0.12);padding:6px 10px;border-radius:999px;font-weight:700;margin-top:10px;font-size:0.95rem}
+
+    @media(max-width:980px){
+      .hero-inner{grid-template-columns:1fr}
+      .hero{padding:48px 16px}
+    }
+
+    .two-col{display:grid;grid-template-columns: 1fr 360px; gap:24px; align-items:start;}
+    @media(max-width:980px){.two-col{grid-template-columns:1fr}}
+
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;}
+    h2,h3{color:#07373a;margin-top:0}
+    p.lead{color:var(--muted);font-size:1.05rem;line-height:1.6}
+
+    .gallery{display:flex;gap:16px;overflow-x:auto;padding:8px 6px;scroll-behavior:smooth;}
+    .gallery::-webkit-scrollbar{height:8px}
+    .gallery::-webkit-scrollbar-thumb{background:var(--primary);border-radius:8px}
+    .gallery-item{min-width:220px;border-radius:12px;overflow:hidden;flex-shrink:0;cursor:pointer;box-shadow:0 8px 20px rgba(2,20,20,0.06)}
+    .gallery-item img{width:100%;height:140px;object-fit:cover;display:block;transition:transform .3s}
+    .gallery-item:hover img{transform:scale(1.04)}
+
+    .itinerary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .it-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,#ffffff, #f7feff);box-shadow:0 8px 18px rgba(4,20,20,0.04)}
+    .it-card h4{margin:0 0 8px 0}
+    .it-card p{margin:0;color:var(--muted)}
+
+    .includes ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .includes li{padding-left:28px;position:relative;color:var(--muted);font-weight:600}
+    .includes li::before{content:"✔";position:absolute;left:0;top:0;color:var(--primary);font-weight:900}
+
+    .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+    .tip{background:linear-gradient(180deg,#f8ffff,#ffffff);padding:14px;border-radius:12px;text-align:center;font-weight:600;color:var(--accent)}
+
+    .experience-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+    .exp{border-radius:12px;overflow:hidden}
+    .exp img{width:100%;height:140px;object-fit:cover;display:block}
+    .exp .exp-body{padding:12px;background:#fff}
+
+    .cta{display:flex;gap:12px;align-items:center;justify-content:center;margin:28px 0}
+    .btn-primary{background:var(--primary);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:0 8px 18px rgba(12,154,166,0.16)}
+    .btn-secondary{background:transparent;border:2px solid var(--primary);color:var(--primary);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    .fade-in{opacity:0;transform:translateY(2rem);transition:opacity .8s ease-out,transform .8s ease-out}
+    .fade-in.show{opacity:1;transform:none}
+
+    footer {
+  border-top: 0.125rem solid var(--accent); /* 2px */
+  padding: 1.25rem 0; /* 20px */
+  color: var(--muted);
+  background: var(--white);
+  text-align: center;
+}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <a href="index.html">
+          <img src="logo.png" alt="El Turista logo" class="logoturista">
+        </a>
+        <div>
+          <div style="font-size:12px;color:var(--muted)">Desde San José, Uruguay</div>
+        </div>
+      </div>
+      <div class="navlinks">
+         <a href="index.html">Inicio</a>
+        <a href="blog.html">Blog</a>
+        <a href="sobre.html">Sobre Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="container" role="main" aria-labelledby="paquete-title">
+  <section class="hero fade-in" aria-label="Cataratas y Ciudad del Este — hero">
+    <div class="hero-inner">
+      <div>
+        <h1 class="hero-title" id="paquete-title">Cataratas del Iguazú y Compras en Ciudad del Este</h1>
+        <p class="hero-sub">Explorá las majestuosas Cataratas del Iguazú, disfrutá de la naturaleza y combiná tu viaje con compras imperdibles en Ciudad del Este, todo en un solo paquete pensado para vos.</p>
+
+        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
+          <span class="pill">Alojamiento 4★ / 5★</span>
+          <span class="pill">Traslados incluidos</span>
+          <span class="pill">Entradas a parque y tour de compras</span>
+        </div>
+
+        <div style="margin-top:18px">
+          <a class="btn-primary" href="contacto.html" title="Consultar paquete cataratas">consultar paquete</a>
+          <a class="btn-secondary" href="#detalles" title="Ver más detalles">ver detalles</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Resumen rápido del paquete">
+        <div style="font-size:0.9rem;color:rgba(255,255,255,0.9)">desde</div>
+        <div class="price-tag">u$ 599 <span style="font-weight:600;font-size:0.8rem;display:block">por persona* (promo)</span></div>
+        <div style="margin-top:8px;color:rgba(255,255,255,0.9)">4 días · 3 noches · Traslados y entradas incl.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="card fade-in" aria-labelledby="galeria-cataratas">
+    <h2 id="galeria-cataratas">Galería — Cataratas y Compras</h2>
+    <p class="lead">Vistas impresionantes de las cataratas, paseos por senderos naturales y experiencias de compras en Ciudad del Este.</p>
+
+    <div class="gallery" role="list" aria-label="Galería de imágenes cataratas y compras">
+      <div class="gallery-item" role="listitem" tabindex="0">
+        <img src="img/iguazu-1.jpg" alt="Vista panorámica de las cataratas" loading="lazy">
+      </div>
+      <div class="gallery-item" role="listitem" tabindex="0">
+        <img src="img/iguazu-2.jpg" alt="Sendero en el parque nacional" loading="lazy">
+      </div>
+      <div class="gallery-item" role="listitem" tabindex="0">
+        <img src="img/iguazu-3.jpg" alt="Paseo en bote bajo las cataratas" loading="lazy">
+      </div>
+      <div class="gallery-item" role="listitem" tabindex="0">
+        <img src="img/ceu-1.jpg" alt="Compras en Ciudad del Este" loading="lazy">
+      </div>
+      <div class="gallery-item" role="listitem" tabindex="0">
+        <img src="img/ceu-2.jpg" alt="Productos y tiendas locales" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <div class="two-col" style="margin-top:24px; gap:24px;">
+    <section class="card fade-in" id="detalles" aria-labelledby="detalles-title">
+      <h2 id="detalles-title">Detalles del paquete</h2>
+      <p class="lead">Paquete ideal para quienes quieren combinar naturaleza y compras: alojamiento seleccionado, traslados, entradas al Parque Nacional Iguazú y tour guiado de compras en Ciudad del Este.</p>
+
+      <h3 style="margin-top:18px">Qué incluye</h3>
+      <div class="includes" aria-hidden="false">
+        <ul>
+          <li>Alojamiento 3 noches en hotel 4★ (desayuno incluido).</li>
+          <li>Traslados completos: aeropuerto — hotel — parque — tour de compras — regreso.</li>
+          <li>Entradas al Parque Nacional Iguazú, circuito superior e inferior.</li>
+          <li>Tour de compras guiado en Ciudad del Este con tips y recomendaciones.</li>
+          <li>Seguro viajero básico y asistencia 24/7.</li>
+        </ul>
+      </div>
+
+      <h3 style="margin-top:16px">Itinerario (ejemplo — 4 días)</h3>
+      <div class="itinerary" role="list">
+        <article class="it-card" role="listitem">
+          <h4>📍 Día 1 — Llegada y acomodación</h4>
+          <p>Recepción en aeropuerto y traslado al hotel. Tiempo libre para descansar y familiarizarse con el entorno.</p>
+        </article>
+
+        <article class="it-card" role="listitem">
+          <h4>📍 Día 2 — Parque Nacional Iguazú</h4>
+          <p>Desayuno y recorrido completo por senderos del parque: circuitos superior e inferior, pasarelas y miradores. Opción de paseo en bote bajo las cataratas.</p>
+        </article>
+
+        <article class="it-card" role="listitem">
+          <h4>📍 Día 3 — Tour de compras Ciudad del Este</h4>
+          <p>Traslado a Ciudad del Este y visita guiada por tiendas y mercados destacados. Tips para aprovechar precios y productos locales.</p>
+        </article>
+
+        <article class="it-card" role="listitem">
+          <h4>📍 Día 4 — Cierre y regreso</h4>
+          <p>Check-out y traslado al aeropuerto. Posibilidad de último paseo por el entorno natural antes de la salida.</p>
+        </article>
+      </div>
+
+      <h3 style="margin-top:16px">Recomendado para</h3>
+      <p>Amantes de la naturaleza y las experiencias de compras, familias, parejas y grupos que buscan un viaje completo y dinámico.</p>
+
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn-primary" href="contacto.html" title="Reservar paquete cataratas">reservar ahora</a>
+        <a class="btn-secondary" href="mailto:info@elturista.uy?subject=Consulta%20Cataratas%20y%20Compras" title="Contactar por mail">consultar por mail</a>
+      </div>
+    </section>
+
+    <aside class="card fade-in" aria-labelledby="info-rapida">
+      <h3 id="info-rapida">Información rápida</h3>
+      <p style="margin-top:0;color:var(--muted)">Duración sugerida: 4 días / 3 noches • Grupo mínimo: 2 • Idioma guía: Español / Portugués.</p>
+
+      <h4 style="margin-top:12px">Servicios destacados</h4>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="padding:10px 0;border-bottom:1px dashed #e8f8f9;color:var(--muted)"><i class="fa-solid fa-bus" style="color:var(--primary);margin-right:8px"></i> Traslados incluidos</li>
+        <li style="padding:10px 0;border-bottom:1px dashed #e8f8f9;color:var(--muted)"><i class="fa-solid fa-tree" style="color:var(--primary);margin-right:8px"></i> Acceso al Parque Nacional Iguazú</li>
+        <li style="padding:10px 0;border-bottom:1px dashed #e8f8f9;color:var(--muted)"><i class="fa-solid fa-shopping-bag" style="color:var(--primary);margin-right:8px"></i> Tour de compras guiado</li>
+        <li style="padding:10px 0;color:var(--muted)"><i class="fa-solid fa-shield-halved" style="color:var(--primary);margin-right:8px"></i> Seguro y asistencia 24/7</li>
+      </ul>
+
+      <h4 style="margin-top:14px">Consejos prácticos</h4>
+      <div class="tips" style="margin-top:8px">
+        <div class="tip">Llevá calzado cómodo para caminar por senderos</div>
+        <div class="tip">Protector solar y repelente de insectos</div>
+        <div class="tip">Dinero en efectivo y tarjeta para compras en Ciudad del Este</div>
+        <div class="tip">Cargá batería y cámara para fotos increíbles</div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="card fade-in" style="margin-top:24px;" aria-labelledby="exp-dest">
+    <h2 id="exp-dest">Experiencias destacadas</h2>
+    <p class="lead">Complementá tu viaje con actividades únicas: caminatas por la selva, paseos en bote, y recorridos por tiendas y mercados locales.</p>
+
+    <div class="experience-cards" style="margin-top:12px">
+      <div class="exp card">
+        <img src="img/paseo-bote.jpg" alt="Paseo en bote bajo las cataratas">
+        <div class="exp-body">
+          <h4>Paseo en bote</h4>
+          <p style="color:var(--muted);margin:8px 0 0">Vive la emoción de acercarte a la base de las cataratas, una experiencia única y refrescante.</p>
+        </div>
+      </div>
+
+      <div class="exp card">
+        <img src="img/selva-iguazu.jpg" alt="Senderos de la selva en Iguazú">
+        <div class="exp-body">
+          <h4>Caminatas en la selva</h4>
+          <p style="color:var(--muted);margin:8px 0 0">Descubre flora y fauna autóctona mientras recorres senderos guiados por la selva misionera.</p>
+        </div>
+      </div>
+
+      <div class="exp card">
+        <img src="img/ceu-compras.jpg" alt="Recorrido de compras en Ciudad del Este">
+        <div class="exp-body">
+          <h4>Compras guiadas</h4>
+          <p style="color:var(--muted);margin:8px 0 0">Aprende a aprovechar los mejores precios y productos de la ciudad con nuestro guía experto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta fade-in" role="region" aria-label="Llamado a la acción">
+    <a class="btn-primary" href="contacto.html">reservá tu viaje a Iguazú</a>
+    <a class="btn-secondary" href="paquetes.html">ver otros paquetes</a>
+  </div>
+
+  <p style="font-size:0.85rem;color:var(--muted);text-align:center;margin-top:6px;">*Precio referencial por persona en base doble. Consultar fechas y disponibilidad.</p>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <style>
+    /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
+    .footer {
+      background: #0d1b2a; /* azul profundo */
+      color: #e6e6e6;
+      padding: 3rem 1rem 1rem;
+    }
+
+    .footer-container {
+      max-width: 75rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: #fff;
+    }
+
+    .footer-col p {
+      color: #c9d6df;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .footer-logo {
+      height: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-col ul li a {
+      color: #c9d6df;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-col ul li a:hover {
+      color: #4da8da;
+    }
+
+    .btn-maps {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: #1b263b;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn-maps:hover {
+      background: #415a77;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.6rem;
+      border: 1px solid #415a77;
+      border-radius: 6px;
+      background: #1b263b;
+      color: #fff;
+    }
+    .newsletter-form input::placeholder {
+      color: #8d99ae;
+    }
+    .newsletter-form button {
+      background: #4da8da;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .newsletter-form button:hover {
+      background: #1e90ff;
+    }
+
+    .socials {
+      margin-top: 1rem;
+    }
+    .socials a {
+      margin-right: 0.8rem;
+      font-size: 1.3rem;
+      color: #4da8da;
+      transition: transform 0.2s, color 0.3s;
+    }
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #1e90ff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #8d99ae;
+      border-top: 1px solid #415a77;
+      padding-top: 1rem;
+    }
+    .phone-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff; /* si tu footer es azul */
+  text-decoration: none;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+  color: #ffdd57; /* un color contraste */
+}
+.experience-card img {
+  width: 100%;
+  height: 12.5rem; /* antes 200px */
+  object-fit: cover; /* recorta y mantiene proporción */
+  border-radius: 12px;
+  display: block;
+}
+
+.itinerary-card img {
+  width: 100%;
+  height: 11.25rem; /* antes 180px */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .experience-card img {
+    height: 9.375rem; /* antes 150px */
+  }
+}
+
+    
+  </style>
+
+  <div class="footer-container">
+
+    <!-- Columna 1: Logo y descripción -->
+    <div class="footer-col">
+      <img src="logowhite.png" alt="El Turista logo" class="footer-logo">
+      <p>Agencia de viajes con más de 20 años de experiencia.  
+         Salidas desde San José hacia todo el país y el mundo.</p>
+    </div>
+
+    <!-- Columna 2: Dirección -->
+    <div class="footer-col">
+      <h4>📍 Dirección</h4>
+      <p>San José de Mayo, Uruguay</p>
+      <a href="https://maps.google.com/?q=San+José+de+Mayo+Uruguay" target="_blank" class="btn-maps">Ver en mapa</a>
+    </div>
+
+    <!-- Columna 3: Enlaces -->
+    <div class="footer-col">
+      <h4>Enlaces rápidos</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="destinos.html">Destinos</a></li>
+        <li><a href="sobre.html">Sobre Nosotros</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 4: Newsletter -->
+<div class="footer-col">
+  <h4>📞 ¿Preferís hablar?</h4>
+  <p>Llamanos y te asesoramos al instante:</p>
+  <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
+  
+  <div class="socials">
+    <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  </div>
+</div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 El Turista — San José • Diseñado por Agustin Espinosa
+  </div>
+</footer>
+
+<script>
+  // FADE-IN ON SCROLL
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('show');
+      obs.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(el => appearOnScroll.observe(el));
+
+  // GALLERY — modal overlay
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => openModal(item.querySelector('img').src, item.querySelector('img').alt));
+    item.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(item.querySelector('img').src, item.querySelector('img').alt); }});
+  });
+
+  function openModal(src, alt){
+    const overlay = document.createElement('div');
+    overlay.style.cssText = "position:fixed;inset:0;background:rgba(2,8,10,0.85);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px;";
+    overlay.setAttribute('role','dialog');
+    overlay.setAttribute('aria-label','Imagen ampliada: '+alt);
+
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = alt;
+    img.style.cssText = "max-width:96%;max-height:90%;border-radius:12px;box-shadow:0 18px 48px rgba(0,0,0,0.6)";
+    overlay.appendChild(img);
+
+    overlay.addEventListener('click', () => overlay.remove());
+    document.body.appendChild(overlay);
+  }
+</script>
+</body>
+</html>
