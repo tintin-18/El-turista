@@ -86,72 +86,79 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeElements.forEach(el => observer.observe(el));
 
-// ==== LIGHTBOX GALERÍA CON FLECHAS ====
+// ==== LIGHTBOX CARRUSEL CON SWIPE ====
 (function() {
-  const galleryImages = document.querySelectorAll('#galeria .gallery-grid img');
-
-  // Crear el lightbox
   const lightbox = document.createElement('div');
   lightbox.className = 'lightbox';
   lightbox.innerHTML = `
-    <button id="lb-close" aria-label="Cerrar imagen">✕</button>
-    <button id="lb-prev" class="lightbox-arrow">&#10094;</button>
+    <button class="close-btn" aria-label="Cerrar">✕</button>
+    <button class="prev-btn" aria-label="Anterior">‹</button>
+    <button class="next-btn" aria-label="Siguiente">›</button>
     <img src="" alt="">
-    <button id="lb-next" class="lightbox-arrow">&#10095;</button>
   `;
   document.body.appendChild(lightbox);
 
   const imgTag = lightbox.querySelector('img');
-  const btnClose = document.getElementById('lb-close');
-  const btnPrev = document.getElementById('lb-prev');
-  const btnNext = document.getElementById('lb-next');
+  const btnClose = lightbox.querySelector('.close-btn');
+  const btnPrev = lightbox.querySelector('.prev-btn');
+  const btnNext = lightbox.querySelector('.next-btn');
 
+  // Todas las imágenes de la galería
+  const galleryImgs = Array.from(document.querySelectorAll('#galeria .gallery-grid img'));
   let currentIndex = 0;
 
-  // Abrir lightbox al click en imagen
-  galleryImages.forEach((img, index) => {
-    img.addEventListener('click', () => {
-      currentIndex = index;
-      imgTag.src = img.src;
-      imgTag.alt = img.alt || '';
-      lightbox.classList.add('show');
-    });
-  });
-
-  // Funciones navegación
-  function showImage(index) {
-    currentIndex = (index + galleryImages.length) % galleryImages.length;
-    const img = galleryImages[currentIndex];
-    imgTag.src = img.src;
-    imgTag.alt = img.alt || '';
+  function showLightbox(index) {
+    currentIndex = index;
+    imgTag.src = galleryImgs[currentIndex].dataset.full || galleryImgs[currentIndex].src;
+    imgTag.alt = galleryImgs[currentIndex].alt || '';
+    lightbox.classList.add('show');
   }
 
-  btnPrev.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showImage(currentIndex - 1);
-  });
-
-  btnNext.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showImage(currentIndex + 1);
-  });
-
-  // Cerrar lightbox
   function closeLightbox() {
     lightbox.classList.remove('show');
     imgTag.src = '';
   }
 
-  btnClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
+    imgTag.src = galleryImgs[currentIndex].dataset.full || galleryImgs[currentIndex].src;
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % galleryImgs.length;
+    imgTag.src = galleryImgs[currentIndex].dataset.full || galleryImgs[currentIndex].src;
+  }
+
+  galleryImgs.forEach((img, i) => {
+    img.addEventListener('click', () => showLightbox(i));
   });
 
-  // Teclado
+  btnClose.addEventListener('click', closeLightbox);
+  btnPrev.addEventListener('click', showPrev);
+  btnNext.addEventListener('click', showNext);
+
+  // Cerrar con Esc
   document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('show')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') btnPrev.click();
-    if (e.key === 'ArrowRight') btnNext.click();
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') showPrev();
+    if(e.key === 'ArrowRight') showNext();
   });
+
+  // Swipe móvil
+  let startX = 0;
+  imgTag.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  imgTag.addEventListener('touchend', e => {
+    let endX = e.changedTouches[0].clientX;
+    if(endX - startX > 50) showPrev();   // swipe derecha
+    if(startX - endX > 50) showNext();   // swipe izquierda
+  });
+
+  // Clic fuera de la imagen cierra
+  lightbox.addEventListener('click', e => {
+    if(e.target === lightbox) closeLightbox();
+  });
+
 })();

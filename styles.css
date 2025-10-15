@@ -427,53 +427,52 @@ footer {
   overflow: hidden;
 }
 
-/* ==== LIGHTBOX GLOBAL ==== */
+/* ==== LIGHTBOX CARRUSEL ==== */
 .lightbox {
   position: fixed;
   inset: 0;
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.75); /* un poco más oscuro para destacar */
+  background: rgba(0,0,0,0.85);
   z-index: 9999;
-  padding: 20px;
+  overflow: hidden;
 }
 
-.lightbox.show {
-  display: flex;
-}
+.lightbox.show { display: flex; }
 
 .lightbox img {
-  width: 80vw;
-  height: auto;
-  max-height: 80vh;
+  max-width: 90%;
+  max-height: 90%;
   border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-  object-fit: cover; /* mantiene proporción 16:9 */
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.lightbox button {
+.lightbox button.close-btn,
+.lightbox button.prev-btn,
+.lightbox button.next-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
   background: rgba(255,255,255,0.9);
   border: none;
   border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 18px;
+  padding: 8px 12px;
+  font-size: 20px;
   cursor: pointer;
-  transition: background 0.3s;
+  z-index: 10;
 }
 
-.lightbox button:hover {
-  background: #ffffff;
-}
+.lightbox button.close-btn { top: 16px; right: 16px; }
+.lightbox button.prev-btn { top: 50%; left: 16px; transform: translateY(-50%); }
+.lightbox button.next-btn { top: 50%; right: 16px; transform: translateY(-50%); }
 
-/* Ajustes para pantallas móviles */
+.lightbox button:hover { background: white; }
+
+/* Móvil: touch swipe */
 @media (max-width: 768px) {
   .lightbox img {
     width: 90vw;
-    max-height: 50vh;
+    max-height: 60vh;
   }
 }
 
