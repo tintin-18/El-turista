@@ -93,6 +93,7 @@
       gap: 20px;
       flex-wrap: wrap;
       margin-bottom: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .bus-gallery img {
@@ -102,6 +103,12 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
       display: block;
     }
+
+    .bus-gallery img:hover {
+  transform: scale(1.05); /* zoom ligero */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2); /* sombra más intensa */
+  cursor: pointer;
+}
 
     .pictogramatitulo {
   font-size: 2rem; /* tamaño normal en desktop */
@@ -489,6 +496,30 @@
   }, appearOptions);
 
   faders.forEach(fader => appearOnScroll.observe(fader));
+  
+  // Selecciona todas las imágenes de la galería
+  document.querySelectorAll('.bus-gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      // Crea el overlay
+      const overlay = document.createElement('div');
+      overlay.style.cssText = `
+        position: fixed; top:0; left:0; width:100%; height:100%;
+        background: rgba(0,0,0,0.8); display:flex; justify-content:center; align-items:center;
+        z-index:9999; cursor:pointer;
+      `;
+      // Imagen grande dentro del overlay
+      const modalImg = document.createElement('img');
+      modalImg.src = img.src;
+      modalImg.style.cssText = 'max-width:90%; max-height:90%; border-radius:12px;';
+      overlay.appendChild(modalImg);
+
+      // Cerrar al clickearel overlay
+      overlay.addEventListener('click', () => overlay.remove());
+
+      document.body.appendChild(overlay);
+    });
+  });
+
 </script>
 
 </body>
