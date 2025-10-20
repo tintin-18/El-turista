@@ -11,164 +11,354 @@
 
   <!-- Page styles -->
   <style>
-    :root{
-      --bg:#f2fbff;
-      --card:#fff;
-      --muted:#6b7c84;
-      --primary:#0c9aa6; /* agua/verde naturaleza */
-      --accent:#065a60;
-      --shadow: 0 8px 28px rgba(3,15,17,0.06);
-      --radius:16px;
-    }
-
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+   :root{
+  --bg:#f2fbff;
+  --card:#fff;
+  --muted:#6b7c84;
+  --primary:#b22222; /* rojo elegante para hero */
+  --accent:#8b0000;
+  --shadow:0 8px 28px rgba(3,15,17,0.06);
+  --radius:16px;
 }
 
-    /* ------------------ HEADER ------------------ */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Montserrat', sans-serif;
+}
+
+html, body {
+  background:var(--bg);
+  color:#05343a;
+}
+
+.container {
+  width:100%;
+  max-width:75rem;
+  margin:0 auto;
+  padding:0 1rem;
+}
+
+/* ------------------ HEADER ------------------ */
 header {
-  background: white;
-  border-bottom: 0.125rem solid var(--accent); /* 2px */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  margin-bottom: 2rem;
+  background:white;
+  border-bottom:0.125rem solid var(--accent);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  margin-bottom:2rem;
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0.75rem 0; /* 12px */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  padding:0.75rem 0;
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem; /* 10px */
+  display:flex;
+  align-items:center;
+  gap:0.625rem;
 }
 
 .brand img {
-  height: 2.625rem; /* 42px */
+  height:2.625rem;
 }
 
 .navlinks {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem; /* 12px */
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:0.75rem;
 }
 
 .navlinks a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  transition: color 0.3s;
+  text-decoration:none;
+  color:#05343a;
+  font-weight:600;
+  transition:color 0.3s;
 }
 
 .navlinks a:hover {
-  color: var(--secondary);
+  color:var(--accent);
 }
 
 .navlinks .cta {
-  background: var(--primary);
-  color: var(--white);
-  padding: 0.375rem 0.875rem; /* 6px 14px */
-  border-radius: 0.5rem; /* 8px */
-  transition: background 0.3s;
+  background:var(--primary);
+  color:#fff;
+  padding:0.375rem 0.875rem;
+  border-radius:0.5rem;
+  transition:background 0.3s;
 }
 
 .navlinks .cta:hover {
-  background: var(--secondary);
+  background:var(--accent);
 }
 
-  :root{
-    --bg:#f2fbff;
-    --card:#fff;
-    --muted:#6b7c84;
-    --primary:#0c9aa6; /* agua termal */
-    --accent:#065a60;
-    --shadow: 0 8px 28px rgba(3,15,17,0.06);
-    --radius:16px;
-  }
-
-  html,body{margin:0;padding:0;background:var(--bg);font-family:'Nunito',system-ui,-apple-system,"Segoe UI",Roboto,Montserrat, "Helvetica Neue", Arial; color:#05343a;}
-.container {
-  width: 100%;
-  max-width: 75rem; /* 1200px */
-  margin: 0 auto;
-  padding: 0 1rem; /* 16px */
+/* ------------------ HERO ------------------ */
+.hero{
+  background: linear-gradient(180deg, rgba(178, 34, 34, 0.85), rgba(139, 0, 0, 0.85)), url('img/iguazu-hero.jpg') center/cover no-repeat;
+  border-radius:20px;
+  color:#fff;
+  padding:64px 20px;
+  box-shadow:0 12px 36px rgba(2,28,30,0.16);
+  margin-bottom:2rem;
 }
 
-    .hero{
-background: linear-gradient(180deg, rgba(178, 34, 34, 0.85), rgba(139, 0, 0, 0.85)), url('img/iguazu-hero.jpg') center/cover no-repeat;
-      border-radius: 20px;
-      color: #fff;
-      padding: 64px 20px;
-      box-shadow: 0 12px 36px rgba(2,28,30,0.16);
-      margin-bottom: 2rem;
-    }
-    .hero-inner{display:grid;grid-template-columns: 1fr 420px; gap: 2rem; align-items:center;}
-    .hero-title{font-size:2.1rem;margin:0 0 0.6rem 0;font-weight:700;}
-    .hero-sub{margin:0;color:rgba(255,255,255,0.95);font-size:1.05rem;line-height:1.6;}
-    .hero-card{background:rgba(255,255,255,0.08);padding:18px;border-radius:12px;text-align:center;}
-    .price-tag{font-size:1.6rem;font-weight:800;color:#fff;}
-    .pill{display:inline-block;background:rgba(255,255,255,0.12);padding:6px 10px;border-radius:999px;font-weight:700;margin-top:10px;font-size:0.95rem}
-
-    @media(max-width:980px){
-      .hero-inner{grid-template-columns:1fr}
-      .hero{padding:48px 16px}
-    }
-
-    .two-col{display:grid;grid-template-columns: 1fr 360px; gap:24px; align-items:start;}
-    @media(max-width:980px){.two-col{grid-template-columns:1fr}}
-
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;}
-    h2,h3{color:#07373a;margin-top:0}
-    p.lead{color:var(--muted);font-size:1.05rem;line-height:1.6}
-
-    .gallery{display:flex;gap:16px;overflow-x:auto;padding:8px 6px;scroll-behavior:smooth;}
-    .gallery::-webkit-scrollbar{height:8px}
-    .gallery::-webkit-scrollbar-thumb{background:var(--primary);border-radius:8px}
-    .gallery-item{min-width:220px;border-radius:12px;overflow:hidden;flex-shrink:0;cursor:pointer;box-shadow:0 8px 20px rgba(2,20,20,0.06)}
-    .gallery-item img{width:100%;height:140px;object-fit:cover;display:block;transition:transform .3s}
-    .gallery-item:hover img{transform:scale(1.04)}
-
-    .itinerary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .it-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,#ffffff, #f7feff);box-shadow:0 8px 18px rgba(4,20,20,0.04)}
-    .it-card h4{margin:0 0 8px 0}
-    .it-card p{margin:0;color:var(--muted)}
-
-    .includes ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-    .includes li{padding-left:28px;position:relative;color:var(--muted);font-weight:600}
-    .includes li::before{content:"✔";position:absolute;left:0;top:0;color:var(--primary);font-weight:900}
-
-    .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-    .tip{background:linear-gradient(180deg,#f8ffff,#ffffff);padding:14px;border-radius:12px;text-align:center;font-weight:600;color:var(--accent)}
-
-    .experience-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-    .exp{border-radius:12px;overflow:hidden}
-    .exp img{width:100%;height:140px;object-fit:cover;display:block}
-    .exp .exp-body{padding:12px;background:#fff}
-
-    .cta{display:flex;gap:12px;align-items:center;justify-content:center;margin:28px 0}
-    .btn-primary{background:var(--primary);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:0 8px 18px rgba(12,154,166,0.16)}
-    .btn-secondary{background:transparent;border:2px solid var(--primary);color:var(--primary);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
-
-    .fade-in{opacity:0;transform:translateY(2rem);transition:opacity .8s ease-out,transform .8s ease-out}
-    .fade-in.show{opacity:1;transform:none}
-
-    footer {
-  border-top: 0.125rem solid var(--accent); /* 2px */
-  padding: 1.25rem 0; /* 20px */
-  color: var(--muted);
-  background: var(--white);
-  text-align: center;
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:2rem;
+  align-items:center;
 }
+
+.hero-title{
+  font-size:2.1rem;
+  margin-bottom:0.6rem;
+  font-weight:700;
+}
+
+.hero-sub{
+  font-size:1.05rem;
+  line-height:1.6;
+  color:rgba(255,255,255,0.95);
+}
+
+.hero-card{
+  background:rgba(255,255,255,0.08);
+  padding:18px;
+  border-radius:12px;
+  text-align:center;
+}
+
+.price-tag{
+  font-size:1.6rem;
+  font-weight:800;
+  color:#fff;
+}
+
+.pill{
+  display:inline-block;
+  background:rgba(255,255,255,0.12);
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:700;
+  margin-top:10px;
+  font-size:0.95rem;
+}
+
+/* Ajuste mobile hero */
+@media(max-width:980px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero{padding:48px 16px}
+}
+
+/* ------------------ GRID 2 COLUMNAS ------------------ */
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 360px;
+  gap:24px;
+  align-items:start;
+}
+
+@media(max-width:980px){
+  .two-col{grid-template-columns:1fr}
+}
+
+/* ------------------ CARDS ------------------ */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:20px;
+}
+
+h2,h3{
+  color:#07373a;
+  margin-top:0;
+}
+
+p.lead{
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.6;
+}
+
+/* ------------------ GALLERY ------------------ */
+.gallery{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  padding:8px 6px;
+  scroll-behavior:smooth;
+}
+
+.gallery::-webkit-scrollbar{
+  height:8px;
+}
+
+.gallery::-webkit-scrollbar-thumb{
+  background:var(--primary);
+  border-radius:8px;
+}
+
+.gallery-item{
+  min-width:220px;
+  border-radius:12px;
+  overflow:hidden;
+  flex-shrink:0;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(2,20,20,0.06);
+}
+
+.gallery-item img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  display:block;
+  transition:transform .3s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.04);
+}
+
+/* ------------------ ITINERARIO ------------------ */
+.itinerary{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+
+.it-card{
+  padding:18px;
+  border-radius:12px;
+  background:linear-gradient(180deg,#ffffff,#f7feff);
+  box-shadow:0 8px 18px rgba(4,20,20,0.04);
+}
+
+.it-card h4{margin-bottom:8px;}
+.it-card p{margin:0;color:var(--muted);}
+
+/* ------------------ INCLUDES ------------------ */
+.includes ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px;
+}
+
+.includes li{
+  padding-left:28px;
+  position:relative;
+  color:var(--muted);
+  font-weight:600;
+}
+
+.includes li::before{
+  content:"✔";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--primary);
+  font-weight:900;
+}
+
+/* ------------------ TIPS ------------------ */
+.tips{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+}
+
+.tip{
+  background:linear-gradient(180deg,#f8ffff,#ffffff);
+  padding:14px;
+  border-radius:12px;
+  text-align:center;
+  font-weight:600;
+  color:var(--accent);
+}
+
+/* ------------------ EXPERIENCES ------------------ */
+.experience-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
+}
+
+.exp{
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.exp img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  display:block;
+}
+
+.exp .exp-body{
+  padding:12px;
+  background:#fff;
+}
+
+/* ------------------ CTA BUTTONS ------------------ */
+.cta{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  margin:28px 0;
+}
+
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:800;
+  box-shadow:0 8px 18px rgba(12,154,166,0.16);
+}
+
+.btn-secondary{
+  background:transparent;
+  border:2px solid var(--primary);
+  border-color: black;
+  color:black;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+/* ------------------ FADE-IN ------------------ */
+.fade-in{
+  opacity:0;
+  transform:translateY(2rem);
+  transition:opacity .8s ease-out,transform .8s ease-out;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:none;
+}
+
+/* ------------------ FOOTER ------------------ */
+footer{
+  border-top:0.125rem solid var(--accent);
+  padding:1.25rem 0;
+  color:var(--muted);
+  background:#0d1b2a;
+  text-align:center;
+}
+
   </style>
 </head>
 <body>
@@ -199,17 +389,19 @@ background: linear-gradient(180deg, rgba(178, 34, 34, 0.85), rgba(139, 0, 0, 0.8
       <div>
         <h1 class="hero-title" id="paquete-title">Cataratas del Iguazú y Compras en Ciudad del Este</h1>
         <p class="hero-sub">Explorá las majestuosas Cataratas del Iguazú, disfrutá de la naturaleza y combiná tu viaje con compras imperdibles en Ciudad del Este, todo en un solo paquete pensado para vos.</p>
+<div style="margin-top:20px; display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
+    <span class="pill">Alojamiento 4★ / 5★</span>
+    <span class="pill">Traslados incluidos</span>
+    <span class="pill">Entradas a parque y tour de compras</span>
+  </div>
 
-        <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
-          <span class="pill">Alojamiento 4★ / 5★</span>
-          <span class="pill">Traslados incluidos</span>
-          <span class="pill">Entradas a parque y tour de compras</span>
-        </div>
+  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-top:10px;">
+    <a class="btn-primary" href="contacto.html" title="Consultar paquete cataratas">consultar paquete</a>
+    <a class="btn-secondary" href="#detalles" title="Ver más detalles">ver detalles</a>
+  </div>
+</div>
 
-        <div style="margin-top:18px">
-          <a class="btn-primary" href="contacto.html" title="Consultar paquete cataratas">consultar paquete</a>
-          <a class="btn-secondary" href="#detalles" title="Ver más detalles">ver detalles</a>
-        </div>
       </div>
 
       <aside class="hero-card" aria-label="Resumen rápido del paquete">
@@ -483,28 +675,20 @@ background: linear-gradient(180deg, rgba(178, 34, 34, 0.85), rgba(139, 0, 0, 0.8
   text-decoration: underline;
   color: #ffdd57; /* un color contraste */
 }
-.experience-card img {
-  width: 100%;
-  height: 12.5rem; /* antes 200px */
-  object-fit: cover; /* recorta y mantiene proporción */
-  border-radius: 12px;
-  display: block;
+
+    .hidden-link {
+  color: inherit;
+  text-decoration: none;
+  background: transparent;
 }
 
-.itinerary-card img {
-  width: 100%;
-  height: 11.25rem; /* antes 180px */
-  object-fit: cover;
-  border-radius: 12px;
+/* Evita cambios de color en visitado, hover o active */
+.hidden-link:visited,
+.hidden-link:hover,
+.hidden-link:active {
+  color: inherit;
+  text-decoration: none;
 }
-
-@media (max-width: 768px) {
-  .experience-card img {
-    height: 9.375rem; /* antes 150px */
-  }
-}
-
-    
   </style>
 
   <div class="footer-container">
@@ -550,8 +734,8 @@ background: linear-gradient(180deg, rgba(178, 34, 34, 0.85), rgba(139, 0, 0, 0.8
   </div>
 
   <div class="footer-bottom">
-    © 2025 El Turista — San José • Diseñado por Agustin Espinosa
-  </div>
+    © 2025 El Turista — San José • Diseñado por  <a class="hidden-link" href="https://tintin-18.github.io/portafoliopersonal">Agustin Espinosa</a>
+
 </footer>
 
 <script>

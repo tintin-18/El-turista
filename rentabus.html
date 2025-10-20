@@ -294,7 +294,19 @@
   color: #ffdd57; /* un color contraste */
 }
 
-    
+    .hidden-link {
+  color: inherit;
+  text-decoration: none;
+  background: transparent;
+}
+
+/* Evita cambios de color en visitado, hover o active */
+.hidden-link:visited,
+.hidden-link:hover,
+.hidden-link:active {
+  color: inherit;
+  text-decoration: none;
+}
   </style>
 
   <div class="footer-container">
@@ -340,8 +352,8 @@
   </div>
 
   <div class="footer-bottom">
-    © 2025 El Turista — San José • Diseñado por Agustin Espinosa
-  </div>
+    © 2025 El Turista — San José • Diseñado por  <a class="hidden-link" href="https://tintin-18.github.io/portafoliopersonal">Agustin Espinosa</a>
+
 </footer>
 
 <script>

@@ -11,14 +11,47 @@
 
   <!-- Page styles (self-contained for easy drop-in) -->
 <style>
-    * {
+   /* ------------------ GLOBAL RESET ------------------ */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
 
-    /* ------------------ HEADER ------------------ */
+/* ------------------ THEME / ROOT ------------------ */
+:root{
+  --bg:#f2fbff;
+  --card:#fff;
+  --muted:#6b7c84;
+  --primary:#0c9aa6; /* agua termal */
+  --accent:#065a60;
+  --shadow: 0 8px 28px rgba(3,15,17,0.06);
+  --radius:16px;
+  --white: #ffffff;
+  --text: #05343a;
+  --secondary: #065a60;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  font-family:'Nunito',system-ui,-apple-system,"Segoe UI",Roboto,Montserrat, "Helvetica Neue", Arial;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ------------------ LAYOUT CONTAINER ------------------ */
+.container {
+  width: 100%;
+  max-width: 75rem; /* 1200px */
+  margin: 0 auto;
+  padding: 0 1rem; /* 16px */
+}
+
+/* ------------------ HEADER ------------------ */
 header {
   background: white;
   border-bottom: 0.125rem solid var(--accent); /* 2px */
@@ -27,7 +60,6 @@ header {
   z-index: 1000;
   margin-bottom: 2rem;
 }
-
 nav {
   display: flex;
   align-items: center;
@@ -35,35 +67,25 @@ nav {
   flex-wrap: wrap;
   padding: 0.75rem 0; /* 12px */
 }
-
 .brand {
   display: flex;
   align-items: center;
   gap: 0.625rem; /* 10px */
 }
-
-.brand img {
-  height: 2.625rem; /* 42px */
-}
-
+.brand img { height: 2.625rem; /* 42px */ }
 .navlinks {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.75rem; /* 12px */
 }
-
 .navlinks a {
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
   transition: color 0.3s;
 }
-
-.navlinks a:hover {
-  color: var(--secondary);
-}
-
+.navlinks a:hover { color: var(--secondary); }
 .navlinks .cta {
   background: var(--primary);
   color: var(--white);
@@ -71,117 +93,232 @@ nav {
   border-radius: 0.5rem; /* 8px */
   transition: background 0.3s;
 }
+.navlinks .cta:hover { background: var(--secondary); }
 
-.navlinks .cta:hover {
-  background: var(--secondary);
+/* ------------------ HERO ------------------ */
+.hero{
+  background: linear-gradient(180deg, rgba(12,154,166,0.95), rgba(6,90,96,0.95)), url('img/termas-hero.jpg') center/cover no-repeat;
+  border-radius: 20px;
+  color: #fff;
+  padding: 64px 20px;
+  box-shadow: 0 12px 36px rgba(2,28,30,0.16);
+  margin-bottom: 2rem;
+}
+.hero-inner{
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap: 2rem;
+  align-items:center;
+}
+.hero-title{
+  font-size:2.1rem;
+  margin:0 0 0.6rem 0;
+  font-weight:700;
+}
+.hero-sub{
+  margin:0;
+  color:rgba(255,255,255,0.95);
+  font-size:1.05rem;
+  line-height:1.6;
 }
 
-  :root{
-    --bg:#f2fbff;
-    --card:#fff;
-    --muted:#6b7c84;
-    --primary:#0c9aa6; /* agua termal */
-    --accent:#065a60;
-    --shadow: 0 8px 28px rgba(3,15,17,0.06);
-    --radius:16px;
-  }
+/* hero card (summary) */
+.hero-card{
+  background:rgba(255,255,255,0.08);
+  padding:18px;
+  border-radius:12px;
+  text-align:center;
+  /* keep desktop appearance */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+.price-tag{
+  font-size:1.6rem;
+  font-weight:800;
+  color:#fff;
+  display:inline-block; /* helps wrapping on small widths */
+  line-height:1;
+}
+.price-tag span{ font-weight:600;font-size:0.8rem;display:block;margin-top:6px; }
 
-  html,body{margin:0;padding:0;background:var(--bg);font-family:'Nunito',system-ui,-apple-system,"Segoe UI",Roboto,Montserrat, "Helvetica Neue", Arial; color:#05343a;}
-.container {
-  width: 100%;
-  max-width: 75rem; /* 1200px */
-  margin: 0 auto;
-  padding: 0 1rem; /* 16px */
+/* pills */
+.pill{
+  display:inline-block;
+  background:rgba(255,255,255,0.12);
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:700;
+  margin-top:10px;
+  font-size:0.95rem;
+  white-space:nowrap;
 }
 
+/* ------------------ GRID LAYOUT ------------------ */
+.two-col{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:24px;
+  align-items:start;
+}
 
-  /* HERO */
-  .hero{
-    background: linear-gradient(180deg, rgba(12,154,166,0.95), rgba(6,90,96,0.95)), url('img/termas-hero.jpg') center/cover no-repeat;
-    border-radius: 20px;
-    color: #fff;
-    padding: 64px 20px;
-    box-shadow: 0 12px 36px rgba(2,28,30,0.16);
-    margin-bottom: 2rem;
-  }
-  .hero-inner{display:grid;grid-template-columns: 1fr 420px; gap: 2rem; align-items:center;}
-  .hero-title{font-size:2.1rem;margin:0 0 0.6rem 0;font-weight:700;}
-  .hero-sub{margin:0;color:rgba(255,255,255,0.95);font-size:1.05rem;line-height:1.6;}
-  .hero-card{background:rgba(255,255,255,0.08);padding:18px;border-radius:12px;text-align:center;}
-  .price-tag{font-size:1.6rem;font-weight:800;color:#fff;}
-  .pill{display:inline-block;background:rgba(255,255,255,0.12);padding:6px 10px;border-radius:999px;font-weight:700;margin-top:10px;font-size:0.95rem}
+/* ------------------ CONTENT CARDS ------------------ */
+.card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px; }
+h2,h3{ color:#07373a; margin-top:0; }
+p.lead{ color:var(--muted); font-size:1.05rem; line-height:1.6; }
 
-  @media(max-width:980px){
-    .hero-inner{grid-template-columns:1fr}
-    .hero{padding:48px 16px}
-  }
+/* ------------------ GALLERY ------------------ */
+.gallery{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  padding:8px 6px;
+  scroll-behavior:smooth;
+}
+.gallery::-webkit-scrollbar{ height:8px }
+.gallery::-webkit-scrollbar-thumb{ background:var(--primary); border-radius:8px }
+.gallery-item{
+  min-width:220px;
+  border-radius:12px;
+  overflow:hidden;
+  flex-shrink:0;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(2,20,20,0.06);
+}
+.gallery-item img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  display:block;
+  transition:transform .3s;
+}
+.gallery-item:hover img{ transform:scale(1.04) }
 
-  /* GRID LAYOUT */
-  .two-col{display:grid;grid-template-columns: 1fr 360px; gap:24px; align-items:start;}
-  @media(max-width:980px){.two-col{grid-template-columns:1fr}}
+/* ------------------ ITINERARY / INCLUDES / TIPS / EXPERIENCES ------------------ */
+.itinerary{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.it-card{ padding:18px; border-radius:12px; background:linear-gradient(180deg,#ffffff, #f7feff); box-shadow:0 8px 18px rgba(4,20,20,0.04) }
+.it-card h4{ margin:0 0 8px 0 }
+.it-card p{ margin:0; color:var(--muted) }
 
-  /* CONTENT CARDS */
-  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;}
-  h2,h3{color:#07373a;margin-top:0}
-  p.lead{color:var(--muted);font-size:1.05rem;line-height:1.6}
+.includes ul{ list-style:none; padding:0; margin:0; display:grid; gap:10px }
+.includes li{ padding-left:28px; position:relative; color:var(--muted); font-weight:600 }
+.includes li::before{ content:"✔"; position:absolute; left:0; top:0; color:var(--primary); font-weight:900 }
 
-  /* GALERÍA estilo instagram / scroll horizontal + grid fallback */
-  .gallery{
-    display:flex;
-    gap:16px;
-    overflow-x:auto;
-    padding:8px 6px;
-    scroll-behavior:smooth;
-  }
-  .gallery::-webkit-scrollbar{height:8px}
-  .gallery::-webkit-scrollbar-thumb{background:var(--primary);border-radius:8px}
-  .gallery-item{min-width:220px;border-radius:12px;overflow:hidden;flex-shrink:0;cursor:pointer;box-shadow:0 8px 20px rgba(2,20,20,0.06)}
-  .gallery-item img{width:100%;height:140px;object-fit:cover;display:block;transition:transform .3s}
-  .gallery-item:hover img{transform:scale(1.04)}
+.tips{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px }
+.tip{ background:linear-gradient(180deg,#f8ffff,#ffffff); padding:14px; border-radius:12px; text-align:center; font-weight:600; color:var(--accent) }
 
-  /* ITINERARIO */
-  .itinerary{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-  .it-card{padding:18px;border-radius:12px;background:linear-gradient(180deg,#ffffff, #f7feff);box-shadow:0 8px 18px rgba(4,20,20,0.04)}
-  .it-card h4{margin:0 0 8px 0}
-  .it-card p{margin:0;color:var(--muted)}
+.experience-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px }
+.exp{ border-radius:12px; overflow:hidden }
+.exp img{ width:100%; height:140px; object-fit:cover; display:block }
+.exp .exp-body{ padding:12px; background:#fff }
 
-  /* INCLUYE / SERVICIOS */
-  .includes ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-  .includes li{padding-left:28px;position:relative;color:var(--muted);font-weight:600}
-  .includes li::before{content:"✔";position:absolute;left:0;top:0;color:var(--primary);font-weight:900}
+/* ------------------ CTA / BUTTONS ------------------ */
+.cta{ display:flex; gap:12px; align-items:center; justify-content:center; margin:28px 0 }
+.btn-primary{ background:var(--primary); color:#fff; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:800; box-shadow:0 8px 18px rgba(12,154,166,0.16) }
+.btn-secondary{ background:transparent; border:2px solid black; color:black; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:700 }
 
-  /* TIPS grid */
-  .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-  .tip{background:linear-gradient(180deg,#f8ffff,#ffffff);padding:14px;border-radius:12px;text-align:center;font-weight:600;color:var(--accent)}
+/* ------------------ FOOTER ------------------ */
+/* (lo dejamos como en tu template) */
+.footer{ background:#0d1b2a; color:#e6e6e6; padding:3rem 1rem; margin-top:2.5rem }
+.footer-container{ max-width:75rem; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem }
+.footer-logo{ height:3rem; margin-bottom:0.6rem }
+.footer-bottom{ text-align:center; margin-top:2rem; color:#8d99ae; border-top:1px solid rgba(65,90,119,0.12); padding-top:1rem }
 
-  /* EXPERIENCIAS */
-  .experience-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-  .exp{border-radius:12px;overflow:hidden}
-  .exp img{width:100%;height:140px;object-fit:cover;display:block}
-  .exp .exp-body{padding:12px;background:#fff}
+/* small aesthetic touch: subtle fade-in */
+.fade-in{ opacity:0; transform:translateY(2rem); transition:opacity .8s ease-out,transform .8s ease-out }
+.fade-in.show{ opacity:1; transform:none }
 
-  /* CTA */
-  .cta{display:flex;gap:12px;align-items:center;justify-content:center;margin:28px 0}
-  .btn-primary{background:var(--primary);color:#fff;padding:12px 20px;border-radius:10px;text-decoration:none;font-weight:800;box-shadow:0 8px 18px rgba(12,154,166,0.16)}
-  .btn-secondary{background:transparent;border:2px solid var(--primary);color:var(--primary);padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
-
-  /* FOOTER (mantener igual a tu template) */
-  .footer{background:#0d1b2a;color:#e6e6e6;padding:3rem 1rem;margin-top:2.5rem}
-  .footer-container{max-width:75rem;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem}
-  .footer-logo{height:3rem;margin-bottom:0.6rem}
-  .footer-bottom{text-align:center;margin-top:2rem;color:#8d99ae;border-top:1px solid rgba(65,90,119,0.12);padding-top:1rem}
-
-  /* FADE IN */
-  .fade-in{opacity:0;transform:translateY(2rem);transition:opacity .8s ease-out,transform .8s ease-out}
-  .fade-in.show{opacity:1;transform:none}
-
-  footer {
-  border-top: 0.125rem solid var(--accent); /* 2px */
-  padding: 1.25rem 0; /* 20px */
+footer {
+  border-top: 0.125rem solid var(--accent);
+  padding: 1.25rem 0;
   color: var(--muted);
   background: var(--white);
   text-align: center;
 }
+
+/* ------------------ RESPONSIVE FIXES (ONLY MOBILE CHANGES) ------------------ */
+/* These media queries contain all changes so desktop stays exactly igual. */
+
+/* Medium breakpoint: adjust hero layout stacking */
+@media (max-width: 980px) {
+  .hero-inner{ grid-template-columns: 1fr; gap:1.25rem; align-items:start; }
+  .hero{ padding:48px 16px; border-radius:16px; }
+
+  /* center the hero-card when stacked and reduce width */
+  .hero-card{
+    width:100%;
+    max-width:420px;
+    margin:0 auto;
+    padding:16px;
+    text-align:center;
+  }
+
+  /* allow pill text to wrap nicely and center them */
+  .pill{
+    white-space:normal;
+    display:inline-block;
+    text-align:center;
+    max-width:100%;
+    padding:8px 12px;
+    font-size:0.92rem;
+  }
+
+  /* gallery: smaller items to avoid horizontal overflow looking broken */
+  .gallery-item{ min-width:180px; }
+  .gallery-item img{ height:130px; }
+
+  /* two-col stack */
+  .two-col{ grid-template-columns:1fr; }
+
+  /* right column aside (card) should not be too wide */
+  aside.card{ width:100%; max-width:760px; margin:0 auto; }
+
+  /* nav: center links and give them breathing room */
+  nav{ padding:0.6rem 0; }
+  .navlinks{ justify-content:center; gap:10px; }
+
+  /* reduce hero text sizes slightly */
+  .hero-title{ font-size:1.8rem; }
+  .hero-sub{ font-size:1rem; }
+}
+
+/* Small / narrow screens: extra tweaks */
+@media (max-width: 480px) {
+  .hero{ padding:28px 14px; border-radius:12px; }
+  .hero-title{ font-size:1.6rem; line-height:1.2; }
+  .hero-sub{ font-size:0.95rem; line-height:1.5; }
+
+  /* price tag readability on very small widths */
+  .price-tag{ font-size:1.35rem; word-break:break-word; text-align:center; }
+
+  /* pills become full-width "chips" stacked */
+  .hero > div > div > .pill,
+  .hero .pill {
+    display:inline-block;
+    width:100%;
+    max-width:100%;
+    margin-left:0;
+    margin-right:0;
+  }
+
+  /* gallery smaller and touch-friendly */
+  .gallery{ gap:12px; padding:8px 4px; }
+  .gallery-item{ min-width:150px; border-radius:10px; }
+  .gallery-item img{ height:110px; }
+
+  /* buttons: make them full width if they wrap */
+  .btn-primary, .btn-secondary{ padding:10px 14px; }
+}
+
+/* Accessibility: focus styles */
+a:focus, button:focus, .gallery-item:focus { outline: 3px solid rgba(12,154,166,0.18); outline-offset:3px; }
+
+/* Small helper for long lists in includes/aside so text doesn't overflow */
+.includes li, .footer-col p, .footer-col li a { word-break: break-word; }
+
+/* End of stylesheet */
+
 </style>
 
 </head>
@@ -243,19 +380,19 @@ nav {
 
       <div class="gallery" role="list" aria-label="Galería de imágenes termas">
         <div class="gallery-item" role="listitem" tabindex="0">
-          <img src="img/termas-1.jpg" alt="Piscina termal al atardecer" loading="lazy">
+          <img src="termas-1.jpg" alt="Piscina termal al atardecer" loading="lazy">
         </div>
         <div class="gallery-item" role="listitem" tabindex="0">
-          <img src="img/termas-2.jpg" alt="Circuito de piscinas termales" loading="lazy">
+          <img src="termas-2.jpg" alt="Circuito de piscinas termales" loading="lazy">
         </div>
         <div class="gallery-item" role="listitem" tabindex="0">
-          <img src="img/spa-sala.jpg" alt="Sala de spa y masajes" loading="lazy">
+          <img src="termas-3.jpg" alt="Sala de spa y masajes" loading="lazy">
         </div>
         <div class="gallery-item" role="listitem" tabindex="0">
-          <img src="img/termas-3.jpg" alt="Senderos y áreas verdes del complejo" loading="lazy">
+          <img src="termas-4.jpg" alt="Senderos y áreas verdes del complejo" loading="lazy">
         </div>
         <div class="gallery-item" role="listitem" tabindex="0">
-          <img src="img/termas-4.jpg" alt="Jacuzzi y zona lounge" loading="lazy">
+          <img src="termas-5.jpg" alt="Jacuzzi y zona lounge" loading="lazy">
         </div>
       </div>
     </section>
@@ -343,7 +480,7 @@ nav {
 
       <div class="experience-cards" style="margin-top:12px">
         <div class="exp card">
-          <img src="img/masaje.jpg" alt="Masaje relajante en spa">
+          <img src="masaje.jpg" alt="Masaje relajante en spa">
           <div class="exp-body">
             <h4>Masajes y tratamientos</h4>
             <p style="color:var(--muted);margin:8px 0 0">Opciones desde relajantes hasta terapéuticos (con suplemento).</p>
@@ -351,7 +488,7 @@ nav {
         </div>
 
         <div class="exp card">
-          <img src="img/gastronomia-termal.jpg" alt="Cena típica en restaurante del complejo">
+          <img src="gastronomia-termal.jpg" alt="Cena típica en restaurante del complejo">
           <div class="exp-body">
             <h4>Gastronomía local</h4>
             <p style="color:var(--muted);margin:8px 0 0">Menús con ingredientes regionales y opciones saludables recomendadas por el chef.</p>
@@ -359,7 +496,7 @@ nav {
         </div>
 
         <div class="exp card">
-          <img src="img/paisaje-termal.jpg" alt="Senderos y naturaleza alrededor de las termas">
+          <img src="paisaje-termal.jpg" alt="Senderos y naturaleza alrededor de las termas">
           <div class="exp-body">
             <h4>Paseos y naturaleza</h4>
             <p style="color:var(--muted);margin:8px 0 0">Caminatas guiadas por jardines termales y áreas naturales protegidas cercanas.</p>
@@ -378,7 +515,7 @@ nav {
 
   </main>
 
-  <!-- FOOTER -->
+<!-- FOOTER -->
 <footer class="footer">
   <style>
     /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
@@ -509,28 +646,20 @@ nav {
   text-decoration: underline;
   color: #ffdd57; /* un color contraste */
 }
-.experience-card img {
-  width: 100%;
-  height: 12.5rem; /* antes 200px */
-  object-fit: cover; /* recorta y mantiene proporción */
-  border-radius: 12px;
-  display: block;
+
+    .hidden-link {
+  color: inherit;
+  text-decoration: none;
+  background: transparent;
 }
 
-.itinerary-card img {
-  width: 100%;
-  height: 11.25rem; /* antes 180px */
-  object-fit: cover;
-  border-radius: 12px;
+/* Evita cambios de color en visitado, hover o active */
+.hidden-link:visited,
+.hidden-link:hover,
+.hidden-link:active {
+  color: inherit;
+  text-decoration: none;
 }
-
-@media (max-width: 768px) {
-  .experience-card img {
-    height: 9.375rem; /* antes 150px */
-  }
-}
-
-    
   </style>
 
   <div class="footer-container">
@@ -576,10 +705,9 @@ nav {
   </div>
 
   <div class="footer-bottom">
-    © 2025 El Turista — San José • Diseñado por Agustin Espinosa
-  </div>
-</footer>
+    © 2025 El Turista — San José • Diseñado por  <a class="hidden-link" href="https://tintin-18.github.io/portafoliopersonal">Agustin Espinosa</a>
 
+</footer>
   <!-- SCRIPTS: fade-in on scroll + gallery modal -->
   <script>
     // FADE-IN ON SCROLL
