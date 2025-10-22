@@ -421,7 +421,7 @@ footer {
 }
 /* Contenedor del mapa */
 #mapa {
-  height: 25rem;           /* 400px ≈ 25rem */
+  height: 20rem;           /* 400px ≈ 25rem */
   min-height: 18.75rem;    /* 300px ≈ 18.75rem */
   border-radius: 0.75rem;  /* 12px */
   overflow: hidden;
