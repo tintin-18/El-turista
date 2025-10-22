@@ -15,10 +15,9 @@
 /* ------------------ ANIMACIÓN EN SCROLL ------------------ */
 .fade-in {
   opacity: 0;
-  transform: translateY(40px); /* empieza un poco abajo */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+  transform: translateY(40px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out; 
 }
-
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
@@ -255,277 +254,176 @@ header { margin-bottom: 3rem; }
   </section>
 
   <section id="posts" class="section">
-    <div class="grid">
+<div class="grid">
 
-      <!-- Card 1 -->
-      <article class="card fade-in">
-        <div class="category">🇺🇾 Uruguay</div>
-        <h4>5 tips para viajar a Colonia del Sacramento</h4>
-        <p>Descubrí los mejores lugares históricos, restaurantes y actividades para tu escapada.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal1')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal1')">&times;</span>
-          <h2>5 tips para viajar a Colonia del Sacramento</h2>
-          <p><strong>1-Llegá temprano para aprovechar el día:</strong> Colonia es ideal para recorrer caminando; si llegás en la mañana podés disfrutar de todo el barrio histórico sin apuro.
-<br>
-<strong>2-No te pierdas el atardecer en la Rambla:</strong> es uno de los más lindos del Río de la Plata, con vista despejada y ambiente relajado.
-<br>
-<strong>3-Alquilá una bici o carrito eléctrico:</strong> recorrer la ciudad y la costanera en dos ruedas es cómodo y divertido.
-<br>
-<strong>4-Explorá el Barrio Histórico:</strong> calle de los Suspiros, Faro, Plaza Mayor y la Puerta de la Ciudadela son paradas obligatorias.
-<br>
-<strong>5-Probá la gastronomía local:</strong> desde un buen chivito hasta restaurantes con vista al río, la experiencia culinaria completa el viaje.</p>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <article class="card fade-in">
-        <div class="category">🇧🇷 Brasil</div>
-        <h4>Río de Janeiro: qué hacer en 3 días</h4>
-        <p>Itinerario completo, consejos de transporte y lugares imperdibles en la ciudad brasileña.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal2')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal2" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal2')">&times;</span>
-          <h2>Río de Janeiro: qué hacer en 3 días</h2>
-          <p><strong>Día 1:</strong> Visitá el Cristo Redentor en la mañana, subí al Pan de Azúcar para ver la ciudad desde arriba y terminá con una caminata por Copacabana.
-<br>
-<strong>Día 2:</strong> Explorá el barrio bohemio de Santa Teresa, la Escalera de Selarón y disfrutá la tarde en Ipanema. Por la noche, samba en Lapa.
-<br>
-<strong>Día 3:</strong> Excursión al Parque Nacional de Tijuca, con cascadas y senderos, y despedida de la ciudad con un paseo por el Jardín Botánico.</p>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <article class="card fade-in">
-        <div class="category">❤️ Parejas</div>
-        <h4>Viajes en pareja: escapadas románticas en Uruguay</h4>
-        <p>Ideas de destinos y experiencias para disfrutar en pareja sin salir del país.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal3')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal3" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal3')">&times;</span>
-          <h2>Viajes en pareja: escapadas románticas en Uruguay</h2>
-          <p><strong>Colonia del Sacramento:</strong> calles empedradas, paseos en coche antiguo y atardeceres frente al río.
-<br>
-<strong>José Ignacio:</strong> cabañas junto al mar y cenas íntimas en restaurantes de autor.
-<br>
-<strong>Bodegas en Canelones:</strong> recorridos entre viñedos, degustaciones y hospedajes boutique.
-<br>
-<strong>Valle del Lunarejo:</strong> naturaleza pura, caminatas y noches bajo un cielo estrellado.
-<br>
-<strong>Termas del Daymán:</strong> relax en aguas termales y tratamientos de spa para dos.</p>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <article class="card fade-in">
-        <div class="category">🇦🇷 Argentina</div>
-        <h4>Buenos Aires en 48 horas</h4>
-        <p>Descubrí los barrios más emblemáticos, cafés históricos y actividades imperdibles en la capital argentina.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal4')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal4" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal4')">&times;</span>
-          <h2>Buenos Aires en 48 horas</h2>
-          <p><strong>Día 1 (mañana):</strong> Plaza de Mayo, Casa Rosada y Catedral Metropolitana. No te pierdas las historias detrás de los edificios y la arquitectura colonial.<br>
-    <strong>Día 1 (tarde):</strong> Caminá por San Telmo, visitá la feria y probá un café en un bar notable. Terminá en Puerto Madero para una cena frente al río.<br>
-    <strong>Día 2 (mañana):</strong> Explorá La Boca con su Caminito y el estadio de Boca Juniors, sumergiéndote en la cultura futbolera.<br>
-    <strong>Día 2 (tarde):</strong> Recoleta (cementerio, librerías, museos) y cerrá con cena en Palermo, barrio trendy con bares y restaurantes de moda.</p>
-    <p>Tip: Usá transporte público o caminá entre barrios cercanos para vivir la ciudad como un local y aprovechar el tiempo al máximo.</p>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <article class="card fade-in">
-        <div class="category">🏔️ Aventura</div>
-        <h4>Aventura en la Cordillera de los Andes</h4>
-        <p>Rutas de trekking, refugios y paisajes que no te podés perder en tu próxima escapada.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal5')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal5" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal5')">&times;</span>
-          <h2>Aventura en la Cordillera de los Andes</h2>
-         <p><strong>1.</strong> Trekking en Bariloche: Cerro Catedral y Refugio Frey ofrecen senderos para todos los niveles.<br>
-    <strong>2.</strong> Ascenso al Aconcagua: desafío para los más experimentados, con vistas impresionantes.<br>
-    <strong>3.</strong> Refugios de montaña: alojamiento rústico y cercano a la naturaleza.<br>
-    <strong>4.</strong> Cabalgatas y rafting: aventuras que suman adrenalina y paisajes únicos.<br>
-    <strong>5.</strong> Paisajes espectaculares: glaciares, lagos y montañas que parecen de otro planeta.</p>
-    <p>Consejo: siempre llevá ropa adecuada para cambios de clima y guías locales para rutas más seguras.</p>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <article class="card fade-in">
-        <div class="category">🏖️ Punta del Este</div>
-        <h4>Punta del Este: guía de playas y vida nocturna</h4>
-        <p>Desde playas tranquilas hasta los mejores paradores y clubs nocturnos.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal6')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal6" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal6')">&times;</span>
-          <h2>Punta del Este: guía de playas y vida nocturna</h2>
-         <p><strong>Playa Mansa:</strong> perfecta para familias y atardeceres tranquilos.<br>
-    <strong>Playa Brava:</strong> surf y “La Mano”, icono de Punta.<br>
-    <strong>La Barra y Manantiales:</strong> ambiente joven, galerías de arte y restaurantes.<br>
-    <strong>Vida nocturna:</strong> paradores, boliches y casinos para todos los gustos.<br>
-    <strong>Extra:</strong> visitá Casapueblo en Punta Ballena para un atardecer inolvidable.<br>
-  Tip: si vas en temporada alta, llegá temprano a las playas y reservá restaurantes con anticipación.</p>
-        </div>
-      </div>
-
-      <!-- Card 7 -->
-      <article class="card fade-in">
-        <div class="category">🍷 Gastronomía</div>
-        <h4>Ruta del vino en Uruguay</h4>
-        <p>Visita bodegas, degustaciones y consejos para disfrutar del vino uruguayo como un experto.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal7')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal7" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal7')">&times;</span>
-          <h2>Ruta del vino en Uruguay</h2>
-           <p><strong>1.</strong> Bodegas en Canelones: visitas guiadas y catas.<br>
-    <strong>2.</strong> Tannat, uva insignia: probá sus diferentes expresiones.<br>
-    <strong>3.</strong> Experiencias gourmet: maridajes con quesos y carnes.<br>
-    <strong>4.</strong> Bodegas boutique en Maldonado: intimidad y diseño único.<br>
-    <strong>5.</strong> Participá en vendimias y eventos locales.
-    Consejo: llevá una libreta de notas para registrar tus vinos favoritos y aprovechar al máximo cada degustación.</p>
-        </div>
-      </div>
-
-      <!-- Card 8 -->
-      <article class="card fade-in">
-        <div class="category">👨‍👩‍👧 Familias</div>
-        <h4>Escapadas familiares: destinos ideales en Uruguay</h4>
-        <p>Lugares para disfrutar con niños, actividades al aire libre y alojamiento recomendado.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal8')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal8" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal8')">&times;</span>
-          <h2>Escapadas familiares: destinos ideales en Uruguay</h2>
-          <p><strong>Piriápolis:</strong> playa, Cerro Pan de Azúcar y aerosilla.<br>
-    <strong>Termas de Arapey:</strong> aguas termales y diversión para todas las edades.<br>
-    <strong>Parque Lecocq:</strong> naturaleza y picnic, ideal para niños.<br>
-    <strong>Minas y sierras:</strong> senderismo y camping.<br>
-    <strong>Colonia:</strong> casco histórico y recorridos en carrito eléctrico.
-    Tip: combiná actividades al aire libre con momentos de relax para que toda la familia disfrute el viaje.</p>
-        </div>
-      </div>
-
-      <!-- Card 9 -->
-      <article class="card fade-in">
-        <div class="category">✈️ Tips de viaje</div>
-        <h4>Cómo preparar tu viaje internacional sin estrés</h4>
-        <p>Tips de planificación, documentos, equipaje y seguridad para viajar tranquilo.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal9')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal9" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal9')">&times;</span>
-          <h2>Cómo preparar tu viaje internacional sin estrés</h2>
-      <p><strong>1.</strong> Revisá pasaporte, visas y seguros.<br>
-    <strong>2.</strong> Armá tu equipaje con listas y llevá solo lo necesario.<br>
-    <strong>3.</strong> Dinero y tarjetas: informá al banco y llevá efectivo local.<br>
-    <strong>4.</strong> Traslados y transporte: reservá desde el aeropuerto si es necesario.<br>
-    <strong>5.</strong> Planificación flexible: itinerario tentativo, pero espacio para improvisar.
-    Extra: descargá apps de mapas y traducción antes de viajar para mayor comodidad.</p>
-        </div>
-      </div>
-
-      <!-- Card 10 -->
-      <article class="card fade-in">
-        <div class="category">🛶 Turismo activo</div>
-        <h4>Turismo activo: kayak, rafting y aventuras en Uruguay</h4>
-        <p>Lugares para los que buscan emoción y deportes al aire libre.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal10')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal10" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal10')">&times;</span>
-          <h2>Turismo activo: kayak, rafting y aventuras en Uruguay</h2>
-         <p><strong>Kayak:</strong> Río Negro, ideal para principiantes y familias.<br>
-    <strong>Rafting:</strong> Río Tacuarembó, adrenalina y paisajes serranos.<br>
-    <strong>Kitesurf:</strong> playas de Rocha, viento perfecto.<br>
-    <strong>Senderismo:</strong> Quebrada de los Cuervos, naturaleza y fauna.<br>
-    <strong>Cabalgatas:</strong> Lavalleja, entre sierras y arroyos.
-    Tip: consultá condiciones climáticas y guías locales para cada actividad para mayor seguridad.</p>
-        </div>
-      </div>
-
-      <!-- Card 11 -->
-      <article class="card fade-in">
-        <div class="category">🎭 Cultura</div>
-        <h4>Cultura y festivales en Brasil</h4>
-        <p>Eventos imperdibles, carnavales y fiestas locales que todo viajero debería conocer.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal11')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal11" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal11')">&times;</span>
-          <h2>Cultura y festivales en Brasil</h2>
-          <p><strong>1.</strong> Carnaval de Río: desfiles, comparsas y música sin igual.<br>
-    <strong>2.</strong> Fiestas juninas: bailes tradicionales y comidas típicas.<br>
-    <strong>3.</strong> Festival de Parintins: espectáculo amazónico lleno de color.<br>
-    <strong>4.</strong> Música en Salvador de Bahía: ritmos afrobrasileños y conciertos.<br>
-    <strong>5.</strong> Arte y museos en São Paulo: galerías, arquitectura y exposiciones contemporáneas.
-    Consejo: buscá festivales locales según la fecha de tu viaje para vivir la cultura brasileña al máximo.</p>
-        </div>
-      </div>
-
-      <!-- Card 12 -->
-      <article class="card fade-in">
-        <div class="category">🏕️ Naturaleza</div>
-        <h4>Camping y naturaleza en Uruguay</h4>
-        <p>Los mejores campings, reservas naturales y actividades al aire libre.</p>
-        <div style="display:flex; justify-content:flex-end;">
-          <button class="cta-link" onclick="openModal('modal12')">Leer más →</button>
-        </div>
-      </article>
-      <div id="modal12" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('modal12')">&times;</span>
-          <h2>Camping y naturaleza en Uruguay</h2>
-          <p><strong>Santa Teresa (Rocha):</strong> playas, bosque y fortaleza histórica.<br>
-    <strong>Valle del Lunarejo (Rivera):</strong> paisajes únicos, senderismo y fauna.<br>
-    <strong>Laguna Garzón:</strong> deportes acuáticos, pesca y tranquilidad.<br>
-    <strong>Parque Anchorena (Colonia):</strong> reserva natural con ciervos y flora nativa.<br>
-    <strong>Sierras de Minas:</strong> camping entre arroyos, cascadas y miradores naturales.
-    Tip: llevá repelente, abrigo para la noche y respetá las normas de cada reserva para una experiencia segura y responsable.</p>
-        </div>
-      </div>
-
+  <!-- Card 1 -->
+  <article class="card fade-in">
+    <div class="category">🧳 Documentación</div>
+    <h4>Documentación lista</h4>
+    <p>Revisá que tus documentos estén vigentes, llevá copias y guardá los originales en un lugar seguro.</p>
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="cta-link" onclick="openModal('modal1')">Leer más →</button>
     </div>
+  </article>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>🧳 Documentación lista</h2>
+      <p>Antes de salir, revisá que tus documentos estén vigentes y en buen estado.<br>
+      Llevá siempre una copia aparte y guardá los originales en un lugar seguro.<br>
+      Recordá: ¡sin documentos, no hay viaje!</p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <article class="card fade-in">
+    <div class="category">🍽️ Salud y alimentación</div>
+    <h4>Cuidados durante el viaje</h4>
+    <p>Informá tus necesidades alimentarias y llevá tus medicamentos esenciales.</p>
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="cta-link" onclick="openModal('modal2')">Leer más →</button>
+    </div>
+  </article>
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>🍽️ Salud y alimentación</h2>
+      <p>Avisá a la agencia si sos celíaco, diabético, hipertenso o vegetariano para que preparen los servicios adecuados.<br>
+      Llevá tus medicamentos y un pequeño botiquín con lo básico.</p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <article class="card fade-in">
+    <div class="category">💵 Dinero y seguridad</div>
+    <h4>Consejos para cuidar tu dinero</h4>
+    <p>Informate sobre la moneda local y repartí el dinero en distintos lugares.</p>
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="cta-link" onclick="openModal('modal3')">Leer más →</button>
+    </div>
+  </article>
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>💵 Dinero y seguridad</h2>
+      <p>Averiguá qué moneda se usa en tu destino y si aceptan los billetes que llevás (algunos países no aceptan dólares viejos).<br>
+      Usá la caja fuerte del hotel y repartí el dinero en distintos lugares.</p>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <article class="card fade-in">
+    <div class="category">😴 Comodidad</div>
+    <h4>Comodidad al viajar</h4>
+    <p>Pequeños detalles que hacen más placentero el viaje, sobre todo en trayectos largos.</p>
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="cta-link" onclick="openModal('modal4')">Leer más →</button>
+    </div>
+  </article>
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h2>😴 Comodidad al viajar</h2>
+      <p>Usá ropa cómoda, llevá una almohada, auriculares, antifaz y un cepillo de dientes.<br>
+      Un pequeño kit de viaje puede hacer la diferencia en trayectos largos.</p>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <article class="card fade-in">
+    <div class="category">🎒 Equipaje</div>
+    <h4>Equipaje inteligente</h4>
+    <p>Planificá lo que vas a llevar y marcá tu valija para reconocerla fácilmente.</p>
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="cta-link" onclick="openModal('modal5')">Leer más →</button>
+    </div>
+  </article>
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span>
+      <h2>🎒 Equipaje inteligente</h2>
+      <p>Planificá tus atuendos según el clima y las actividades.<br>
+      No olvides traje de baño, abrigo, ropa formal, impermeable y protector solar.<br>
+      Aprovechá los compartimentos y marcá tu valija con algo llamativo para reconocerla rápido.</p>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <article class="card fade-in">
+    <div class="category">🌍 Experiencias</div>
+    <h4>Vive el destino</h4>
+    <p>Sumergite en la cultura local y respetá las costumbres del lugar que visites.</p>
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="cta-link" onclick="openModal('modal6')">Leer más →</button>
+    </div>
+  </article>
+  <div id="modal6" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal6')">&times;</span>
+      <h2>🌍 Vive el destino</h2>
+      <p>Explorá más allá de lo turístico.<br>
+      Probá comida local, charlá con los lugareños y respetá sus costumbres.<br>
+      Comprá artesanías auténticas —nunca productos ilegales o de especies protegidas—.</p>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <article class="card fade-in">
+    <div class="category">💫 Bienestar</div>
+    <h4>Disfrutá el momento</h4>
+    <p>Desconectate del celular y viví el presente en cada lugar que visites.</p>
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="cta-link" onclick="openModal('modal7')">Leer más →</button>
+    </div>
+  </article>
+  <div id="modal7" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal7')">&times;</span>
+      <h2>💫 Disfrutá el momento</h2>
+      <p>Desconectate del celular por un día, caminá, mirá el atardecer y disfrutá cada rincón.<br>
+      Llevá un diario de viaje o un libro: te ayudará a atesorar recuerdos.</p>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <article class="card fade-in">
+    <div class="category">😊 Actitud</div>
+    <h4>Buena actitud, siempre</h4>
+    <p>Una sonrisa abre puertas: viajá con buena energía y disfrutá más.</p>
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="cta-link" onclick="openModal('modal8')">Leer más →</button>
+    </div>
+  </article>
+  <div id="modal8" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal8')">&times;</span>
+      <h2>😊 Buena actitud, siempre</h2>
+      <p>No importa si no hablás el idioma: una sonrisa y amabilidad abren puertas.<br>
+      Viajar con buena energía te hará conocer gente increíble y disfrutar el doble.</p>
+    </div>
+  </div>
+
+  <!-- Card 9 -->
+  <article class="card fade-in">
+    <div class="category">🏠 Regreso</div>
+    <h4>Al volver del viaje</h4>
+    <p>Dejate un día libre antes de volver a la rutina y descansá sin apuro.</p>
+    <div style="display:flex; justify-content:flex-end;">
+      <button class="cta-link" onclick="openModal('modal9')">Leer más →</button>
+    </div>
+  </article>
+  <div id="modal9" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal9')">&times;</span>
+      <h2>🏠 Al volver</h2>
+      <p>Dejate un día libre antes de volver al trabajo.<br>
+      Descansá, organizá tus pendientes sin apuro y compartí tus anécdotas con amigos.<br>
+      Y cuando empieces a extrañar… ¡planeá tu próximo viaje con <strong>El Turista</strong> en <a href="https://elturista.uy" target="_blank">elturista.uy</a>!</p>
+    </div>
+  </div>
+
+</div>
+
   </section>
 
   <div class="cta-box">
@@ -579,12 +477,13 @@ const fadeElements = document.querySelectorAll('.fade-in');
 const handleScroll = () => {
   const triggerBottom = window.innerHeight;
 
-  fadeElements.forEach((el, index) => {
-    const elTop = el.getBoundingClientRect().top;
-    if (elTop < triggerBottom) {
-      setTimeout(() => el.classList.add('show'), index * 50);
-    }
-  });
+fadeElements.forEach((el, index) => {
+  const elTop = el.getBoundingClientRect().top;
+  if (elTop < triggerBottom) {
+    setTimeout(() => el.classList.add('show'), index * 150); // 150ms entre elementos
+  }
+});
+
 };
 
 window.addEventListener('scroll', handleScroll);
