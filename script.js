@@ -162,3 +162,18 @@ fadeElements.forEach(el => observer.observe(el));
   });
 
 })();
+
+window.addEventListener('load', () => {
+  const modal = document.getElementById('initialModal');
+  modal.style.display = 'flex';
+
+  // Cerrar al hacer clic en cualquier parte del modal
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // También cerrar con Escape
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') modal.style.display = 'none';
+  });
+});
