@@ -593,3 +593,60 @@ footer {
   }
 }
 
+/* TABLA DESTINOS - VIAJES */
+#viajes table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Nunito', sans-serif;
+  margin-top: 1rem;
+}
+
+#viajes th, #viajes td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+
+#viajes thead tr {
+  background-color: #0077ff;
+  color: #fff;
+}
+
+
+
+#viajes tbody tr:hover {
+  background-color: #d0e2ff;
+  transform: translateY(-2px);
+}
+
+#viajes td {
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #viajes table, #viajes thead, #viajes tbody, #viajes th, #viajes td, #viajes tr {
+    display: block;
+    width: 100%;
+  }
+  #viajes thead {
+    display: none;
+  }
+  #viajes tbody tr {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid gray;
+    padding: 0.5rem;
+  }
+  #viajes td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  #viajes td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: calc(50% - 2rem);
+    text-align: left;
+    font-weight: 600;
+  }
+}

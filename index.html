@@ -153,12 +153,14 @@
   <!-- VIAJES -->
 <section id="viajes" class="section">
   <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px;">
-    <!-- Calendario simple -->
+    <!-- Tabla de viajes -->
     <div class="fade-in" style="flex:1;min-width:300px;">
-      <h4 style="margin-bottom:10px; font-size: 2rem; color: var(--primary); text-align: center;">Próximas salidas confirmadas</h4>
-      <table style="width:100%;border-collapse:separate;">
+      <h4 style="margin-bottom:10px; font-size: 2rem; color: var(--primary); text-align: center;">
+        Próximas salidas confirmadas
+      </h4>
+      <table>
         <thead>
-          <tr style="background:#0077ff;color:white;">
+          <tr>
             <th>Fecha</th>
             <th>Destino</th>
             <th>Tipo de paquete</th>
@@ -166,17 +168,32 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td>12/10/2025</td><td>Colonia </td><td>Fin de semana (3 dias)</td><td>100usd</td></tr>
-          <tr><td>20/10/2025</td><td>Punta del Este</td><td>Playa & vida nocturna (3 dias)</td><td>100usd</td></tr>
-          <tr><td>05/11/2025</td><td>Río de Janeiro</td><td>Paquete todo incluido (3 dias)</td><td>100usd</td></tr>        
+          <tr>
+            <td data-label="Fecha">12/10/2025</td>
+            <td data-label="Destino">Termas Romanas, Brasil</td>
+            <td data-label="Tipo de paquete">Paquete Termas (3 días)</td>
+            <td data-label="Precio">350 USD</td>
+          </tr>
+          <tr>
+            <td data-label="Fecha">20/10/2025</td>
+            <td data-label="Destino">Florianópolis, Brasil</td>
+            <td data-label="Tipo de paquete">Sol y Playa (3 días)</td>
+            <td data-label="Precio">400 USD</td>
+          </tr>
+          <tr>
+            <td data-label="Fecha">05/11/2025</td>
+            <td data-label="Destino">Ciudad del Este / Iguazú</td>
+            <td data-label="Tipo de paquete">Naturaleza y Compras (3 días)</td>
+            <td data-label="Precio">450 USD</td>
+          </tr>
         </tbody>
       </table>
     </div>
-     <!-- Mapa -->
+
+    <!-- Mapa -->
     <div id="mapa" class="fade-in" style="flex:1;min-width:300px;height:400px;border-radius:12px;overflow:hidden;"></div>
   </div>
 </section>
-
   <!-- GALERÍA -->
 <section id="galeria" class="section">
   <h3 class="fade-in" style="text-align:center; margin-bottom:30px; animation-delay: 0.2s;">📸 Galería de recuerdos</h3>
@@ -493,11 +510,11 @@
   // Inicializar mapa centrado en Uruguay
   const map = L.map('mapa').setView([-34.9, -56.2], 6);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
-  const destinos = [
-    {name: "Colonia del Sacramento", coords: [-34.4667, -57.8333], info: "Escapada fin de semana"},
-    {name: "Punta del Este", coords: [-34.9667, -54.9333], info: "Playas y vida nocturna"},
-    {name: "Río de Janeiro", coords: [-22.9068, -43.1729], info: "Paquete todo incluido"}
-  ];
+const destinos = [
+  {name: "Termas Romanas, Brasil", coords: [-29.3675, -51.5136], info: "Paquete Termas (3 días)"},
+  {name: "Florianópolis, Brasil", coords: [-27.5949, -48.5480], info: "Sol y Playa (3 días)"},
+  {name: "Ciudad del Este / Iguazú", coords: [-25.5160, -54.6118], info: "Naturaleza y Compras (3 días)"}
+];
   destinos.forEach(d => {
     L.marker(d.coords).addTo(map).bindPopup(`<b>${d.name}</b><br>${d.info}`);
   });
