@@ -640,242 +640,137 @@ footer {
 
 <!-- FOOTER -->
 <footer class="footer">
-<style>
-  :root {
-    --color-accent: #f57c00; /* Naranja principal */
-  }
+  <style>
+    /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
+    .footer {
+      background: #0d1b2a; /* azul profundo */
+      color: #e6e6e6;
+      padding: 3rem 1rem 1rem;
+    }
 
-.hero {
-  position: relative;
-  width: 100%;
-  min-height: 70vh; /* en lugar de 100vh */
-background: linear-gradient(
-    rgba(255, 145, 0, 0.55),
-    rgba(255, 94, 0, 0.55)
-  ),
-    url('img/floripa.jpg') center center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0 1.2rem;
-  color: #fff;
-  margin-top: 1rem;
-  
-}
+    .footer-container {
+      max-width: 75rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
 
-.hero-content {
-  max-width: 650px;
-  background: rgba(0, 0, 0, 0.35); /* leve fondo translúcido */
-  padding: 2rem;
-  border-radius: 1.2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: #fff;
+    }
 
-.hero h1 {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  margin-bottom: 0.8rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #fff;
-}
+    .footer-col p {
+      color: #c9d6df;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
 
-.hero p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  margin-bottom: 1.6rem;
-  color: #f8f8f8;
-}
+    .footer-logo {
+      height: 3rem;
+      margin-bottom: 0.8rem;
+    }
 
-.hero a {
-  background: var(--color-accent);
-  color: #fff;
-  padding: 0.8rem 1.8rem;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
 
-.hero a:hover {
-  background: #ff934f;
-  transform: translateY(-2px);
-}
+    .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 60vh;
-    padding: 0 1rem;
-    background-position: center top;
-  }
+    .footer-col ul li a {
+      color: #c9d6df;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
 
-  .hero-content {
-    padding: 1.5rem;
-    max-width: 90%;
-  }
+    .footer-col ul li a:hover {
+      color: #4da8da;
+    }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
+    .btn-maps {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: #1b263b;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn-maps:hover {
+      background: #415a77;
+    }
 
-  .hero p {
-    font-size: 1rem;
-  }
-}
+    .socials {
+      margin-top: 1rem;
+    }
+    .socials a {
+      margin-right: 0.8rem;
+      font-size: 1.3rem;
+      color: #4da8da;
+      transition: transform 0.2s, color 0.3s;
+    }
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #1e90ff;
+    }
 
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #8d99ae;
+      border-top: 1px solid #415a77;
+      padding-top: 1rem;
+    }
 
-  /* ------------------ FOOTER AZUL ELEGANTE ------------------ */
-  .footer {
-    background: #0d1b2a; /* azul profundo */
-    color: #e6e6e6;
-    padding: 3rem 1rem 1rem;
-  }
+    .phone-link {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
 
-  .footer-container {
-    max-width: 75rem;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-  }
+    .phone-link:hover {
+      text-decoration: underline;
+      color: #ffdd57;
+    }
 
-  .footer-col h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-    color: #fff;
-  }
+    .hidden-link {
+      color: inherit;
+      text-decoration: none;
+      background: transparent;
+    }
 
-  .footer-col p {
-    color: #c9d6df;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
+    .hidden-link:visited,
+    .hidden-link:hover,
+    .hidden-link:active {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  .footer-logo {
-    height: 3rem;
-    margin-bottom: 0.8rem;
-  }
+    /* --- QR Uruguay Natural --- */
+    .uruguaynatural-qr {
+      display: block;
+      margin: 0.5rem auto 0;
+      height: 100px;
+      width: 100px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, opacity 0.3s;
+      opacity: 0.95;
+    }
 
-  .footer-col ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .footer-col ul li {
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-col ul li a {
-    color: #c9d6df;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-
-  .footer-col ul li a:hover {
-    color: #4da8da;
-  }
-
-  .btn-maps {
-    display: inline-block;
-    margin-top: 0.5rem;
-    padding: 0.4rem 0.8rem;
-    background: #1b263b;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-
-  .btn-maps:hover {
-    background: #415a77;
-  }
-
-  .newsletter-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .newsletter-form input {
-    flex: 1;
-    padding: 0.6rem;
-    border: 1px solid #415a77;
-    border-radius: 6px;
-    background: #1b263b;
-    color: #fff;
-  }
-
-  .newsletter-form input::placeholder {
-    color: #8d99ae;
-  }
-
-  .newsletter-form button {
-    background: #4da8da;
-    color: #fff;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .newsletter-form button:hover {
-    background: #1e90ff;
-  }
-
-  .socials {
-    margin-top: 1rem;
-  }
-
-  .socials a {
-    margin-right: 0.8rem;
-    font-size: 1.3rem;
-    color: #4da8da;
-    transition: transform 0.2s, color 0.3s;
-  }
-
-  .socials a:hover {
-    transform: scale(1.2);
-    color: #1e90ff;
-  }
-
-  .footer-bottom {
-    text-align: center;
-    margin-top: 2rem;
-    font-size: 0.85rem;
-    color: #8d99ae;
-    border-top: 1px solid #415a77;
-    padding-top: 1rem;
-  }
-
-  .phone-link {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff; /* si tu footer es azul */
-    text-decoration: none;
-  }
-
-  .phone-link:hover {
-    text-decoration: underline;
-    color: #ffdd57; /* un color contraste */
-  }
-
-  .hidden-link {
-    color: inherit;
-    text-decoration: none;
-    background: transparent;
-  }
-
-  /* Evita cambios de color en visitado, hover o active */
-  .hidden-link:visited,
-  .hidden-link:hover,
-  .hidden-link:active {
-    color: inherit;
-    text-decoration: none;
-  }
-</style>
-
+    .uruguaynatural-qr:hover {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  </style>
 
   <div class="footer-container">
 
@@ -885,14 +780,6 @@ background: linear-gradient(
       <p>Agencia de viajes con más de 20 años de experiencia.  
          Salidas desde San José hacia todo el país y el mundo.</p>
     </div>
-
-    <!-- Columna 2: Dirección -->
-    <div class="footer-col">
-      <h4>📍 Dirección</h4>
-      <p>San José de Mayo, Uruguay</p>
-      <a href="https://maps.google.com/?q=San+José+de+Mayo+Uruguay" target="_blank" class="btn-maps">Ver en mapa</a>
-    </div>
-
     <!-- Columna 3: Enlaces -->
     <div class="footer-col">
       <h4>Enlaces rápidos</h4>
@@ -905,23 +792,30 @@ background: linear-gradient(
       </ul>
     </div>
 
-    <!-- Columna 4: Newsletter -->
-<div class="footer-col">
-  <h4>📞 ¿Preferís hablar?</h4>
-  <p>Llamanos y te asesoramos al instante:</p>
-  <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
-  
-  <div class="socials">
-    <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  </div>
-</div>
-
+    <!-- Columna 4: Contacto y redes -->
+    <div class="footer-col">
+      <h4>📞 ¿Preferís hablar?</h4>
+      <p>Llamanos y te asesoramos al instante:</p>
+      <p><a href="tel:+59898765432" class="phone-link">+598 92 227 722</a></p>
+      
+      <div class="socials">
+        <a href="https://www.instagram.com/elturista.uy" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61580975551264" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    <!-- Columna 2: QR Uruguay Natural -->
+       <div class="footer-col" style="text-align:center;">
+      <a href="http://apps.mintur.gub.uy/operadores/operador.php?tipo=10&numero=738" target="_blank">
+        <img src="uruguaynatural.jpeg" alt="QR Uruguay Natural"
+        style="width:150px;height:auto">
+      </a>
+    </div>
   </div>
 
   <div class="footer-bottom">
-    © 2025 El Turista — San José • Diseñado por  <a class="hidden-link" href="https://tintin-18.github.io/portafoliopersonal">Agustin Espinosa</a>
-
+    © 2025 El Turista — San José • Diseñado por  
+    <a class="hidden-link" href="https://tintin-18.github.io/portafoliopersonal">Agustin Espinosa</a>
+  </div>
 </footer>
 
 <script>
