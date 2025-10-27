@@ -142,22 +142,34 @@
     </div>
 
     <!-- 📅 Formulario -->
-    <div class="contact-card fade-in">
-      <h3 class="fade-in" style="font-size:1.6rem; margin-bottom:10px;">Solicitá tu cotización</h3>
-      <p class="fade-in" style="color:#555; margin-bottom:20px;">
-        Completá el formulario y armamos tu propuesta personalizada.
-      </p>
-      <form id="rentabusForm" onsubmit="sendBusForm(event)" class="fade-in" style="display:flex;flex-direction:column;gap:14px;">
-        <input type="text" name="name" placeholder="✏️ Tu nombre" required />
-        <input type="email" name="email" placeholder="📧 Tu email" required />
-        <input type="text" name="phone" placeholder="📱 Teléfono de contacto" />
-        <input type="text" name="destination" placeholder="🏠 Origen del viaje" required />
-         <input type="text" name="origen" placeholder="🎯 Destino del viaje" required />
-        <input type="number" name="passengers" placeholder="👥 N° de pasajeros (máx. 48)" required />
-        <textarea name="message" rows="4" placeholder="💬 Detalles adicionales (fecha, horarios, etc.)..." required></textarea>
-        <button type="submit">🚀 Enviar solicitud</button>
-      </form>
-    </div>
+  <div class="contact-card fade-in">
+  <h3 class="fade-in" style="font-size:1.6rem; margin-bottom:10px;">Solicitá tu cotización</h3>
+  <p class="fade-in" style="color:#555; margin-bottom:20px;">
+    Completá el formulario y armamos tu propuesta personalizada.
+  </p>
+
+<form id="rentabusForm" action="https://formsubmit.co/bus.elturista@gmail.com" method="POST" style="display:flex;flex-direction:column;gap:14px;">
+    <input type="text" name="name" placeholder="✏️ Tu nombre" required />
+    <input type="email" name="email" placeholder="📧 Tu email" required />
+    <input type="text" name="phone" placeholder="📱 Teléfono de contacto" />
+    <input type="text" name="destination" placeholder="🏠 Origen del viaje" required />
+    <input type="text" name="origen" placeholder="🎯 Destino del viaje" required />
+    <input type="number" name="passengers" placeholder="👥 N° de pasajeros (máx. 48)" required />
+    <textarea name="message" rows="4" placeholder="💬 Detalles adicionales (fecha, horarios, etc.)..." required></textarea>
+
+    <!-- Opcional: evita captcha -->
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit">🚀 Enviar solicitud</button>
+
+    <!-- Mensaje de éxito -->
+    <p id="successMessage" style="display:none; color: green; font-weight: bold; margin-top: 10px;">
+        ✅ Solicitud enviada correctamente. Nos pondremos en contacto a la brevedad.
+    </p>
+</form>
+
+
+</div>
   </section>
 </main>
 
@@ -346,12 +358,37 @@
 </footer>
 
 <script>
-  function sendBusForm(e) {
-    e.preventDefault();
-    alert("✅ Solicitud enviada. Nos pondremos en contacto a la brevedad.");
-    document.getElementById("rentabusForm").reset();
-  }
+  const form = document.getElementById('rentabusForm');
+const successMessage = document.getElementById('successMessage');
 
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: { "Accept": "application/json" }
+    });
+
+    if (response.ok) {
+      successMessage.style.display = "block";
+      form.reset();
+
+      // Ocultar mensaje después de 5 segundos
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 5000);
+
+    } else {
+      alert("⚠️ Hubo un error al enviar. Probá de nuevo.");
+    }
+  } catch (error) {
+    alert("⚠️ Hubo un error al enviar. Probá de nuevo.");
+    console.error(error);
+  }
+});
   // ------------------ FADE-IN ON SCROLL ------------------
   const faders = document.querySelectorAll('.fade-in');
 
